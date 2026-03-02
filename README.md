@@ -1,6 +1,6 @@
-# Modelos LaTeX para Trabalhos Acadêmicos – UFPel
+# Modelos LaTeX para Trabalhos Acadêmicos
 
-Este repositório disponibiliza **modelos LaTeX oficiais e exemplos práticos** para a elaboração de trabalhos acadêmicos da **Universidade Federal de Pelotas (UFPel)**, seguindo as normas da **ABNT** e diretrizes institucionais.
+Este repositório disponibiliza **modelos LaTeX oficiais e exemplos práticos** para a elaboração de trabalhos acadêmicos do **Instituto Federal Siul-rio-grandense (IFSul) - câmpus Sapucaia do Sul**, seguindo as normas da **ABNT** e diretrizes institucionais.
 
 O objetivo é facilitar a escrita, padronização e formatação de documentos acadêmicos, oferecendo modelos prontos e arquivos auxiliares amplamente utilizados e mantidos ao longo dos anos.
 
@@ -11,7 +11,7 @@ O objetivo é facilitar a escrita, padronização e formatação de documentos a
 ### 📌 Arquivos principais
 
 - **`texufpel.cls`**  
-  Classe LaTeX principal da UFPel. Responsável pela padronização de capa, margens, fontes, espaçamentos, elementos pré-textuais e estrutura geral do documento.
+  Classe LaTeX. Responsável pela padronização de capa, margens, fontes, espaçamentos, elementos pré-textuais e estrutura geral do documento.
 
 - **`abnt.bst`**  
   Estilo bibliográfico no padrão ABNT para uso com BibTeX.
@@ -32,23 +32,7 @@ Os arquivos abaixo são **modelos completos e funcionais**, prontos para adapta�
 
 - **`exemplo-tcc.tex`** – Trabalho de Conclusão de Curso  
 - **`exemplo-tcc-proposta.tex`** – Proposta de Trabalho de Conclusão de Curso  
-
-- **`exemplo-diss.tex`** – Dissertação de Mestrado  
-- **`exemplo-diss-proposta.tex`** – Proposta de Dissertação  
-
-- **`exemplo-tese.tex`** – Tese de Doutorado  
-- **`exemplo-tese-proposta.tex`** – Proposta de Tese  
-
-- **`exemplo-qualificacao.tex`** – Exame de Qualificação  
-
 - **`exemplo-ti.tex`** – Trabalho de Iniciação Científica ou Trabalho Técnico  
-
----
-
-## 📊 Slides
-
-- **`exemplo-slides/`**  
-  Diretório contendo exemplos de apresentações acadêmicas desenvolvidas em LaTeX.
 
 ---
 
@@ -74,11 +58,7 @@ Documentos explicativos com orientações sobre funcionalidades específicas e f
 
 - **`figura.pdf`**  
   Arquivo de exemplo para inserção e formatação de figuras.
-
-- **`ufpel.pdf`**  
-- **`ufpelw.pdf`**  
-  Arquivos gráficos institucionais da Universidade Federal de Pelotas.
-
+  
 ---
 
 ## 🚀 Como utilizar
@@ -100,14 +80,6 @@ Documentos explicativos com orientações sobre funcionalidades específicas e f
 
 ---
 
-## 👥 Público-alvo
-
-- Estudantes de graduação e pós-graduação da UFPel  
-- Docentes e pesquisadores  
-- Usuários LaTeX interessados em modelos acadêmicos no padrão ABNT  
-
----
-
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas e incentivadas.
@@ -120,7 +92,8 @@ Contribuições são bem-vindas e incentivadas.
 ### Utilize **issues** ou envie **pull requests**.
 ---
 
-## 📜 Licença
+## 📜 Agradecimentos
+- Estes documentos foram adaptados dos modelos desenvolvidos e disponibilizados pela UFPel, no repositório .
 
 Uso livre para fins acadêmicos e educacionais.
 
