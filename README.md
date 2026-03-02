@@ -10,7 +10,7 @@ O objetivo é facilitar a escrita, padronização e formatação de documentos a
 
 ### 📌 Arquivos principais
 
-- **`texufpel.cls`**  
+- **`texifsap.cls`**  
   Classe LaTeX. Responsável pela padronização de capa, margens, fontes, espaçamentos, elementos pré-textuais e estrutura geral do documento.
 
 - **`abnt.bst`**  
@@ -32,7 +32,6 @@ Os arquivos abaixo são **modelos completos e funcionais**, prontos para adapta�
 
 - **`exemplo-tcc.tex`** – Trabalho de Conclusão de Curso  
 - **`exemplo-tcc-proposta.tex`** – Proposta de Trabalho de Conclusão de Curso  
-- **`exemplo-ti.tex`** – Trabalho de Iniciação Científica ou Trabalho Técnico  
 
 ---
 
