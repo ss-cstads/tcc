@@ -511,10 +511,10 @@ Versão: \currversion^^J
 %==============================================================================
 \renewenvironment{abstract}{%
   \chapter*{\abstractname}
-  \@ifundefined{@nocipinfo}{
-  \noindent{\MakeUppercase{\@authoralast},
-    \@authorafirst. \textbf{\@title}. \advisorname: \@advisorafirst\ \@advisoralast. \@publyear. \pageref{LastPage}~f. \@tipodocumento,
-    \universidadename, \@city, \@publyear.}\\~\\}{}
+%  \@ifundefined{@nocipinfo}{
+%  \noindent{\MakeUppercase{\@authoralast},
+%    \@authorafirst. \textbf{\@title}. \advisorname: \@advisorafirst\ \@advisoralast. \@publyear. \pageref{LastPage}~f. \@tipodocumento,
+%    \universidadename, \@city, \@publyear.}\\~\\}{}
 }{%
   \par\vfill
   \noindent\keywordsname: \@abstractkw
