@@ -351,7 +351,7 @@ Versão: \currversion^^J
       \vskip 1cm%
       \MakeUppercase{\textbf{\@universidade}}\\%
       \textbf{\@unidade}\\%
-      \@ifundefined{@nomecurso}{\textbf{\@programa}}{\textbf{Curso de \@nomecurso}}\\%
+      \@ifundefined{@nomecurso}{\textbf{\@programa}}{\textbf{\@nomecurso}}\\%
       \vskip 1cm%
       \includegraphics[width=3cm]{imagens/ufpelw.pdf}
       \vskip 1cm%
