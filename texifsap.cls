@@ -531,9 +531,9 @@ Versão: \currversion^^J
       }
 
       \chapter*{\abstractname}
-      \noindent{\MakeUppercase{\@authoralast},
-        \@authorafirst. \textbf{\@englishtitle}. \advisorname: \@advisorafirst\ \@advisoralast. \@publyear. \pageref{LastPage}~f. \@tipodocumento,
-        \universidadename, \@city, \@publyear.}\\~\\
+%      \noindent{\MakeUppercase{\@authoralast},
+%        \@authorafirst. \textbf{\@englishtitle}. \advisorname: \@advisorafirst\ \@advisoralast. \@publyear. \pageref{LastPage}~f. \@tipodocumento,
+%        \universidadename, \@city, \@publyear.}\\~\\
     }{
       \par\vfill
       \noindent\keywordsname: \@abstractkweng
