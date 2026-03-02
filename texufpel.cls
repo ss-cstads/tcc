@@ -5,17 +5,16 @@
 
 \typeout{^^J^^J
 --------------------------------------------------^^J
-CLASSE texufpel^^J
-Formatação de Documentos LaTeX da UFPEL^^J
+CLASSE texifsap^^J
+Formatação de Documentos LaTeX do CSTADS do IFSul - câmpus Sapucaia do Sul^^J
 --------------------------------------------------^^J
-Desenvolvida a partir da Classe IIUFRGS^^J
-por Marilton S. de Aguiar (marilton@inf.ufpel.edu.br)^^J
+Desenvolvida a partir da Classe textufpel^^J
 --------------------------------------------------^^J
 Versão: \currversion^^J
 --------------------------------------------------^^J^^J}
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{texufpel}[\currversion]
+\ProvidesClass{texifsap}[\currversion]
 
 %==============================================================================
 % Declaração de opções
@@ -26,8 +25,8 @@ Versão: \currversion^^J
 
 \newcommand{\universidade}[1]{\gdef\@universidade{#1}}
 \newcommand{\universidadeeng}[1]{\gdef\@universidadeeng{#1}}
-\universidade{Universidade Federal de Pelotas}
-\universidadeeng{Federal University of Pelotas}
+\universidade{Instituto Federal Sul-rio-grandense}
+\universidadeeng{Sul-rio-grandense Federal Institute}
 
 \newcommand{\unidade}[1]{\gdef\@unidade{#1}}
 \newcommand{\programa}[1]{\gdef\@programa{#1}}
@@ -47,53 +46,13 @@ Versão: \currversion^^J
 \DeclareOption{tcc}{
 \documento{Trabalho de Conclus\~ao de Curso}
 \tipodocumento{\tccname\ (\cursoname) -- \unidadename}
-\descricaodocumento{Trabalho de Conclus\~ao de Curso apresentado ao \@unidade\ da \@universidade, como requisito parcial \`a obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso.}
-\descricaoaprovacao{Trabalho de Conclus\~ao de Curso aprovado, como requisito parcial, para obten{\c{c}}{\~a}o do grau de \@titulocurso, \@unidade, \@universidade.}
+\descricaodocumento{Trabalho de Conclus\~ao de Curso apresentado, como requisito parcial, para obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso.}
+\descricaoaprovacao{Trabalho de Conclus\~ao de Curso aprovado, como requisito parcial, para obten{\c{c}}{\~a}o do grau de \@titulocurso, \@universidade - \@unidade.}
 }
 
 \DeclareOption{tcc-proposta}{
-\tipodocumento{Proposta de Trabalho de Conclus\~ao de Curso (\@nomecurso) -- \@unidade}
-\descricaodocumento{Proposta de Trabalho de Conclus\~ao de Curso apresentada ao \@unidade\ da \@universidade, como requisito parcial \`a obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso.}
-}
-
-\DeclareOption{diss}{
-\documento{Disserta\c c\~ao}
-\tipodocumento{\dissname\ (\masterin\ \cursoname) -- \unidadename}
-\descricaodocumento{Disserta{\c{c}}{\~a}o apresentada ao \@programa\ do \@unidade\ da \@universidade, como requisito parcial \`a obten{\c{c}}{\~a}o do t\'itulo de Mestre em \@curso.}
-\descricaoaprovacao{Disserta{\c{c}}{\~a}o aprovada, como requisito parcial, para obten{\c{c}}{\~a}o do grau de Mestre em \@curso, \@programa, \@unidade, \@universidade.}
-}
-
-\DeclareOption{diss-proposta}{
-\tipodocumento{Proposta de Disserta\c c\~ao (Mestrado em \@curso) -- \@programa, \@unidade}
-\descricaodocumento{Proposta de Disserta{\c{c}}{\~a}o apresentada ao \@programa\ do \@unidade\ da \@universidade, como requisito parcial \`a obten{\c{c}}{\~a}o do t\'itulo de Mestre em \@curso.}
-}
-
-\DeclareOption{tese}{
-\documento{Tese}
-\tipodocumento{\thesisname\ (\doctoratein\ \cursoname) -- \unidadename}
-\descricaodocumento{Tese apresentada ao \@programa\ do \@unidade\ da \@universidade, como requisito parcial \`a obten{\c{c}}{\~a}o do t\'itulo de Doutor em \@curso.}
-\descricaoaprovacao{Tese aprovada, como requisito parcial, para obten{\c{c}}{\~a}o do grau de Doutor em \@curso, \@programa, \@unidade, \@universidade.}}
-
-%proposta de tese deixou de existir no PPGC - regimento de 2020
-\DeclareOption{tese-proposta}{
-\tipodocumento{Proposta de Tese (Doutorado em \@curso) -- \@programa, \@unidade}
-\descricaodocumento{Proposta de Tese apresentada ao \@programa\ do \@unidade\ da \@universidade, como requisito parcial \`a obten{\c{c}}{\~a}o do t\'itulo de Doutor em \@curso.}
-}
-
-\DeclareOption{eq}{
-\documento{Exame de Qualifica{\c{c}}{\~a}o}
-\tipodocumento{\eqname\ (\doctoratein\ \cursoname) -- \unidadename}
-\descricaodocumento{Exame de Qualifica{\c{c}}{\~a}o apresentado ao \@programa\ do \@unidade\ da \@universidade, como requisito parcial \`a obten{\c{c}}{\~a}o do t\'itulo de Doutor em \@curso.}
-\descricaoaprovacao{Exame de Qualifica{\c{c}}{\~a}o aprovado, como requisito parcial, para obten{\c{c}}{\~a}o do grau de Doutor em \@curso, \@programa, \@unidade, \@universidade.}}
-
-\DeclareOption{ti}{
-\tipodocumento{Trabalho Individual (Mestrado em \@curso) -- \@unidade}
-\descricaodocumento{Trabalho Individual apresentado ao \@programa\ do \@unidade\ da \@universidade, como requisito parcial \`a obten{\c{c}}{\~a}o do t\'itulo de Mestre em \@curso.}
-}
-
-\DeclareOption{tid}{
-\tipodocumento{Trabalho Individual (Doutorado em \@curso) -- \@unidade}
-\descricaodocumento{Trabalho Individual apresentado ao \@programa\ do \@unidade\ da \@universidade, como requisito parcial \`a obten{\c{c}}{\~a}o do t\'itulo de Doutor em \@curso.}
+\tipodocumento{Proposta de Trabalho de Conclus\~ao de Curso (\@nomecurso) --  \@universidade - \@unidade.}
+\descricaodocumento{Proposta de Trabalho de Conclus\~ao de Curso apresentado, como requisito parcial, para obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso.}
 }
 
 \newcommand{\capa}[1]{\gdef\@capa{#1}}
