@@ -1,6 +1,6 @@
 # Modelos LaTeX para Trabalhos Acadêmicos
 
-Este repositório disponibiliza **modelos LaTeX oficiais e exemplos práticos** para a elaboração de trabalhos acadêmicos do **Instituto Federal Siul-rio-grandense (IFSul) - câmpus Sapucaia do Sul**, seguindo as normas da **ABNT** e diretrizes institucionais.
+Este repositório disponibiliza **modelos oficiais e exemplos práticos** para a elaboração de trabalhos acadêmicos do **Instituto Federal Siul-rio-grandense (IFSul) - câmpus Sapucaia do Sul**, seguindo as normas da **ABNT** e diretrizes institucionais.
 
 O objetivo é facilitar a escrita, padronização e formatação de documentos acadêmicos, oferecendo modelos prontos e arquivos auxiliares amplamente utilizados e mantidos ao longo dos anos.
 
@@ -28,10 +28,10 @@ O objetivo é facilitar a escrita, padronização e formatação de documentos a
 
 Os arquivos abaixo são **modelos completos e funcionais**, prontos para adaptação conforme o tipo de trabalho acadêmico.
 
-### 🎓 Trabalhos acadêmicos
+### 🎓 Modelos de TCC
 
-- **`exemplo-tcc.tex`** – Trabalho de Conclusão de Curso  
-- **`exemplo-tcc-proposta.tex`** – Proposta de Trabalho de Conclusão de Curso  
+- **`exemplo-tcc.tex`** – Trabalho de Conclusão de Curso em LaTeX  
+- **`exemplo-tcc.docx`** – Trabalho de Conclusão de Curso em Microsoft Word  
 
 ---
 
