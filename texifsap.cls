@@ -46,8 +46,8 @@ Versão: \currversion^^J
 \DeclareOption{tcc}{
 \documento{Trabalho de Conclus\~ao de Curso}
 \tipodocumento{\tccname\ (\cursoname) -- \unidadename}
-\descricaodocumento{Trabalho de Conclus\~ao de Curso apresentado, como requisito parcial, para obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso.}
-\descricaoaprovacao{Trabalho de Conclus\~ao de Curso aprovado, como requisito parcial, para obten{\c{c}}{\~a}o do grau de \@titulocurso, \@universidade - \@unidade.}
+\descricaodocumento{Trabalho de Conclus\~ao de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso.}
+\descricaoaprovacao{Trabalho de Conclus\~ao de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, no Instituto Federal Sul-rio-grandense - câmpus Sapucaia do Sul.}
 }
 
 \DeclareOption{tcc-proposta}{
@@ -353,9 +353,9 @@ Versão: \currversion^^J
       \textbf{\@unidade}\\%
       \@ifundefined{@nomecurso}{\textbf{\@programa}}{\textbf{\@nomecurso}}\\%
       \vskip 1cm%
-      \includegraphics[width=3cm]{imagens/ufpelw.pdf}
-      \vskip 1cm%
-      \@documento\\%
+      %\includegraphics[width=3cm]{imagens/ifsul.pdf}
+      %\vskip 1cm%
+      \textbf{\@documento\\}%
       \vskip 1cm%
   \vskip 3cm%
   \noindent%
@@ -531,9 +531,9 @@ Versão: \currversion^^J
       }
 
       \chapter*{\abstractname}
-%      \noindent{\MakeUppercase{\@authoralast},
-%        \@authorafirst. \textbf{\@englishtitle}. \advisorname: \@advisorafirst\ \@advisoralast. \@publyear. \pageref{LastPage}~f. \@tipodocumento,
-%        \universidadename, \@city, \@publyear.}\\~\\
+  %    \noindent{\MakeUppercase{\@authoralast},
+  %      \@authorafirst. \textbf{\@englishtitle}. \advisorname: \@advisorafirst\ \@advisoralast. \@publyear. \pageref{LastPage}~f. %\@tipodocumento,
+   %     \universidadename, \@city, \@publyear.}\\~\\
     }{
       \par\vfill
       \noindent\keywordsname: \@abstractkweng
@@ -678,75 +678,6 @@ Versão: \currversion^^J
 %   \ifNAT@swa\expandafter\MakeUppercase\else\expandafter\@firstofone\fi{{\NAT@up #1}}%
 % }
 
-%capa do CDROM
-\newcommand{\makecover}{%
-\singlespacing
-\thispagestyle{empty}
-\clearpage%
-\mbox{}%
-\vfill%
-\fcolorbox{black}{white}{%
-\parbox[b]{14cm}{%
-\begin{minipage}{1.8cm}
-\rotatebox{90}{~\parbox{12cm}{%
-\begin{minipage}[c]{1cm}
-\includegraphics[width=\columnwidth]{ufpelw}
-\end{minipage}\hfill
-\begin{minipage}[c]{10.5cm}
-\textbf{\@title} -- \@authora
-\end{minipage}
-}~}
-\end{minipage}
-\begin{minipage}{12cm}
-\noindent%
-\fcolorbox{black}{laranjaufpel}{%
-\parbox[b]{12cm}{%
-\begin{center}
-\MakeUppercase{\textbf{\@universidade}}\\%
-\@unidade\\%
-\@ifundefined{@nomecurso}{\@programa}{Curso de \@nomecurso}\\%
-\includegraphics[width=3cm]{ufpel}\\
-\@documento%
-\end{center}
-}%
-}%
-\vskip .2cm%
-\noindent%
-\fcolorbox{black}{azulufpel}{%
-\parbox[c][2cm]{12cm}{%
-\begin{center}
-\vfill 
-{\color{white}\textbf{\@title}}%
-\vfill 
-\end{center}
-}%
-}%
-\vskip .2cm%
-\noindent%
-\fcolorbox{black}{verdeufpel}{%
-\parbox[c][2cm]{12cm}{%
-\begin{center}
-{\textbf{\MakeUppercase{\@authora}\\
-\@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}\\}%
-\@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}%
-\@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}}}%
-\end{center}
-}%
-}%
-\vskip .2cm%
-\noindent%
-\fcolorbox{black}{cinzaufpel}{%
-\parbox[b]{12cm}{%
-\centering%
-\@city, \ei@date%
-}%
-}%
-\end{minipage}
-}
-}
-\vfill
-}
-
 %apendices
 \newcommand{\apendices}{
   \clearpage
@@ -781,7 +712,7 @@ Versão: \currversion^^J
 	\mbox{}
 	\vfill
 	\begin{center}
-		\textbf{Insira AQUI a ficha catalogr\'afica\\Quando finalizado o trabalho, deve ser\\solicitada através do Sistema Cobalto\\Biblioteca -- Cadastro -- Ficha catalográfica.}
+		\textbf{Insira AQUI a ficha catalogr\'afica\\Quando finalizado o trabalho, deve ser\\solicitada à Biblioteca.}
 	\end{center}
 	\vfill
 }
@@ -826,6 +757,7 @@ Versão: \currversion^^J
 	\onehalfspacing
 	\begin{center}
 		\noindent\textbf{\@authora}\\
+        \@ifundefined{@authorb}{}{\noindent\textbf{\@authorb}\\}%
 		\vskip 2cm
 		\noindent\textbf{\@title}\\
 		\vskip 2cm
