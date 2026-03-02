@@ -93,7 +93,7 @@ Contribuições são bem-vindas e incentivadas.
 ---
 
 ## 📜 Agradecimentos
-- Estes documentos foram adaptados dos modelos desenvolvidos e disponibilizados pela UFPel, no repositório .
+- Estes documentos foram adaptados dos modelos desenvolvidos e disponibilizados pela UFPel, no repositório https://github.com/notcc/texufpel.
 
 Uso livre para fins acadêmicos e educacionais.
 
