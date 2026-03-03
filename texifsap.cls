@@ -324,7 +324,7 @@ Versão: \currversion^^J
         \gdef\@state{#2}
 }
 
-\location{Pelotas}{RS}
+\location{Sapucaia do Sul}{RS}
 
 \renewcommand{\maketitle}{
 \@ifundefined{@capa}{%
@@ -361,7 +361,7 @@ Versão: \currversion^^J
   \noindent%
       \centering%
       \vskip .5cm%
-      \textbf{\@title}%
+      \MakeUppercase{\textbf{\@title}}%
       \vskip .5cm%
   \vskip 3cm%
   \noindent%
