@@ -46,8 +46,8 @@ Versão: \currversion^^J
 \DeclareOption{tcc}{
 \documento{Trabalho de Conclus\~ao de Curso}
 \tipodocumento{\tccname\ (\cursoname) -- \unidadename}
-\descricaodocumento{Trabalho de Conclus{\~a}o de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso, do Curso \@cursoname do Instituto Federal Sul-rio-grandense – C{\^a}mpus Sapucaia do Sul.}
-\descricaoaprovacao{Trabalho de Conclus{\~a}o de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, do Curso \@cursoname do Instituto Federal Sul-rio-grandense – C{\^a}mpus Sapucaia do Sul.}
+\descricaodocumento{Trabalho de Conclus{\~a}o de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso, do Curso {\@nomecurso} do Instituto Federal Sul-rio-grandense – C{\^a}mpus Sapucaia do Sul.}
+\descricaoaprovacao{Trabalho de Conclus{\~a}o de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, do Curso {\@nomecurso} do Instituto Federal Sul-rio-grandense – C{\^a}mpus Sapucaia do Sul.}
 }
 
 \newcommand{\capa}[1]{\gdef\@capa{#1}}
@@ -344,13 +344,13 @@ Versão: \currversion^^J
   \noindent%
       \centering%
       \vskip 1cm%
-      \MakeUppercase{\textbf{\@universidade}}\\%
-      \MakeUppercase{\textbf{\@unidade}}\\%
-      \@ifundefined{@nomecurso}\MakeUppercase{{\textbf{\@programa}}{\textbf{\@nomecurso}}}\\%
+      \MakeUppercase{\@universidade}\\%
+      \MakeUppercase{\@unidade}\\%
+      \@ifundefined{@nomecurso}\MakeUppercase{Curso} \MakeUppercase{\@nomecurso}\\%
       \vskip 1cm%
       %\includegraphics[width=3cm]{imagens/ifsul.pdf}
       %\vskip 1cm%
-      \textbf{\@documento\\}%
+      %\textbf{\@documento\\}%
       \vskip 1cm%
   \vskip 3cm%
   \noindent%
@@ -371,17 +371,17 @@ Versão: \currversion^^J
   \noindent%
       \centering%
       \vskip .1cm%
-      \@city, \ei@date%
+      \@city\\\ei@date%
       \vskip .1cm%
 }
 
 \newcommand{\thetitlepage}{%
   \noindent%
     \centering%
-    \textbf{\@authora}\\
-    \@ifundefined{@authorb}{}{\textbf{\@authorb}\\}%
-    \@ifundefined{@authorc}{}{\textbf{\@authorc}\\}%
-    \@ifundefined{@authord}{}{\textbf{\@authord}\\}%
+    {\@authora}\\
+    \@ifundefined{@authorb}{}{{\@authorb}\\}%
+    \@ifundefined{@authorc}{}{{\@authorc}\\}%
+    \@ifundefined{@authord}{}{{\@authord}\\}%
     \vskip 5cm%
     {\MakeUppercase{\textbf{\@title}}}%
   \vskip 8cm%
@@ -390,51 +390,18 @@ Versão: \currversion^^J
 %        \begin{hyphenrules}{nohyphenation}%
         \@descricaodocumento%
  %     	\end{hyphenrules}%
-  \end{adjustwidth}
-    \vfill%
-  \vfill%
+          \vskip .5cm% 
   \@ifundefined{@advisora}{}{%
-    \onehalfspacing%
-    \centering%
-        \@ifundefined{@advisora}{}{
-          \begin{tabular}{rp{9cm}}%
-          \@ifundefined{@advisorb}{\advisorname:}{\advisorname es:} &
-          \@ifundefined{@advisora}{}{\@advisora\\}
-          \@ifundefined{@advisorb}{}{\ &}
-          \@ifundefined{@advisorb}{}{\@advisorb\\}
-          \@ifundefined{@advisorc}{}{\ &}
-          \@ifundefined{@advisorc}{}{\@advisorc\\}
-          \@ifundefined{@advisord}{}{\ &}
-          \@ifundefined{@advisord}{}{\@advisord\\}
-          \end{tabular}
-          }
-        \@ifundefined{@coadvisora}{}{
-        \begin{tabular}{rp{9cm}}%
-      	\@ifundefined{@coadvisorb}{\coadvisorname:}{\coadvisorname es:} &
-      	\@ifundefined{@coadvisora}{}{\@coadvisora\\}
-        \@ifundefined{@coadvisorb}{}{\ &}
-        \@ifundefined{@coadvisorb}{}{\@coadvisorb\\}
-        \@ifundefined{@coadvisorc}{}{\ &}
-        \@ifundefined{@coadvisorc}{}{\@coadvisorc\\}
-        \@ifundefined{@coadvisord}{}{\ &}
-        \@ifundefined{@coadvisord}{}{\@coadvisord\\}
-        \end{tabular}
-        }
-        \@ifundefined{@collaboratora}{}{
-        \begin{tabular}{rp{9cm}}%
-      	\@ifundefined{@collaboratorb}{\collaboratorname:}{\collaboratorname es:} &
-      	\@ifundefined{@collaboratora}{}{\@collaboratora\\}
-        \@ifundefined{@collaboratorb}{}{\ &}
-        \@ifundefined{@collaboratorb}{}{\@collaboratorb\\}
-        \@ifundefined{@collaboratorc}{}{\ &}
-        \@ifundefined{@collaboratorc}{}{\@collaboratorc\\}
-        \@ifundefined{@collaboratord}{}{\ &}
-        \@ifundefined{@collaboratord}{}{\@collaboratord\\}
-        \end{tabular}
-        }
+        \@ifundefined{@advisora}{}{\advisorname: }{\@advisora\\}
+        \@ifundefined{@coadvisora}{}{\coadvisorname: }{\@coadvisora\\}
+
+        \end{adjustwidth}
     \vfill%
   }%
-  \centerline{\@city, \ei@date}%
+       \centering%
+      \vskip .1cm%
+      \@city\\\ei@date%
+      \vskip .1cm%
 }
 
 %==============================================================================
@@ -751,25 +718,25 @@ Versão: \currversion^^J
 	\clearpage
 	\onehalfspacing
 	\begin{center}
-		\noindent\textbf{\@authora}\\
-        \@ifundefined{@authorb}{}{\noindent\textbf{\@authorb}\\}%
+		\noindent{\@authora}\\
+        \@ifundefined{@authorb}{}{\noindent{\@authorb}\\}%
 		\vskip 2cm
 		\noindent\textbf{\@title}\\
 		\vskip 2cm
-		\noindent\parbox[b]{16cm}{
-		\singlespacing
+		\begin{adjustwidth}{7cm}{0cm}
+        \singlespacing
 		\begin{hyphenrules}{nohyphenation}
 			\@descricaoaprovacao
 		\end{hyphenrules}
-		}
-	\end{center}
+			\end{adjustwidth}
+	
 	\vskip 2cm
-	\noindent\textbf{Data da Defesa: }{#1}\\
+	\noindent\textbf{Aprovada em: }{#1}\\
 	\mbox{}
 	\vfill
-	\begin{flushleft}
+	
 		\textbf{Banca Examinadora: }\\
 }{
-	\end{flushleft}
+	\end{center}
 	\vfill
 }
