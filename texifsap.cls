@@ -388,7 +388,7 @@ Versão: \currversion^^J
     \@ifundefined{@authorc}{}{\textbf{\@authorc}\\}%
     \@ifundefined{@authord}{}{\textbf{\@authord}\\}%
     \vskip 5cm%
-    {\textbf{\@title}}%
+    {\MakeUppercase{\textbf{\@title}}}%
   \vskip 8cm%
         \singlespacing%
   \begin{adjustwidth}{7cm}{0cm}
