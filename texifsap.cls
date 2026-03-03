@@ -367,10 +367,10 @@ Versão: \currversion^^J
   \noindent%
       \centering%
       \vskip .5cm%
-      \textbf{\@authora\\
+      \@authora\\
       \@ifundefined{@authorb}{}{\@authorb\\}%
       \@ifundefined{@authorc}{}{\@authorc\\}%
-      \@ifundefined{@authord}{}{\@authord\\}}%
+      \@ifundefined{@authord}{}{\@authord\\}%
       \vskip .5cm%
   \vfill%
   \noindent%
