@@ -60,11 +60,10 @@ Documentos explicativos com orientações sobre funcionalidades específicas e f
   
 ---
 
-## 🚀 Como utilizar
+## 🚀 Como utilizar em LaTeX
 
-1. Escolha o arquivo de exemplo correspondente ao seu tipo de trabalho acadêmico.
-2. Edite o arquivo `.tex` com o conteúdo do seu trabalho.
-3. Compile o documento utilizando uma das opções abaixo:
+1. Edite o arquivo `.tex` com o conteúdo do seu trabalho.
+2. Compile o documento utilizando uma das opções abaixo:
    - **Overleaf**
    - **TeXstudio**
    - **VS Code com LaTeX Workshop**
