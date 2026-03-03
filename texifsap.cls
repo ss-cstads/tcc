@@ -46,8 +46,8 @@ Versão: \currversion^^J
 \DeclareOption{tcc}{
 \documento{Trabalho de Conclus\~ao de Curso}
 \tipodocumento{\tccname\ (\cursoname) -- \unidadename}
-\descricaodocumento{Trabalho de Conclus\~ao de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso.}
-\descricaoaprovacao{Trabalho de Conclus\~ao de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, no Instituto Federal Sul-rio-grandense - câmpus Sapucaia do Sul.}
+\descricaodocumento{Trabalho de Conclus\~ao de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso, do Curso \@cursoname do Instituto Federal Sul-rio-grandense – C{\~a}mpus Sapucaia do Sul.}
+\descricaoaprovacao{Trabalho de Conclus\~ao de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, do Curso \@cursoname do Instituto Federal Sul-rio-grandense – C{\a}mpus Sapucaia do Sul.}
 }
 
 \DeclareOption{tcc-proposta}{
