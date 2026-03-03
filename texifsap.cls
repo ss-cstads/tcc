@@ -46,13 +46,8 @@ Versão: \currversion^^J
 \DeclareOption{tcc}{
 \documento{Trabalho de Conclus\~ao de Curso}
 \tipodocumento{\tccname\ (\cursoname) -- \unidadename}
-\descricaodocumento{Trabalho de Conclus\~ao de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso, do Curso \@cursoname do Instituto Federal Sul-rio-grandense – C{\~a}mpus Sapucaia do Sul.}
-\descricaoaprovacao{Trabalho de Conclus\~ao de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, do Curso \@cursoname do Instituto Federal Sul-rio-grandense – C{\a}mpus Sapucaia do Sul.}
-}
-
-\DeclareOption{tcc-proposta}{
-\tipodocumento{Proposta de Trabalho de Conclus\~ao de Curso (\@nomecurso) --  \@universidade - \@unidade.}
-\descricaodocumento{Proposta de Trabalho de Conclus\~ao de Curso apresentado, como requisito parcial, para obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso.}
+\descricaodocumento{Trabalho de Conclus{\~a}o de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso, do Curso \@cursoname do Instituto Federal Sul-rio-grandense – C{\^a}mpus Sapucaia do Sul.}
+\descricaoaprovacao{Trabalho de Conclus{\~a}o de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, do Curso \@cursoname do Instituto Federal Sul-rio-grandense – C{\^a}mpus Sapucaia do Sul.}
 }
 
 \newcommand{\capa}[1]{\gdef\@capa{#1}}
@@ -350,8 +345,8 @@ Versão: \currversion^^J
       \centering%
       \vskip 1cm%
       \MakeUppercase{\textbf{\@universidade}}\\%
-      \textbf{\@unidade}\\%
-      \@ifundefined{@nomecurso}{\textbf{\@programa}}{\textbf{\@nomecurso}}\\%
+      \MakeUppercase{\textbf{\@unidade}}\\%
+      \@ifundefined{@nomecurso}\MakeUppercase{{\textbf{\@programa}}{\textbf{\@nomecurso}}}\\%
       \vskip 1cm%
       %\includegraphics[width=3cm]{imagens/ifsul.pdf}
       %\vskip 1cm%
