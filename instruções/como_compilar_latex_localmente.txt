@@ -1,0 +1,115 @@
+COMO COMPILAR O TEMPLATE LATEX NO SEU COMPUTADOR (WINDOWS E LINUX)
+
+O QUE É PRECISO?
+
+Duas coisas:
+1) Uma DISTRIBUIÇÃO LaTeX — o conjunto de programas que transforma o
+   .tex em PDF (pdflatex, bibtex) e os milhares de pacotes;
+2) Um EDITOR — recomendamos o TeXstudio (gratuito, texstudio.org),
+   que tem botão de compilar, visualizador de PDF e corretor em
+   português.
+
+Estrutura do template (importante para a configuração):
+   raiz/            -> texifsap.cls, abnt.bst, bibliografia.bib, Makefile
+   raiz/tcc/        -> exemplo-tcc.tex  (o arquivo que você edita)
+   raiz/imagens/    -> figuras
+O .tex fica numa subpasta e a classe/bibliografia ficam na raiz — por
+isso existe um passo de configuração específico em cada sistema.
+
+A ORDEM DE COMPILAÇÃO (o "ritual" do LaTeX)
+
+O LaTeX resolve citações, referências cruzadas e sumário em etapas.
+A sequência completa é:
+
+   pdflatex  ->  bibtex  ->  pdflatex  ->  pdflatex
+
+(a primeira passada anota as citações; o bibtex monta as referências;
+as duas últimas passadas encaixam tudo e acertam o sumário). Se as
+citações aparecerem como [?] ou o sumário vier desatualizado, é sinal
+de que faltou repetir a sequência.
+
+========================= LINUX (Ubuntu/Mint/Debian) =================
+
+1) Instale a distribuição e o editor (uma vez só):
+
+   sudo apt update
+   sudo apt install texlive-latex-extra texlive-lang-portuguese \
+                    texlive-fonts-recommended texstudio make
+
+2) Compile pelo terminal, NA PASTA RAIZ do template:
+
+   make          (faz a sequência completa, inclusive o bibtex dos
+                  apêndices com referências próprias)
+   make clean    (apaga os arquivos temporários da compilação)
+
+   O PDF sai em tcc/exemplo-tcc.pdf.
+
+3) Se preferir compilar de dentro do TeXstudio no Linux, aplique a
+   mesma configuração de comandos descrita para o Windows abaixo,
+   trocando as opções --include-directory=.. por definir a variável
+   de ambiente TEXINPUTS=..: BIBINPUTS=..: BSTINPUTS=..: — ou
+   simplesmente continue usando o make no terminal, que é mais fácil.
+
+========================= WINDOWS ====================================
+
+1) Instale o MiKTeX (miktex.org -> Download). Durante a instalação,
+   em "Install missing packages on-the-fly", escolha "Yes": assim o
+   MiKTeX baixa sozinho qualquer pacote que o template precisar na
+   primeira compilação (natbib, bibunits, titlesec, caption etc.).
+
+2) Instale o TeXstudio (texstudio.org) DEPOIS do MiKTeX, para que ele
+   detecte a distribuição automaticamente.
+
+3) Configure os comandos para o template (uma vez só) — é isto que
+   permite ao .tex da pasta tcc/ encontrar a classe e a bibliografia
+   que ficam na raiz:
+
+   TeXstudio -> Opções -> Configurar o TeXstudio -> Comandos:
+
+   PdfLaTeX:
+     pdflatex.exe --include-directory=.. -synctex=1 -interaction=nonstopmode %.tex
+   BibTeX:
+     bibtex.exe --include-directory=.. %
+
+   (acrescentamos apenas o "--include-directory=.." aos comandos
+   padrão; ele diz "procure também na pasta de cima")
+
+4) Abra o tcc/exemplo-tcc.tex no TeXstudio e compile:
+   - F5 (Compilar e visualizar) -> primeira passada
+   - F8 (Bibliografia)          -> roda o bibtex
+   - F5 duas vezes              -> encaixa citações e sumário
+
+   Na primeira compilação o MiKTeX vai pedir para instalar vários
+   pacotes — aceite todos (pode marcar "sempre instalar").
+
+APÊNDICE COM REFERÊNCIAS PRÓPRIAS (ambiente referenciasapendice)
+
+Se o seu trabalho usa o ambiente referenciasapendice, existe um passo
+extra: além do bibtex normal, é preciso rodar o bibtex nos arquivos
+auxiliares dos apêndices (bu1, bu2...). No Linux o make já faz isso.
+No Windows, abra o Prompt de Comando na pasta tcc/ e rode:
+
+   bibtex --include-directory=.. bu1
+
+(repita para bu2, bu3... se houver mais de um apêndice com
+referências) e compile mais duas vezes no TeXstudio.
+
+DICAS E ERROS COMUNS
+
+- Acentos estranhos no PDF: o arquivo deve estar salvo em UTF-8 (é o
+  padrão do TeXstudio; não edite o .tex no Bloco de Notas antigo).
+- "File texifsap.cls not found": a configuração do passo 3 do Windows
+  não foi aplicada (ou o comando foi digitado com espaço a mais).
+- Citações como [?] ou sumário desatualizado: repita a sequência
+  F5 -> F8 -> F5 -> F5.
+- O template exige apenas pdflatex (não use XeLaTeX/LuaLaTeX).
+
+ALTERNATIVA SEM INSTALAR NADA
+
+O template também compila no Overleaf (overleaf.com, gratuito): crie
+um projeto novo, envie TODOS os arquivos e pastas do template
+preservando a estrutura, mova texifsap.cls, abnt.bst e bibliografia.bib
+para a MESMA pasta do exemplo-tcc.tex (no Overleaf é mais simples
+deixar tudo junto), defina exemplo-tcc.tex como documento principal e
+compile — o Overleaf executa a sequência completa sozinho, inclusive o
+bibtex dos apêndices.
