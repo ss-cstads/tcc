@@ -1,0 +1,126 @@
+COMO INSERIR UMA FIGURA VETORIZADA COM TEXTOS NA FONTE DO DOCUMENTO
+
+O QUE É UMA FIGURA VETORIZADA?
+
+Uma imagem comum (PNG, JPG) é feita de pixels: ao dar zoom ou imprimir,
+ela fica serrilhada/borrada. Uma figura vetorizada (PDF, SVG) é descrita
+por linhas e curvas matemáticas: fica nítida em qualquer tamanho de
+zoom e de impressão. Diagramas, fluxogramas, arquiteturas e gráficos
+devem sempre ser vetorizados.
+
+O PROBLEMA DOS TEXTOS DA FIGURA
+
+Mesmo em uma figura vetorizada, os textos normalmente ficam na fonte da
+ferramenta de desenho — destoando da fonte do documento. A solução é o
+formato "PDF + LaTeX" do Inkscape (gratuito, inkscape.org): o desenho
+vai em um PDF vetorial e os TEXTOS são separados em um arquivo .pdf_tex,
+que o LaTeX compõe com a fonte do próprio documento. Bônus: dá até para
+usar fórmulas ($x^2$) dentro da figura.
+
+PASSO A PASSO
+
+1) Desenhe a figura no Inkscape (se você desenha no diagrams.net/drawio,
+   exporte de lá como SVG e abra o SVG no Inkscape).
+
+2) No Inkscape: Arquivo -> Salvar como... -> tipo "PDF" -> salve na
+   pasta imagens/ do template (ex.: imagens/diagrama.pdf).
+
+3) Na janela de opções do PDF que aparecer, MARQUE a opção
+   "Omitir texto no PDF e criar arquivo LaTeX"
+   ("Omit text in PDF and create LaTeX file").
+   Serão gerados DOIS arquivos: diagrama.pdf e diagrama.pdf_tex —
+   mantenha os dois juntos na pasta imagens/.
+
+4) No texto, insira a figura assim (no lugar do \includegraphics):
+
+\begin{figure}[htbp]
+\caption{Nome da figura}
+\centering
+\def\svgwidth{0.7\textwidth}
+\input{imagens/diagrama.pdf_tex}\\
+\begin{flushleft}
+{\small Fonte: Elaboração própria.}
+\end{flushleft}
+\label{fig:diagrama}
+\end{figure}
+
+   - \def\svgwidth{...} controla a largura (0.7\textwidth = 70% da
+     largura do texto). Ajuste conforme a necessidade.
+   - O preâmbulo do exemplo-tcc.tex já tem \graphicspath{{imagens/}},
+     necessário para o .pdf_tex encontrar o PDF correspondente.
+
+AJUSTANDO O TAMANHO DOS TEXTOS DA FIGURA
+
+Os textos do .pdf_tex saem no tamanho do texto do documento (12 pt) —
+NÃO encolhem junto com a figura. Por isso, se a figura for reduzida
+pela \svgwidth, os rótulos podem ficar grandes demais em relação ao
+desenho (maiores do que eram na imagem original). Para reduzi-los, use
+os comandos de tamanho do LaTeX, do menor para o maior:
+
+   \tiny  <  \scriptsize  <  \footnotesize  <  \small  <  \normalsize
+
+Duas formas de aplicar:
+
+a) EM TODOS os textos da figura de uma vez: envolva o \input com o
+   comando de tamanho entre chaves —
+
+   \def\svgwidth{0.7\textwidth}
+   {\footnotesize\input{imagens/diagrama.pdf_tex}}\\
+
+   (as chaves limitam o efeito à figura; teste \small, \footnotesize
+   ou \scriptsize até os rótulos ficarem proporcionais ao desenho)
+
+b) EM UM texto específico: no próprio Inkscape, digite o comando junto
+   do texto do rótulo — por exemplo, escreva "\scriptsize Camada de
+   rede" na caixa de texto. O Inkscape repassa o conteúdo tal qual ao
+   LaTeX, então o comando é aplicado só àquele rótulo (pelo mesmo
+   motivo, dá para escrever fórmulas, como $x^2$).
+
+E SE EU SÓ TENHO A FIGURA EM PNG?
+
+Não existe conversão automática perfeita de pixels para vetores — mas,
+para diagramas e desenhos de traço, o Inkscape resolve por um destes
+dois caminhos:
+
+a) VETORIZAÇÃO AUTOMÁTICA (para desenhos simples, de poucas cores):
+   1. Importe o PNG no Inkscape (Arquivo -> Importar);
+   2. Selecione a imagem e use Caminho -> Traçar bitmap
+      (Trace Bitmap); ajuste o modo (detecção de bordas ou cores) e as
+      varreduras até a prévia ficar boa; clique em Aplicar;
+   3. O traçado vetorial é criado por cima — mova-o para o lado e
+      APAGUE o PNG original;
+   4. Os textos vetorizados viraram "desenho de letras" (curvas), não
+      texto de verdade: apague-os e REDIGITE cada um com a ferramenta
+      de texto do Inkscape (tecla T). São esses textos digitados que
+      irão para o .pdf_tex e sairão na fonte do documento;
+   5. Siga os passos 2 a 4 do passo a passo acima (salvar como
+      PDF + LaTeX).
+
+b) REDESENHO SOBRE O PNG (mais fiel para diagramas; dá mais trabalho,
+   mas o resultado é profissional):
+   1. Importe o PNG e reduza a opacidade dele (ele vira um "decalque"
+      de referência);
+   2. Desenhe por cima com as ferramentas de retângulos, elipses,
+      conectores e setas do Inkscape, e digite os textos com a
+      ferramenta de texto;
+   3. Ao terminar, exclua o PNG de referência e salve como PDF + LaTeX
+      (passos 2 a 4 acima).
+
+Atenção: FOTOS e CAPTURAS DE TELA não se vetorizam — nesses casos use
+o próprio PNG em alta resolução (\includegraphics normal), aceitando
+que os textos internos não seguirão a fonte do documento. Para telas de
+sistema, prefira capturar na maior resolução possível; para diagramas
+"printados" de outras fontes, o ideal é recriá-los (citando a fonte
+original: "Fonte: Adaptado de Autor (ano).").
+
+AVISOS
+
+- Sempre redimensione pela \svgwidth, nunca gerando o PDF de novo em
+  outro tamanho: o texto é composto pelo LaTeX e se ajusta sozinho.
+- Se editar a figura, salve novamente em PDF+LaTeX para regenerar os
+  dois arquivos (guarde também o .svg original para edições futuras).
+- Textos muito longos dentro da figura podem "vazar" das caixas, porque
+  a fonte do documento tem largura diferente da fonte do Inkscape —
+  prefira rótulos curtos e confira o resultado compilado.
+- A figura continua precisando de citação no texto (Figura~\ref{...}),
+  legenda em cima e fonte embaixo, como qualquer ilustração.
