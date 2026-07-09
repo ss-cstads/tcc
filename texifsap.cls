@@ -728,15 +728,11 @@ Versão: \currversion^^J
 % }
 
 %apendices
+% NBR 14724: nao ha pagina divisoria "Apendices" -- cada apendice inicia
+% direto com sua identificacao (APENDICE A -- Titulo), em pagina que
+% continua contada e numerada
 \newcommand{\apendices}{
   \clearpage
-  \pagestyle{empty}
-  \mbox{}
-  \vfill
-  \begin{center}
-    \textbf{Ap\^endices}
-  \end{center}
-  \vfill
   \appendix
   \titleformat{\chapter}{\centering\normalfont}{\chaptertitlename\ \thechapter\ --\ }{0em}{}
 }
@@ -744,13 +740,6 @@ Versão: \currversion^^J
 %anexos
 \newcommand{\anexos}{
   \clearpage
-  \pagestyle{empty}
-  \mbox{}
-  \vfill
-  \begin{center}
-    \textbf{Anexos}
-  \end{center}
-  \vfill
   \annex
   \titleformat{\chapter}{\centering\normalfont}{\chaptertitlename\ \thechapter\ --\ }{0em}{}
 }
