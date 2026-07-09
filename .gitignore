@@ -29,3 +29,6 @@ bu[0-9]*.blg
 # Arquivos temporários do Word/OnlyOffice
 ~$*.docx
 .~lock.*#
+
+# Arquivos de teste locais
+tcc/teste-*
