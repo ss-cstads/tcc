@@ -332,12 +332,8 @@ FUNCTION {format.names}
 
 	{i n #1 + <}
 	{
-		duplicate$ duplicate$ i "{ll}{~jj}" format.name$ 
+		duplicate$ duplicate$ i "{ll}{~jj}" format.name$
 		duplicate$ "others" =
-        n #20 >
-        i #2 =
-        and
-        or
 		{
 			pop$ pop$ names " \MakeLowercase{et~al.}" *
 			n 'i :=
@@ -372,14 +368,14 @@ FUNCTION {format.family.names}
 
 	{i n #1 + <}
 	{
-		duplicate$ i "{ll}{~jj}" format.name$ 
+		duplicate$ i "{ll}{~jj}" format.name$
 		duplicate$ "others" =
-		n #20 >
+		n #3 >
 		i #2 =
 		and
 		or
 		{
-			pop$ names " \MakeLowercase{et~al.}" *
+			pop$ names " \MakeLowercase{\textit{et~al.}}" *
 			n 'i :=
 		}{
 			"t" change.case$
@@ -408,7 +404,7 @@ FUNCTION {format.family.names.all}
 		duplicate$ i "{ll}{~jj}" format.name$ 
 		duplicate$ "others" =
 		{
-			pop$ names " \MakeLowercase{et~al.}" *
+			pop$ names " \MakeLowercase{\textit{et~al.}}" *
 			n 'i :=
 		}{
 			"t" change.case$
@@ -531,7 +527,7 @@ FUNCTION {format.editor}
 {
 	editor empty$
 		{""}
-		{editor format.names "~(Ed.)" *}
+		{editor format.names "~(org.)" *}
 	if$
 }
 
@@ -539,7 +535,7 @@ FUNCTION {format.edition}
 {
 	edition empty$
 		{""}
-		{edition convert.to.number ".ed." *}
+		{edition convert.to.number ". ed." *}
 	if$
 }
 
@@ -547,7 +543,7 @@ FUNCTION {format.volume}
 {
 	volume empty$
 		{""}
-		{"v." volume *}
+		{"v.~" volume *}
 	if$
 }
 
@@ -555,7 +551,7 @@ FUNCTION {format.number}
 {
 	number empty$
 		{""}
-		{"n." number *}
+		{"n.~" number *}
 	if$
 }
 
@@ -627,7 +623,7 @@ FUNCTION {format.pages}
 {
 	pages empty$
 		{""}
-		{"p." get.adjusted.pages *}
+		{"p.~" get.adjusted.pages *}
 	if$
 }
 
@@ -635,7 +631,7 @@ FUNCTION {format.totalpages}
 {
 	pages empty$
 		{""}
-		{pages "p." *}
+		{pages " p." *}
 	if$
 }
 
@@ -705,17 +701,63 @@ FUNCTION {add.note} {format.note add.to.list}
 FUNCTION {add.month.year} {format.month.year add.to.list}
 FUNCTION {add.howpublished} {format.howpublished add.to.list}
 
+%
+% Converte numero do mes ("01".."12") para abreviatura em portugues (NBR 6023)
+%
+FUNCTION {month.abbrev.pt}
+{
+	duplicate$ "01" = { pop$ "jan." } {
+	duplicate$ "02" = { pop$ "fev." } {
+	duplicate$ "03" = { pop$ "mar." } {
+	duplicate$ "04" = { pop$ "abr." } {
+	duplicate$ "05" = { pop$ "maio" } {
+	duplicate$ "06" = { pop$ "jun." } {
+	duplicate$ "07" = { pop$ "jul." } {
+	duplicate$ "08" = { pop$ "ago." } {
+	duplicate$ "09" = { pop$ "set." } {
+	duplicate$ "10" = { pop$ "out." } {
+	duplicate$ "11" = { pop$ "nov." } {
+	duplicate$ "12" = { pop$ "dez." } 'skip$
+	if$ } if$ } if$ } if$ } if$ } if$ } if$ } if$ } if$ } if$ } if$ } if$
+}
+
+%
+% Se urldate estiver no formato ISO (AAAA-MM-DD), converte para
+% "D mes. AAAA" conforme a NBR 6023; caso contrario, usa como esta'
+%
+FUNCTION {format.access.date}
+{
+	urldate text.length$ #10 =
+	urldate #5 #1 substring$ "-" =
+	and
+	urldate #8 #1 substring$ "-" =
+	and
+	{
+		urldate #9 #2 substring$
+		duplicate$ #1 #1 substring$ "0" =
+			{ #2 #1 substring$ }
+			'skip$
+		if$
+		" " *
+		urldate #6 #2 substring$ month.abbrev.pt *
+		" " *
+		urldate #1 #4 substring$ *
+	}
+	{ urldate }
+	if$
+}
+
 FUNCTION {format.urldate} {
 	urldate empty$
     	{""}
-		{"Acesso em: " urldate *}
+		{"Acesso em: " format.access.date *}
    	if$
 }
 
 FUNCTION {format.url} {
 	url empty$
     	{""}
-        {"Dispon{\'\i}vel em: <" url * ">" *}
+        {"Dispon{\'\i}vel em: \url{" url * "}" *}
 	if$
 }
 
@@ -881,16 +923,16 @@ FUNCTION {format.publication}
 	""
 	address empty$
 		{
-			"[S.l."
+			"[S. l."
 			format.publisher empty$
-				{":~s.n.]" *}
+				{":~s. n.]" *}
 				{"]: " format.publisher * *}
 			if$ add.year add.to.item
 		}
 		{
 			format.address
 			format.publisher empty$
-				{": [s.n.]" *}
+				{": [s. n.]" *}
 				{": " format.publisher * *}
 			if$ add.year add.to.item
 		}
@@ -900,7 +942,7 @@ FUNCTION {format.publication}
 FUNCTION {format.proceedings.publication}
 {
 	publisher empty$
-		{"[S.l.:~s.n.]"}
+		{"[S. l.:~s. n.]"}
 		{publisher comma.to.colon}
 	if$ add.year
 }
@@ -946,7 +988,7 @@ FUNCTION {format.complementary.data.with.page.range}
 FUNCTION {format.proceedings.booktitle}
 {
 	process.proceedings.booktitle "" swap$ add.year add.address add.to.item
-	swap$ "{\ldots}" * emphasize " " swap$ * *
+	swap$ " [{\ldots}]" * emphasize "." * " " swap$ * *
 }
 
 %==============================================================================
@@ -959,12 +1001,14 @@ FUNCTION {article}
 	#0 title format.title add.to.item
 	journal emphasize
 		address empty$ {
-			"[S.l.]" add.to.list
+			"[S. l.]" add.to.list
 		}{
 			add.address
 		} if$
 		add.volume add.number add.pages add.month.year add.to.item
 	format.note add.to.item
+	format.url add.to.item
+	format.urldate add.to.item
 
 	write.item
 }
@@ -981,6 +1025,8 @@ FUNCTION {book}
 	format.publication add.to.item
 	format.complementary.data.with.totalpages add.to.item
 	format.note add.to.item
+	format.url add.to.item
+	format.urldate add.to.item
 
 	write.item
 }
@@ -997,6 +1043,8 @@ FUNCTION {inbook}
 	format.publication add.to.item
 	format.complementary.data.with.page.range add.to.item
 	format.note add.to.item
+	format.url add.to.item
+	format.urldate add.to.item
 
 	write.item
 }
@@ -1016,6 +1064,8 @@ FUNCTION {incollection}
 	format.publication add.to.item
 	format.complementary.data.with.page.range add.to.item
 	format.note add.to.item
+	format.url add.to.item
+	format.urldate add.to.item
 
 	write.item
 }
@@ -1029,6 +1079,8 @@ FUNCTION {inproceedings}
 	format.proceedings.publication add.to.item
 	format.complementary.data.with.page.range add.to.item
 	format.note add.to.item
+	format.url add.to.item
+	format.urldate add.to.item
 
 	write.item
 }
@@ -1063,6 +1115,8 @@ FUNCTION {mastersthesis}
 		add.address add.to.item
 	format.note add.to.item
 	format.parenthised.number add.to.item
+	format.url add.to.item
+	format.urldate add.to.item
 
 	write.item
 }
@@ -1108,6 +1162,8 @@ FUNCTION {phdthesis}
 		add.address add.to.item
 	format.note add.to.item
 	format.parenthised.number add.to.item
+	format.url add.to.item
+	format.urldate add.to.item
 
 	write.item
 }
@@ -1134,6 +1190,8 @@ FUNCTION {techreport}
 		{type}
 	if$ add.note add.to.item
 	format.parenthised.number add.to.item
+	format.url add.to.item
+	format.urldate add.to.item
 
 	write.item
 }

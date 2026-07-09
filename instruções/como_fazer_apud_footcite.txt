@@ -1,7 +1,20 @@
-APUD
-\newcommand{\apud}[2]{\citeauthor{#1} (\citeyear{#1} apud \citeauthor{#2}, \citeyear{#2})}
+APUD (citação de citação — NBR 10520:2023)
 
-FOOTCITE
+\apud{obra-original}{obra-consultada}
+   -> Moore (1979 apud Cormen, 1990)          [narrativa, na frase]
+
+\apudp{obra-original}{obra-consultada}
+   -> (Moore, 1979 apud Cormen, 1990)         [entre parênteses]
+
+Importante:
+- Evite o apud; priorize sempre os textos originais.
+- Na lista de Referências deve constar apenas a obra efetivamente
+  consultada (o segundo argumento).
+
+FOOTCITE (referência em nota de rodapé)
+
+Cola no preâmbulo, antes de \begin{document}:
+
 \usepackage{bibentry}
 \nobibliography*
 \newcommand{\footcite}[1]{\footnote{\bibentry{#1}}}

@@ -12,16 +12,28 @@
 }
 
 \unidade{C{\^a}mpus Sapucaia do Sul}
+
+%TÍTULO DE FORMAÇÃO: descomente o bloco correspondente ao seu curso e
+%mantenha o outro comentado.
+%
+%--- Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas:
 \curso{An\'alise e Desenvolvimento de Sistemas}
 \nomecurso{Superior de Tecnologia em An\'alise e Desenvolvimento de Sistemas}
+%na capa, o nome do curso quebra a linha no ponto indicado pelo \\
+\nomecursocapa{Superior de Tecnologia em\\An\'alise e Desenvolvimento de Sistemas}
 \titulocurso{Tecn\'ologo(a) em An\'alise e Desenvolvimento de Sistemas}
+%
+%--- Curso Técnico em Desenvolvimento de Sistemas:
+%\curso{Desenvolvimento de Sistemas}
+%\nomecurso{T\'ecnico em Desenvolvimento de Sistemas}
+%\titulocurso{T\'ecnico(a) em Desenvolvimento de Sistemas}
 
 \title{Um Blabla Blablabla com Aplicações em Blablabla}
 
 \author{ÚltimoSobrenome1}{Primeiro nome e sobrenome}
-\author{ÚltimoSobrenome2}{Primeiro nome e sobrenome}                   %descomente caso seja um trabalho em duplas
+\author{ÚltimoSobrenome2}{Primeiro nome e sobrenome}                   %comente caso seja um trabalho em duplas
 \advisor[Prof.~Dr.]{ÚltimoSobrenome}{Primeiro nome e sobrenome}
-\coadvisor[Prof.~Dr.]{ÚltimoSobrenome}{Primeiro nome e sobrenome}      %descomente caso tenhas co-orientador
+\coadvisor[Prof.~Dr.]{ÚltimoSobrenome}{Primeiro nome e sobrenome}      %comente caso tenhas co-orientador
 
 \begin{document}
 
@@ -29,18 +41,21 @@
 %\renewcommand{\coadvisorname}{Coorientadora}      %descomente caso tenhas co-orientadora
 
 %Palavras-chave em PT_BR
-%use letras minúsculas seguidas por ;
-%a última terminada por .
+%REGRA (NBR 6028:2021): de 3 a 5 palavras-chave, grafadas com inicial
+%minúscula (exceto nomes próprios), separadas entre si por ponto e vírgula
+%e com a última finalizada por ponto. Ex.: \keyword{engenharia de software;}
 \keyword{palavrachave-um;}
 \keyword{palavrachave-dois;}
 \keyword{palavrachave-tres;}
-\keyword{palavrachave-quatro.}
+\keyword{palavrachave-quatro;}
+\keyword{palavrachave-cinco.}
 
 %Palavras-chave em EN_US
 \keywordeng{keyword-one;}
 \keywordeng{keyword-two;}
 \keywordeng{keyword-three;}
-\keywordeng{keyword-four.}
+\keywordeng{keyword-four;}
+\keywordeng{keyword-five.}
 
 
 %\renewcommand{\advisorname}{Orientadora}           %descomente caso tenhas orientadora
@@ -50,9 +65,24 @@
 
 \sloppy
 
-%\fichacatalografica
+%FICHA CATALOGRÁFICA (elemento obrigatório na VERSÃO FINAL):
+%a página gerada abaixo é o verso da folha de rosto e fica reservada
+%para a ficha catalográfica. A ficha NÃO é elaborada pelo estudante:
+%solicite-a à Biblioteca do câmpus DEPOIS da banca e das correções
+%finais (dados como o número de folhas mudam até lá). Ao receber o
+%PDF da Biblioteca (ex.: ficha.pdf), salve-o nesta pasta e troque a
+%linha \fichacatalografica por:
+%\fichacatalograficapdf{ficha.pdf}
+%Conforme a NBR 14724:2024, esta página não é contada nem numerada —
+%o template já cuida disso automaticamente.
+\fichacatalografica
 
 %Composição da Banca Examinadora: descomente abaixo para a versão final do TCC
+%PRAZOS (Regulamento do TCC, arts. 24 e 30): a cópia do TCC deve ser
+%enviada aos membros da Banca Examinadora com, no mínimo, 15 dias de
+%antecedência da defesa; a versão final corrigida deve ser entregue no
+%prazo definido pela banca, de no máximo 10 dias após a apresentação
+%oral.
 
 \begin{aprovacao}{30 de novembro de 2025} %data da banca por extenso
 \noindent Prof(a). Nome completo,\\
@@ -85,36 +115,35 @@ Avaliador(a)\\
   {\sc --- Sócrates}
 \end{epigrafe}
 
-%Resumo em Portugues (no maximo 500 palavras)
+%Resumo em Portugues
+%REGRA (NBR 6028:2021): parágrafo ÚNICO, de 150 a 500 palavras, sem
+%recuo, sem citações, sem siglas não definidas e sem fórmulas/tabelas.
+%Redigir com verbo na voz ativa e na terceira pessoa do singular,
+%iniciando com o objetivo do trabalho e apresentando método, resultados
+%e conclusões.
 \begin{abstract}
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
+Escreva aqui o resumo do trabalho, em um único parágrafo de 150 a 500
+palavras, sem recuo e sem citações: comece pelo objetivo do trabalho e
+apresente, na sequência, o método utilizado, os principais resultados e
+a conclusão. O resumo é a porta de entrada do trabalho: muitos leitores
+decidem continuar (ou não) a leitura a partir dele.
 \end{abstract}
 
-%Resumo em Inglês (no maximo 500 palavras)
+%Resumo em Inglês (Abstract)
+%REGRA (NBR 6028:2021): tradução fiel do resumo em português, seguindo
+%as mesmas regras (parágrafo único, 150 a 500 palavras).
 \begin{englishabstract}{Titulo do Trabalho em Ingles}
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
+Write here the English version of the resumo, as a faithful
+translation: a single paragraph of 150 to 500 words, beginning with the
+objective of the work, followed by the method, the main results and the
+conclusion.
 \end{englishabstract}
 
 %Lista de Figuras
 \listoffigures
 
 %Lista de Quadros
+\listofquadros
 
 %Lista de Tabelas
 \listoftables
@@ -131,57 +160,300 @@ Bla blabla blablabla bla.
 %Sumario
 \tableofcontents
 
+%==============================================================================
+% PARTE TEXTUAL — organização recomendada do TCC para pesquisas na área
+% de computação (alinhada ao guia exemplo-tcc.docx):
+%   1 Introdução (com Objetivo Geral e Objetivos Específicos)
+%   2 Fundamentação Teórica
+%   3 Trabalhos Relacionados
+%   4 Metodologia
+%   [5 Desenvolvimento — apenas para trabalhos de desenvolvimento de um
+%      sistema. Descomente o capítulo correspondente adiante]
+%   5/6 Resultados
+%   Conclusão, Referências, Apêndices e Anexos
+%==============================================================================
+
+%ATENÇÃO — PLÁGIO E INTELIGÊNCIA ARTIFICIAL (Regulamento do TCC, art. 34):
+%plágio total ou parcial ANULA o TCC e reprova o acadêmico. O uso de
+%ferramentas de inteligência artificial para a produção do trabalho é
+%considerado plágio. Escreva o texto com suas próprias palavras e cite e
+%referencie TODAS as fontes utilizadas, conforme as regras de citação
+%indicadas na Fundamentação Teórica.
+
 \chapter{Introdução}
 
-\section{Uma subseção}
+%GUIA: na introdução, situe o leitor no contexto do tema pesquisado,
+%oferecendo uma visão global do estudo. Esclareça as delimitações
+%trabalhadas na abordagem do assunto, os objetivos e as justificativas
+%que levaram à investigação e, em seguida, aponte as questões de
+%pesquisa para as quais se buscará resposta. Ao final da introdução,
+%pode-se descrever sucintamente a forma como o trabalho está organizado.
 
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
+Escreva aqui a introdução do trabalho. Situe o leitor no contexto do
+tema pesquisado, oferecendo uma visão global do estudo, e esclareça as
+delimitações adotadas na abordagem do assunto. Apresente o problema
+investigado em linhas gerais, preparando o leitor para as seções
+seguintes. No último parágrafo, ou na seção opcional Estrutura do
+texto, ao final deste capítulo, descreva sucintamente a organização
+do trabalho, indicando o que será tratado em cada capítulo.
+
+\section{Problema de pesquisa}
+
+%GUIA: o problema é o ponto de partida de todo o trabalho — objetivos,
+%metodologia e resultados existem para resolvê-lo ou compreendê-lo.
+
+Caracterize aqui o problema a ser pesquisado: descreva a situação
+atual, as dificuldades, limitações ou lacunas observadas e as
+consequências de não enfrentá-las, apoiando-se em dados e em fontes
+citadas. Delimite também o contexto em que o problema será estudado
+(onde, quando, com quem): um problema bem caracterizado e bem
+delimitado é o que torna a pesquisa viável dentro do prazo do TCC.
+
+\subsection{Pergunta de pesquisa}
+
+A pergunta de pesquisa é a síntese do problema em forma interrogativa.
+Formule-a aqui em uma única frase clara e delimitada, por exemplo:
+``em que medida a técnica X melhora o aspecto Y no contexto Z?''. Todos
+os capítulos seguintes devem contribuir para respondê-la.
+
+\subsection{Hipótese de pesquisa - Opcional}
+
+Enuncie aqui a resposta provisória à pergunta de pesquisa, que será
+confirmada ou refutada pelos resultados do trabalho. A hipótese deve
+ser verificável: evite afirmações vagas, que não possam ser testadas.
+Por ser um elemento opcional, remova esta subseção caso o seu trabalho
+não utilize hipótese.
+
+\section{Justificativa}
+
+Explique aqui por que o trabalho merece ser realizado: a relevância do
+problema, os benefícios esperados para o público-alvo e para a área de
+computação e as razões que motivaram a escolha do tema. Uma boa
+justificativa apoia-se em dados e em fontes citadas, e não apenas na
+opinião do autor.
+
+
+
+\section{Objetivos}
+
+Nas seções abaixo estão descritos o objetivo geral e os objetivos
+específicos desta pesquisa.
+
+\subsection{Objetivo geral}
+
+%GUIA: um único objetivo, iniciado por verbo no infinitivo (analisar,
+%desenvolver, avaliar...), coerente com o título do trabalho.
+
+Enuncie aqui, em uma única frase iniciada por verbo no infinitivo
+(analisar, desenvolver, avaliar, comparar\ldots), o resultado principal
+que o trabalho pretende alcançar, coerente com o título do trabalho e
+com a pergunta de pesquisa.
+
+\subsection{Objetivos específicos}
+
+%GUIA: as etapas que, somadas, conduzem ao objetivo geral; também
+%iniciadas por verbo no infinitivo.
+
+\begin{itemize}
+\item enunciar cada etapa que, somada às demais, conduz ao objetivo
+  geral;
+\item iniciar cada item por verbo no infinitivo (levantar, implementar,
+  testar\ldots);
+\item manter entre três e cinco objetivos específicos, verificáveis ao
+  final do trabalho.
+\end{itemize}
+
+\section{Estrutura do texto - Opcional}
+
+Apresente aqui, caso já não o tenha feito no último parágrafo da
+introdução, a organização do texto: um parágrafo indicando, capítulo a
+capítulo, o que o leitor encontrará, por exemplo: ``o Capítulo~2
+apresenta a fundamentação teórica; o Capítulo~3 discute os trabalhos
+relacionados; o Capítulo~4 descreve a metodologia; o Capítulo~5
+apresenta e discute os resultados; e o Capítulo~6 traz as conclusões e
+os trabalhos futuros''. Utilize apenas um dos dois lugares (o parágrafo
+final da introdução ou esta seção) e remova o outro.
+
+\chapter{Fundamentação teórica}
+
+%GUIA: embase, por meio de outros autores, os aspectos teóricos e
+%conceituais da pesquisa. Apresente os principais autores sobre o tema
+%e o tratamento que o assunto tem recebido da comunidade científica.
+%Subdivida este capítulo em seções nomeadas de acordo com os assuntos
+%tratados; não há limite mínimo ou máximo de seções — insira sempre
+%texto entre uma seção e outra.
+%
+%REGRAS DE CITAÇÃO (NBR 10520:2023):
+% - Citação INDIRETA (paráfrase das ideias do autor): sem aspas e sem
+%   página obrigatória. Ex.: ... blablabla \cite{vonNeumann:1966:TSR}.
+% - Citação DIRETA de até 3 linhas: no corpo do texto, entre "aspas
+%   duplas", SEMPRE com indicação de página: \cite[p.~15]{chave}.
+% - Citação DIRETA com MAIS de 3 linhas: use o ambiente quote (exemplo
+%   abaixo), que já aplica recuo de 4 cm, fonte menor e espaço simples.
+%   Não use aspas e informe a página.
+% - CITAÇÃO DE CITAÇÃO (apud): quando não se teve acesso ao original.
+%   Evite; priorize os textos originais. Use os comandos:
+%     \apud{original}{consultada}  -> Moore (1979 apud Cormen et al., 1990)
+%     \apudp{original}{consultada} -> (Moore, 1979 apud Cormen et al., 1990)
+%   Na lista de Referências deve constar apenas a obra consultada.
+% - O ponto final da frase vem DEPOIS do parêntese da citação:
+%   correto:  ... blablabla (Silva, 2020).
+% - Com 4 ou mais autores no .bib, a citação sai automaticamente como
+%   "Silva et al." Use \cite{chave} para "(Silva, 2020)" e \citet{chave}
+%   para "Silva (2020)" integrado à frase.
+% - Toda fonte citada deve constar em bibliografia.bib (e vice-versa).
+
+Apresente aqui os conceitos, as teorias e as tecnologias que sustentam
+o trabalho, atribuindo sempre as ideias aos seus autores, como nesta
+citação indireta, em que a fonte aparece ao final da
+frase~\cite{Moore:1979:MAI}.
+
+\section{Uma seção secundária}
+
+Organize a fundamentação em seções temáticas, sempre com texto entre um
+título e outro. Segundo \citet{vonNeumann:1966:TSR}, a citação
+integrada à frase é feita com o comando \verb|\citet|; já a citação ao
+final do período, entre parênteses, é feita com o comando
+\verb|\cite|~\cite{Dijkstra:1968}.
 
 \begin{quote}
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-  Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-  blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla
-  bla~\citet{Moore:1979:MAI,Aguiar:2005}.
+  Use este ambiente para as citações diretas com mais de três linhas: o
+  recuo de 4~cm, a fonte menor e o espaço simples exigidos pela norma já
+  são aplicados automaticamente. Não use aspas, transcreva o texto
+  exatamente como está na obra e informe sempre a página
+  consultada~\cite[p.~10]{Nobre:2017}.
 \end{quote}
-  
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
 
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla~\cite{vonNeumann:1966:TSR}.
+Exemplo de citação de citação: conforme \apud{Moore:1979:MAI}{Cormen},
+use o apud apenas quando não tiver acesso à obra original; nas
+referências constará somente a obra efetivamente consultada
+\apudp{Moore:1979:MAI}{Cormen}.
 
-\section{Outra seção}
+\subsection{Uma seção terciária}
 
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla~\ref{tabela}.
+Aprofunde aqui um tópico específico da seção anterior. Evite seções de
+um único parágrafo e lembre-se: a norma exige texto entre o título de
+uma seção e o título da seção seguinte.
 
-\begin{table}
+\chapter{Trabalhos relacionados}
+
+%GUIA: Apresente
+%os sistemas, ferramentas ou estudos semelhantes ao seu (obtidos no
+%levantamento bibliográfico), descrevendo cada um em uma seção ou
+%parágrafo, SEMPRE com citação da fonte. Ao final, compare-os em um
+%quadro (exemplo abaixo), incluindo o seu próprio trabalho na última
+%linha: é essa comparação que evidencia a lacuna que o seu trabalho
+%preenche e o seu diferencial. A atualidade e a relevância da
+%bibliografia são critérios de avaliação da banca (Regulamento do TCC,
+%art. 32). Evite usar somente comparações binárias (Sim - Não, Tem - Não Tem, etc).
+
+Descreva aqui cada trabalho relacionado, um por parágrafo ou seção,
+sempre com citação da fonte: o que o trabalho de \citet{Moore:1979:MAI}
+faz, em que contexto foi aplicado e que resultados obteve.
+
+Ao descrever a proposta de \citet{Cormen}, destaque o que a aproxima e
+o que a diferencia do seu trabalho, bem como as limitações que o seu
+trabalho pretende superar~\cite{vonNeumann:1966:TSR}.
+
+O Quadro~\ref{quadro-trabrel} resume a comparação entre os trabalhos
+relacionados e este trabalho.
+
+\begin{quadro}[htbp]
+\caption{Comparativo entre os trabalhos relacionados e este trabalho}
+\label{quadro-trabrel}
+\centering\begin{tabular}{|p{3.5cm}|p{3cm}|p{3cm}|p{4cm}|}
+\hline
+\textbf{Trabalho} & \textbf{Tecnologias} & \textbf{Público-alvo} & \textbf{Diferencial/limitação}\\
+\hline
+{\small \citet{Moore:1979:MAI}} & {\small Bla blabla} & {\small Bla} & {\small\em Bla blabla blablabla.}\\
+\hline
+{\small \citet{Cormen}} & {\small Bla blabla} & {\small Bla} & {\small\em Bla blabla blablabla.}\\
+\hline
+{\small \textbf{Este trabalho}} & {\small Bla blabla} & {\small Bla} & {\small\em Bla blabla blablabla.}\\
+\hline
+\end{tabular}
+\begin{flushleft}
+{\small Fonte: Elaboração própria.}
+\end{flushleft}
+\end{quadro}
+
+\chapter{Metodologia}
+
+%GUIA: apresente o conjunto de métodos e técnicas utilizados para a
+%realização da pesquisa: a classificação do tipo de pesquisa, a
+%caracterização do campo de análise (população e amostragem) e os
+%instrumentos e procedimentos de coleta e de análise de dados.
+%Em trabalhos de desenvolvimento de um sistema, descreva também: o método/processo de
+%desenvolvimento adotado (ex.: iterativo, incremental, ágil), as
+%tecnologias, linguagens, ferramentas e o ambiente utilizados e, quando
+%houver experimentos, as métricas e o procedimento de avaliação.
+
+Descreva aqui como a pesquisa foi realizada, com detalhamento
+suficiente para que outro pesquisador possa reproduzi-la: a
+classificação da pesquisa, o método ou processo de desenvolvimento
+adotado, as tecnologias e ferramentas utilizadas e os procedimentos de
+coleta e de análise de dados. Ilustre o processo quando isso ajudar o
+leitor, conforme a Figura~\ref{figura}.
+
+\begin{figure}[htbp]
+\caption{Nome da figura}
+\centering \includegraphics[scale=.4]{imagens/figura.pdf}\\
+\begin{flushleft}
+{\small Fonte: Elaboração própria.}
+\end{flushleft}
+\label{figura}
+\end{figure}
+
+%VARIANTE PARA TRABALHOS DE DESENVOLVIMENTO DE UM SISTEMA (Regulamento do
+%TCC, art. 5º, natureza IV): descomente o capítulo abaixo. Ele apresenta
+%a construção do sistema e antecede os Resultados.
+%
+%\chapter{Desenvolvimento}
+%
+%%GUIA: apresente a proposta e a construção do sistema: o levantamento
+%%de requisitos funcionais e não funcionais (um quadro ajuda), a
+%%modelagem (diagramas UML, modelo de dados), a arquitetura da solução
+%%e os principais aspectos da implementação, ilustrados com figuras
+%%(diagramas e telas do sistema). O código-fonte completo NÃO deve ser
+%%transcrito na monografia: disponibilize-o em um repositório (ex.:
+%%GitHub) e indique o endereço neste capítulo ou em apêndice.
+%%Lembre-se: a entrega da cópia integral dos códigos-fonte é requisito
+%%obrigatório de aprovação (Regulamento do TCC, art. 23) e, quando o
+%%trabalho resultar em software, o registro no NIT deve ser encaminhado
+%%(art. 23, §2º).
+%
+%Descreva aqui os requisitos funcionais e não funcionais, a modelagem,
+%a arquitetura e os principais aspectos da implementação do sistema. O
+%código-fonte completo do sistema está disponível em:
+%\url{https://github.com/usuario/repositorio}.
+
+\chapter{Resultados}
+
+%GUIA: apresente os resultados da pesquisa. Em pesquisas com coleta de
+%dados (naturezas I a III do art. 5º), analise os dados confrontando-os
+%com os objetivos e as hipóteses/pressupostos, para confirmá-los ou
+%rejeitá-los. Em trabalhos de desenvolvimento de um sistema (natureza IV),
+%apresente os testes realizados (unitários, integração, aceitação), os
+%cenários e resultados e a validação com usuários ou especialistas,
+%quando houver, discutindo em que medida o sistema atende aos objetivos.
+%Subdivida este capítulo em seções conforme a necessidade.
+
+Apresente aqui os resultados obtidos e discuta-os à luz dos objetivos e
+da pergunta/hipótese de pesquisa, pois resultados sem discussão não
+demonstram que os objetivos foram alcançados. Use tabelas para dados
+numéricos e quadros para comparações qualitativas, conforme a
+Tabela~\ref{tabela} e o Quadro~\ref{quadro1}.
+
+%REGRAS PARA ILUSTRAÇÕES, TABELAS E QUADROS (NBR 14724:2024):
+% - Todo elemento deve ser citado no texto ANTES de aparecer (use \ref).
+% - A indicação da FONTE, abaixo do elemento, é OBRIGATÓRIA, mesmo que
+%   seja produção do próprio autor: use "Fonte: Elaboração própria." ou
+%   "Fonte: Elaborado pelo próprio autor.". Se for de terceiros, cite a
+%   fonte conforme a NBR 10520 (autor, ano) e referencie no final.
+% - TABELA (dados numéricos/estatísticos): laterais abertas, use
+%   \begin{table}. QUADRO (informações textuais/qualitativas): fechado
+%   em todas as bordas, use \begin{quadro}.
+\begin{table}[htbp]
 \caption{Nome da Tabela}\label{tabela}
 \centering\begin{tabular}{p{4cm}p{5cm}p{6cm}}
 \hline
@@ -193,153 +465,174 @@ Blabla & Blabla & Blablabla\\
   blablabla blabla blablabla.}\\
 {\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
   blablabla blabla blablabla.}\\
-{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-  blablabla blabla blablabla.}\\
-{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-  blablabla blabla blablabla.}\\
-{\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-  blablabla blabla blablabla. Conforme a figura~\ref{figura}}\\
 \hline
 \end{tabular}
 \begin{flushleft}
-{\small Fonte: Elaborada pelo autor.}    
+{\small Fonte: Elaboração própria.}
 \end{flushleft}
 \end{table}
 
-\subsection{Uma subseção}
-
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-
-
-
-\chapter{Desenvolvimento}
-
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla~\ref{tabela}.
-
-\begin{table}
-  \begin{center}
-    \caption{Nome da Tabela}\label{tabela2}
-    \begin{tabular}{p{4cm}p{5cm}p{6cm}}
-      \hline
-      Blabla & Blabla & Blablabla\\
-      \hline
-      {\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-                                       blablabla blabla blablabla.}\\
-      {\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-                                       blablabla blabla blablabla.}\\
-      {\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-                                       blablabla blabla blablabla.}\\
-      {\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-                                       blablabla blabla blablabla.}\\
-      {\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-                                       blablabla blabla blablabla.}\\
-      {\small Bla} & {\small Blabla} & {\small\em Bla blabla blablabla blabla
-                                       blablabla blabla blablabla. Conforme a figura~\ref{figura}}\\
-      \hline
-    \end{tabular}
-  \end{center}
-\end{table}
-
-\begin{figure}[htbp]
-\caption{Nome da figura}   
-\centering \includegraphics[scale=.4]{imagens/figura.pdf}\\
+\begin{quadro}[htbp]
+\caption{Nome do Quadro}\label{quadro1}
+\centering\begin{tabular}{|p{4cm}|p{5cm}|}
+\hline
+Blabla & Blablabla\\
+\hline
+{\small Bla} & {\small\em Bla blabla blablabla blabla.}\\
+\hline
+{\small Bla} & {\small\em Bla blabla blablabla blabla.}\\
+\hline
+\end{tabular}
 \begin{flushleft}
-{\small Fonte: Elaborada pelo autor.}    
+{\small Fonte: Elaboração própria.}
 \end{flushleft}
-\label{figura}
-\end{figure}
+\end{quadro}
 
+\chapter{Conclusões finais e trabalhos futuros}
 
-\chapter{Conclusão}
+%GUIA: retome os objetivos e as hipóteses apresentadas na introdução,
+%fornecendo evidências da solução do problema a partir dos resultados
+%obtidos. Não inclua dados novos que não tenham sido apresentados
+%anteriormente. Apresente, de maneira breve e ordenada, a síntese dos
+%principais resultados e as contribuições trazidas pela pesquisa; no
+%fechamento, pode-se apontar as limitações do método utilizado e
+%recomendações ou sugestões para trabalhos futuros.
 
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
+Retome aqui os objetivos e a pergunta/hipótese apresentados na
+introdução e mostre, com base nos resultados, em que medida foram
+alcançados ou respondidas. Sintetize as principais contribuições do
+trabalho, reconheça as limitações do método e da solução e proponha, ao
+final, trabalhos futuros que deem continuidade à pesquisa. Não apresente
+neste capítulo dados ou informações que não tenham aparecido antes.
 
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
+\section{Declaração sobre uso de Inteligência Artificial}
+
+%GUIA (Portaria CNPq nº 2.664/2026 — Política de Integridade na
+%Atividade Científica): a Portaria exige DECLARAR o uso de ferramentas
+%de inteligência artificial generativa em QUALQUER fase da pesquisa
+%(concepção, levantamento bibliográfico, escrita, análise de dados,
+%submissão), especificando a ferramenta utilizada e a finalidade do uso.
+%É VEDADO apresentar conteúdo gerado por IA como se fosse de autoria
+%própria: o autor permanece integralmente responsável pelo conteúdo
+%final, inclusive por plágio e por inexatidões produzidas pela
+%ferramenta. Lembre-se ainda do Regulamento do TCC (art. 34): o uso de
+%IA para a PRODUÇÃO do trabalho é considerado plágio e anula o TCC.
+
+Declare aqui, de forma transparente, o uso de ferramentas de
+inteligência artificial generativa em qualquer fase do trabalho,
+conforme a Portaria CNPq nº 2.664/2026. Para cada uso, especifique:
+(i)~a ferramenta, com nome e versão; (ii)~a finalidade do uso; e
+(iii)~a fase do trabalho em que ocorreu. Caso nenhuma ferramenta tenha
+sido utilizada, declare-o expressamente.
+
+Exemplo de declaração: ``durante a elaboração deste trabalho, o autor
+utilizou a ferramenta X (versão Y), com a finalidade de revisão
+gramatical e de estilo, na fase de escrita. Após o uso, todo o conteúdo
+foi revisado e editado pelo autor, que assume integral responsabilidade
+pelo conteúdo final do trabalho''.
+
+%EXEMPLOS DE TIPOS DE REFERÊNCIA (NBR 6023:2025) — o \nocite abaixo faz
+%as entradas de demonstração aparecerem na lista de Referências SEM
+%serem citadas no texto, apenas para você conferir a formatação de cada
+%tipo. Tipos demonstrados (chave -> tipo):
+%  Tanenbaum:2011     -> livro impresso
+%  Goodfellow:2016    -> livro em meio eletrônico (gratuito no site oficial)
+%  Pimentel:2011      -> capítulo de livro (coletânea com organizadores)
+%  Dijkstra:1968      -> artigo de periódico com DOI como URL completa
+%                        (citado na Fundamentação Teórica)
+%  Michels:2024       -> trabalho publicado em anais de evento (SBIE)
+%  Nobre:2017         -> trabalho de conclusão de curso/monografia
+%                        (já citada no texto, na Fundamentação Teórica)
+%  Costa:2019         -> dissertação (mestrado)
+%  Garcia:2014        -> tese (doutorado, em repositório institucional)
+%OBS.: TODAS as entradas são obras reais, verificadas nas fontes.
+%  ABNT:25010:2011    -> norma técnica
+%  Brasil:LGPD:2018   -> legislação em meio eletrônico
+%  CNPq:2026          -> portaria de órgão público
+%  Python:2025        -> software
+%  StackOverflow:2025 -> página de site na internet
+%  BernersLee:2009    -> vídeo online (palestra TED)
+%  Guanabara:2024     -> podcast, entrevistado como autor (NBR 6023:2025)
+%NO SEU TRABALHO: remova esta linha \nocite e as entradas não usadas do
+%bibliografia.bib — a lista deve conter somente obras citadas no texto.
+\nocite{Tanenbaum:2011,Goodfellow:2016,Pimentel:2011,Michels:2024,Costa:2019,Garcia:2014,ABNT:25010:2011,Brasil:LGPD:2018,CNPq:2026,Python:2025,StackOverflow:2025,BernersLee:2009,Guanabara:2024}
+
+\bibliographystyle{abnt}
+\bibliography{bibliografia}
 
 % Bibliografia http://liinwww.ira.uka.de/bibliography/index.html um
 % site que cataloga no formato bibtex a bibliografia em computacao
-% \bibliography{nomedoarquivo.bib} (sem extensao)
-% \bibliographystyle{formato.bst} (sem extensao)
 
-\bibliographystyle{abnt}
-\bibliography{bibliografia} 
+%REGRAS PARA AS REFERÊNCIAS (NBR 6023:2018) — preencha bibliografia.bib:
+% - Separe os autores com " and " no campo author e escreva cada um no
+%   formato "Último sobrenome, Inicial do primeiro nome". Exemplo:
+%   Alex Mulattieri Suarez Orozco -> author = "Orozco, A."
+%   O estilo formata sozinho: OROZCO, A. (e separa por ponto e vírgula).
+% - Entrada da referência por tipo de sobrenome:
+%     simples: entrada pelo último ..................... SILVA, A.
+%     composto (substantivo+adjetivo): mantém os dois
+%       (no .bib: "{Castelo Branco}, Ana") ............. CASTELO BRANCO, A.
+%     prefixo de/da/do/von/van: vai APÓS o nome, não
+%       integra o sobrenome (no .bib: "de Mota, Ana") .. MOTA, A. de
+%     Filho/Neto/Júnior: integra o sobrenome
+%       (no .bib: "{Oliveira Filho}, João") ............ OLIVEIRA FILHO, J.
+%     com hífen: sobrenome único ....................... TELES-PONTES, G.
+%     feminino com sobrenome do cônjuge: manter a forma
+%       usada habitualmente pela autora
+%     estrangeiro: convenção do país de origem
+%       (no .bib: "{García López}, María") ............. GARCÍA LÓPEZ, M.
+%     chinês/japonês/coreano: sobrenome já vem primeiro
+%       (no .bib: "Mao, Zedong") ....................... MAO, Z.
+% - Para documentos online, preencha url e urldate no formato
+%   AAAA-MM-DD (ex.: urldate = {2026-07-06}); o "Disponível em:" e o
+%   "Acesso em:" são gerados automaticamente no formato da norma.
+% - Só liste obras efetivamente citadas no texto.
+% - Padronize nome do autor, ou SOBRENOME, Iniciais; ou SOBRENOME, Nome;
+%   Não misture as duas formas de representar o autor.
+
+
 
 % Apêndices (Opcional) - Material produzido pelo autor
+%REGRA (NBR 14724:2024): fontes citadas EXCLUSIVAMENTE em apêndice ou
+%anexo devem ser referenciadas no próprio apêndice/anexo, e NÃO na lista
+%de referências principal. Este é um dos itens que mais gera devolução
+%do trabalho pelas bibliotecas.
+%COMO FAZER: envolva o conteúdo do apêndice/anexo no ambiente
+%referenciasapendice (exemplo abaixo). As citações \cite/\citet funcionam
+%normalmente e a lista de referências dessas obras é gerada
+%automaticamente ao final do próprio apêndice.
 \apendices
-\chapter{Um Apêndice}
+\chapter{Título do apêndice}
+
+\begin{referenciasapendice}
+Os apêndices apresentam material de apoio elaborado pelo próprio autor,
+como questionários, termos de consentimento, diagramas completos ou
+manuais. Cite as fontes normalmente~\cite{Knuth:1984}: as obras citadas
+somente no apêndice são listadas logo abaixo, no próprio apêndice.
+\end{referenciasapendice}
 
 % Anexos (Opcional) - Material produzido por outro
 \anexos
-\chapter{Um Anexo}
+%GUIA: os ANEXOS são documentos NÃO elaborados pelo autor, que servem de
+%fundamentação, comprovação e/ou ilustração (já os APÊNDICES são de
+%autoria própria). Ambos são identificados por letras maiúsculas
+%consecutivas, travessão e o respectivo título.
+\chapter{Título do anexo}
 
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
+Os anexos apresentam material de apoio \textbf{não} elaborado pelo
+autor, utilizado como fundamentação, comprovação ou ilustração, por
+exemplo, normas, leis, manuais de terceiros ou documentos da organização
+estudada.
 
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
+Identifique cada anexo por letra maiúscula consecutiva, travessão e
+título, e cite no corpo do texto a origem do material aqui reproduzido.
 
-\chapter{Outro Anexo}
+\chapter{Título do outro anexo}
 
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
+Utilize um novo anexo para cada documento de origem distinta.
 
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.
+Remova deste modelo os apêndices e anexos que não forem utilizados no
+seu trabalho.
 
 \end{document}
 

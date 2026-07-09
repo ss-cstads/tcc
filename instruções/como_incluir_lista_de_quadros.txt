@@ -1,28 +1,24 @@
-Imediatamente antes de \begin{document} cola o seguinte código:
-
-\usepackage{newfloat}
-
-\DeclareFloatingEnvironment[
-    fileext=loq,
-    listname={Lista de Quadros},
-    name=Quadro,
-    autorefname=Quadro,
-    legendname=Quadro,
-    placement=ht,
-    within=chapter,
-]{quadro}
-
-\counterwithout{quadro}{chapter}
-
-\DeclareCaptionListFormat{quadroListFormat}{Quadro #2}
-\captionsetup[quadro]{listformat=quadroListFormat}
-
-Onde quiseres que apareça a Lista de Quadros, coloque:
+Onde quiseres que apareça a Lista de Quadros (entre a Lista de Figuras
+e a Lista de Tabelas), coloque:
 
 \listofquadros
 
 E o que quiseres colocar como quadro, coloca entre:
 
-\begin{quadro}[ht!]
+\begin{quadro}[htbp]
+\caption{Nome do Quadro}\label{meuquadro}
+\centering\begin{tabular}{|l|l|}
 ...
+\end{tabular}
+\begin{flushleft}
+{\small Fonte: Elaboração própria.}
+\end{flushleft}
 \end{quadro}
+
+O quadro é numerado de forma independente das tabelas, a legenda sai
+como "Quadro 1 – Nome do Quadro" e a entrada na Lista de Quadros é
+gerada automaticamente, nos mesmos moldes da Lista de Tabelas.
+
+Lembrete (NBR 14724:2024): QUADRO é para informações textuais ou
+qualitativas e é fechado em todas as bordas; TABELA é para dados
+numéricos/estatísticos e tem as laterais abertas.

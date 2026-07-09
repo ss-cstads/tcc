@@ -1,7 +1,48 @@
-Para incluir um tooltip em uma abreviação (ou outro texto qualquer) (em PDF)
+O QUE É UM TOOLTIP?
+
+"Tooltip" (dica de ferramenta) é aquela caixinha de texto que aparece
+quando você para o ponteiro do mouse sobre algum elemento, sem clicar.
+Você já viu isso em sites e programas: passe o mouse sobre um botão ou
+ícone e surge uma legenda explicando o que ele faz.
+
+Em um PDF acontece o mesmo: é possível marcar uma palavra do texto para
+que, quando o leitor pousar o mouse sobre ela, apareça uma explicação
+flutuante.
+
+PARA QUE SERVE NO TCC?
+
+Para melhorar a leitura da versão DIGITAL do trabalho. O uso mais comum
+é em siglas e abreviações: o leitor que esqueceu o significado de uma
+sigla não precisa voltar até a Lista de Abreviaturas e Siglas — basta
+passar o mouse sobre a sigla e o significado aparece na hora.
+
+Exemplo: no texto aparece apenas "SBC", mas ao pousar o mouse sobre ela
+o leitor vê "Sociedade Brasileira de Computação".
+
+COMO FAZER
+
+1) No preâmbulo do documento (antes de \begin{document}), adicione:
 
 \usepackage{pdfcomment}
 
-e no texto:
+2) No texto, envolva a sigla com o comando \pdftooltip. O primeiro
+argumento é o que aparece impresso; o segundo é o texto da caixinha:
 
-A \pdftooltip{SBC}{Sociedade Brasileira de Computação} produziu um documento ...
+A \pdftooltip{SBC}{Sociedade Brasileira de Computação} produziu um
+documento ...
+
+No PDF ficará escrito somente "A SBC produziu um documento ...", e a
+explicação aparece ao pousar o mouse sobre "SBC".
+
+AVISOS IMPORTANTES
+
+- O tooltip é um recurso EXTRA, opcional. Ele NÃO substitui as
+  exigências da ABNT: a sigla deve continuar aparecendo por extenso na
+  primeira vez em que é citada no texto — ex.: "Sociedade Brasileira de
+  Computação (SBC)" — e deve constar na Lista de Abreviaturas e Siglas.
+- O tooltip só existe na tela: não aparece na versão impressa.
+- O suporte depende do leitor de PDF. Funciona bem no Adobe Acrobat
+  Reader; em outros leitores (navegador, Evince, visualizador do
+  Overleaf) pode não aparecer. Por isso, nunca coloque em um tooltip
+  uma informação que o leitor não possa obter de outra forma.
+- Funciona em qualquer texto, não só em siglas — mas use com moderação.

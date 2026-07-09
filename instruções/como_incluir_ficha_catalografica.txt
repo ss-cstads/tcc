@@ -1,5 +1,54 @@
-Para incluir a ficha catalográfica (em PDF)
+O QUE É A FICHA CATALOGRÁFICA?
 
-\usepackage{pdfpages}
+É um pequeno quadro padronizado com os dados bibliográficos do seu
+trabalho: autor, título, ano, número de folhas, orientador e os
+assuntos de que o trabalho trata. É o mesmo tipo de ficha que aparece
+nas primeiras páginas de qualquer livro — as bibliotecas a utilizam
+para catalogar e localizar a obra no acervo.
 
-no lugar de \fichacatalografica usar \includepdf{ficha.pdf}
+No TCC, ela fica no VERSO da folha de rosto (a página imediatamente
+após a folha de rosto) e é elemento obrigatório da VERSÃO FINAL do
+trabalho, conforme a NBR 14724:2024.
+
+QUEM FAZ A FICHA? (VOCÊ NÃO!)
+
+A ficha catalográfica NÃO é elaborada pelo estudante: ela deve ser
+solicitada à Biblioteca do câmpus quando o trabalho estiver finalizado
+(depois da banca e das correções, pois dados como o número de folhas
+mudam até lá). Você informa os dados do trabalho e a Biblioteca devolve
+a ficha pronta, normalmente em um arquivo PDF (ex.: ficha.pdf).
+
+Atenção ao prazo: a versão final corrigida deve ser entregue no prazo
+definido pela banca, de no máximo 10 dias após a apresentação oral
+(Regulamento do TCC, art. 30) — solicite a ficha o quanto antes.
+
+COMO INCLUIR NO TEMPLATE
+
+Durante a ESCRITA do trabalho, não é preciso fazer nada — deixe a
+linha comentada como está no exemplo-tcc.tex:
+
+%\fichacatalografica
+
+Se quiser ver uma página de lembrete no lugar da ficha, descomente a
+linha (remova o %). Aparecerá um marcador "Insira AQUI a ficha
+catalográfica...".
+
+Na VERSÃO FINAL, quando receber o PDF da Biblioteca:
+
+1) Salve o arquivo (ex.: ficha.pdf) na mesma pasta do exemplo-tcc.tex;
+
+2) Troque a linha \fichacatalografica por:
+
+\fichacatalograficapdf{ficha.pdf}
+
+Pronto. Não é preciso adicionar pacote algum no preâmbulo: o comando já
+é nativo da classe texifsap e insere a página do PDF no lugar certo.
+
+OBSERVAÇÕES
+
+- A página da ficha NÃO é contada nem numerada (regra da NBR
+  14724:2024). O template já cuida disso automaticamente, tanto no
+  marcador quanto no comando \fichacatalograficapdf.
+- Não tente "desenhar" a ficha você mesmo nem copiar de outro
+  trabalho: a catalogação segue regras próprias de biblioteconomia, e
+  as bibliotecas costumam devolver trabalhos com ficha incorreta.

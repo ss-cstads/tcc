@@ -32,6 +32,9 @@ Versão: \currversion^^J
 \newcommand{\programa}[1]{\gdef\@programa{#1}}
 \newcommand{\curso}[1]{\gdef\@curso{#1}}
 \newcommand{\nomecurso}[1]{\gdef\@nomecurso{#1}}
+% versao do nome do curso exclusiva para a capa, permitindo quebra de
+% linha manual com \\ (opcional; se ausente, a capa usa \nomecurso)
+\newcommand{\nomecursocapa}[1]{\gdef\@nomecursocapa{#1}}
 \newcommand{\titulocurso}[1]{\gdef\@titulocurso{#1}}
 
 \newcommand{\unidadeeng}[1]{\gdef\@unidadeeng{#1}}
@@ -46,8 +49,8 @@ Versão: \currversion^^J
 \DeclareOption{tcc}{
 \documento{Trabalho de Conclus\~ao de Curso}
 \tipodocumento{\tccname\ (\cursoname) -- \unidadename}
-\descricaodocumento{Trabalho de Conclus{\~a}o de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso, do Curso {\@nomecurso} do Instituto Federal Sul-rio-grandense – C{\^a}mpus Sapucaia do Sul.}
-\descricaoaprovacao{Trabalho de Conclus{\~a}o de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, do Curso {\@nomecurso} do Instituto Federal Sul-rio-grandense – C{\^a}mpus Sapucaia do Sul.}
+\descricaodocumento{Trabalho de Conclus{\~a}o de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso, do Curso {\@nomecurso} do Instituto Federal Sul-rio-grandense - C{\^a}mpus Sapucaia do Sul.}
+\descricaoaprovacao{Trabalho de Conclus{\~a}o de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, do Curso {\@nomecurso} do Instituto Federal Sul-rio-grandense - C{\^a}mpus Sapucaia do Sul.}
 }
 
 \newcommand{\capa}[1]{\gdef\@capa{#1}}
@@ -86,6 +89,26 @@ Versão: \currversion^^J
 \captionsetup[figure]{position=bottom,listformat=figuracf}
 \captionsetup[table]{position=top,listformat=tabelacf}
 
+%==============================================================================
+% Ambiente flutuante para quadros, nos mesmos moldes das tabelas, com
+% numeracao propria e Lista de Quadros (\listofquadros)
+%==============================================================================
+\newcounter{quadro}
+\renewcommand\thequadro{\@arabic\c@quadro}
+\def\fps@quadro{tbp}
+\def\ftype@quadro{4}
+\def\ext@quadro{loq}
+\def\fnum@quadro{\quadroname~\thequadro}
+\newenvironment{quadro}{\@float{quadro}}{\end@float}
+\newenvironment{quadro*}{\@dblfloat{quadro}}{\end@dblfloat}
+\newcommand\listofquadros{%
+  \chapter*{\listquadroname}%
+  \@mkboth{\MakeUppercase\listquadroname}{\MakeUppercase\listquadroname}%
+  \@starttoc{loq}%
+}
+\DeclareCaptionListFormat{quadrocf}{\quadroname\ #1#2}
+\captionsetup[quadro]{position=top,listformat=quadrocf}
+
 \geometry{top=3cm,right=2cm,left=3cm,bottom=2cm}
 
 \definecolor{laranjaufpel}{rgb}{1,0.6,0}
@@ -103,8 +126,10 @@ Versão: \currversion^^J
   \def\contentsname{Sum{\'a}rio}%
   \def\listfigurename{Lista de Figuras}%
   \def\listtablename{Lista de Tabelas}%
+  \def\listquadroname{Lista de Quadros}%
   \def\figurename{Figura}%
   \def\tablename{Tabela}%
+  \def\quadroname{Quadro}%
   \def\advisorname{Orientador}%
   \def\coadvisorname{Coorientador}%
   \def\collaboratorname{Colaborador}%
@@ -145,8 +170,10 @@ Versão: \currversion^^J
   \def\contentsname{Contents}%
   \def\listfigurename{List of Figures}%
   \def\listtablename{List of Tables}%
+  \def\listquadroname{List of Charts}%
   \def\figurename{Figure}%
   \def\tablename{Table}%
+  \def\quadroname{Chart}%
   \def\advisorname{Advisor}%
   \def\coadvisorname{Coadvisor}%
   \def\collaboratorname{Collaborator}%
@@ -335,7 +362,8 @@ Versão: \currversion^^J
 \thetitlepage
 \end{titlepage}
 \clearpage
-\setcounter{page}{3}
+% NBR 14724: a capa nao e' contada; a folha de rosto e' a pagina 1
+\setcounter{page}{2}
 }
 }
 
@@ -346,7 +374,9 @@ Versão: \currversion^^J
       \vskip 1cm%
       \MakeUppercase{\@universidade}\\%
       \MakeUppercase{\@unidade}\\%
-      \@ifundefined{@nomecurso}\MakeUppercase{Curso} \MakeUppercase{\@nomecurso}\\%
+      \@ifundefined{@nomecursocapa}%
+        {\@ifundefined{@nomecurso}{}{\MakeUppercase{Curso \@nomecurso}\\}}%
+        {\MakeUppercase{Curso \@nomecursocapa}\\}%
       \vskip 1cm%
       %\includegraphics[width=3cm]{imagens/ifsul.pdf}
       %\vskip 1cm%
@@ -524,11 +554,18 @@ Versão: \currversion^^J
   \@makechapterhead{#2}\@afterheading%
 }
 
+% NBR 14724: o titulo da secao primaria inicia na parte superior da mancha
+% grafica, separado do texto que o sucede por um espaco de 1,5 entre linhas.
+% O separador entre indicativo e titulo e' um espaco; em apendices/anexos,
+% um travessao ("APENDICE A -- Titulo")
+\newcommand{\ei@chapsep}{\hspace{1em}}
+% NBR 14724: a numeracao figura a partir da primeira folha da parte
+% textual, incluindo a pagina de abertura de cada capitulo (as paginas
+% pre-textuais permanecem sem numero porque o estilo global so' muda
+% para "texufpel" no primeiro \chapter da parte textual)
 \def\@makechapterhead#1{%
-  \vspace*{50pt}%
-  \reset@font\noindent{\ei@chapterfont\sffamily\textbf{\@chapapp\thechapter\hspace{1em} {#1}}\par}%
-  \addvspace{42pt}%
-  \thispagestyle{empty}%
+  \reset@font\noindent{\ei@chapterfont\sffamily\textbf{\@chapapp\thechapter\ei@chapsep{#1}}\par}%
+  \addvspace{21pt}%
 }
 
 \def\@schapter#1{%
@@ -539,10 +576,8 @@ Versão: \currversion^^J
 }
 
 \def\@makeschapterhead#1{%
-  \vspace*{50pt}%
   \reset@font\centerline{\ei@chapterfont\sffamily\textbf{{#1}}}%
-  \addvspace{42pt}%
-  \thispagestyle{empty}%
+  \addvspace{21pt}%
 }
 
 \renewcommand{\appendix}[1][\appendixname]{%
@@ -550,6 +585,7 @@ Versão: \currversion^^J
   \renewcommand{\thechapter}{\Alph{chapter}}%
   \setcounter{tocdepth}{0}%
   \@captionlistingfalse%
+  \gdef\ei@chapsep{ -- }%
   \gdef\@chapapp{\MakeUppercase{#1}\space}%
   \addtocontents{toc}{%
     \protect \settowidth{\ei@chapnumindent}{{\sffamily\textbf{\@chapapp}}}%
@@ -618,12 +654,13 @@ Versão: \currversion^^J
 
 \renewcommand*{\l@figure}{\@dottedtocline{1}{0em}{5.5em}}
 \let\l@table\l@figure
+\let\l@quadro\l@figure
 
 %==============================================================================
 % Redefinição do formato de citações longas
 %==============================================================================
 \renewenvironment{quote}{%
-  \small%
+  \small\singlespacing% NBR 14724: citacao longa em espaco simples
   \begin{list}{}{\setlength{\leftmargin}{40mm}\item\relax}
   }{%
   \end{list}
@@ -635,6 +672,56 @@ Versão: \currversion^^J
 %==============================================================================
 \setlength{\bibhang}{0pt}
 \let\cite\citep
+% URLs das referencias na mesma fonte do texto (e com quebra de linha)
+\urlstyle{same}
+
+% NBR 6023: referencias em espaco simples, alinhadas somente a' margem
+% esquerda e separadas entre si por uma linha em branco
+\let\ei@thebibliography\thebibliography
+\renewcommand{\thebibliography}[1]{%
+  \ei@thebibliography{#1}%
+  \singlespacing\raggedright%
+  \setlength{\itemsep}{\baselineskip}%
+}
+
+%==============================================================================
+% Referencias locais em apendices e anexos (NBR 14724:2024): fontes citadas
+% exclusivamente em apendice/anexo devem ser referenciadas no proprio
+% apendice/anexo. Envolva o conteudo do apendice no ambiente
+% referenciasapendice: as citacoes (\cite, \citet) funcionam normalmente e a
+% lista de referencias correspondente e' emitida ao final do proprio ambiente,
+% sem essas obras irem para a lista de Referencias principal.
+%==============================================================================
+\RequirePackage{bibunits}
+
+% guarda o estilo e o arquivo .bib usados no documento para que os
+% apendices os reutilizem automaticamente
+\let\ei@bibliographystyle\bibliographystyle
+\renewcommand{\bibliographystyle}[1]{%
+  \defaultbibliographystyle{#1}\ei@bibliographystyle{#1}%
+}
+\let\ei@bibliography\bibliography
+\renewcommand{\bibliography}[1]{%
+  \defaultbibliography{#1}\ei@bibliography{#1}%
+}
+
+\newenvironment{referenciasapendice}{%
+  \bibunit%
+  % titulo das referencias locais como secao, na mesma pagina do apendice
+  \renewcommand{\bibsection}{\section*{\bibname}}%
+}{%
+  \putbib%
+  \endbibunit%
+}
+
+%==============================================================================
+% Citacao de citacao (apud), NBR 10520:2023. Uso:
+%   \apud{obra-original}{obra-consultada}  -> Moore (1979 apud Cormen, 1990)
+%   \apudp{obra-original}{obra-consultada} -> (Moore, 1979 apud Cormen, 1990)
+% Na lista de referencias deve constar apenas a obra consultada (2o arg.)
+%==============================================================================
+\newcommand{\apud}[2]{\citeauthor{#1} (\citeyear{#1} apud \citeauthor{#2}, \citeyear{#2})}
+\newcommand{\apudp}[2]{(\citeauthor{#1}, \citeyear{#1} apud \citeauthor{#2}, \citeyear{#2})}
 
 % \renewcommand{\NAT@nmfmt}[1]{%
 %   \ifNAT@swa\expandafter\MakeUppercase\else\expandafter\@firstofone\fi{{\NAT@up #1}}%
@@ -669,6 +756,8 @@ Versão: \currversion^^J
 }
 
 %ficha catalográfica
+% NBR 14724:2024: a pagina da ficha (verso da folha de rosto) nao e'
+% contada nem numerada, por isso o contador de paginas e' devolvido
 \newcommand{\fichacatalografica}{
 	\clearpage
 	\mbox{}
@@ -677,6 +766,17 @@ Versão: \currversion^^J
 		\textbf{Insira AQUI a ficha catalogr\'afica\\Quando finalizado o trabalho, deve ser\\solicitada à Biblioteca.}
 	\end{center}
 	\vfill
+	\clearpage
+	\addtocounter{page}{-1}
+}
+
+% versao final: insere a ficha catalografica a partir do PDF fornecido
+% pela Biblioteca. Uso: \fichacatalograficapdf{ficha.pdf}
+\RequirePackage{pdfpages}
+\newcommand{\fichacatalograficapdf}[1]{%
+	\clearpage
+	\includepdf{#1}%
+	\addtocounter{page}{-1}%
 }
 
 %agradecimentos

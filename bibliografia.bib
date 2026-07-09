@@ -1,28 +1,32 @@
 @BOOK{Moore:1979:MAI,
   Address =	 {Philadelphia, PA, USA},
-  Author =	 {Moore, R. E.},
-  Pages =	 {xi + 190},
+  Author =	 {Moore, R.},
+  Pages =	 {190},
   Publisher =	 {Society for Industrial and Applied Mathematics},
   Title =	 {Methods and Applications of Interval Analysis},
   Year =	 {1979}
 }
 
 @BOOK{vonNeumann:1966:TSR,
-  Author =	 {von Neumann, J. and Marilton Aguiar},
+  Author =	 {von Neumann, J.},
   _Editor =	 {Burks, A. W.},
-  Pages =	 {xix + 388},
+  Pages =	 {388},
   Title =	 {Theory of Self-Reproducing Automata},
+  Address =	 {Urbana},
+  Publisher =	 {University of Illinois Press},
   Year =	 {1966}
 }
 
-@MastersThesis{Aguiar:2005,
-   author =       "Marilton Aguiar and Aguiar Marilton",
-   title =        "Título da Monografia",
-   school =       "Centro de Desenvolvimento Tecnológico, Universidade Federal de Pelotas",
-   year =         "2005",
-   type =         "Trabalho de Conclusão (Curso de Ciência da Computação)",
-   pages =        "85",
-   address =      "Pelotas"}
+@MastersThesis{Nobre:2017,
+   author =       "Nobre, I.",
+   title =        "Um mapeamento da usabilidade em modelos e normas de qualidade de software",
+   type =         "Trabalho de Conclus{\~a}o de Curso (Bacharelado em Engenharia de Software)",
+   school =       "Universidade Federal do Cear\'a, Campus Quixad\'a",
+   year =         "2017",
+   pages =        "60",
+   address =      "Quixad\'a",
+   url =          "https://repositorio.ufc.br/handle/riufc/29555",
+   urldate =      "2026-07-07"}
 
 @Book{Cormen,
   author =	"T. Cormen and C. Leiserson and R. Rivest",
@@ -31,12 +35,172 @@
   year = 	"1990",
 }
 
-@online{society_factsheet_2012,
-	title = {Factsheet 417: {The} later stages of dementia},
-	url = {https://www.alzheimers.org.uk/site/scripts/documents\_info.php?documentID=101},
-	abstract = {An Alzheimer's Society factsheet on the later stages of dementia.},
-	urldate = {2016-11-13},
-	author = {Society, Alzheimer's},
-	month = mar,
-	year = {2012}
+@Book{Knuth:1984,
+  author =	"Knuth, D.",
+  title =	"The {\TeX}book",
+  publisher =	"Addison-Wesley",
+  address =	"Reading, MA",
+  year =	"1984"
+}
+
+%===============================================================================
+% EXEMPLOS DE TIPOS DE REFERÊNCIA (NBR 6023:2025) — área de computação.
+% Estas entradas são citadas via \nocite no exemplo-tcc.tex apenas para
+% demonstrar a formatação; REMOVA as que não usar no seu trabalho.
+%===============================================================================
+
+% LIVRO no todo (ver também Cormen e vonNeumann acima)
+@Book{Tanenbaum:2011,
+  author =	"Tanenbaum, A. and Wetherall, D.",
+  title =	"Redes de computadores",
+  edition =	"5",
+  address =	"S{\~a}o Paulo",
+  publisher =	"Pearson",
+  year =	"2011"
+}
+
+% LIVRO em meio eletrônico (obra real, disponível gratuitamente pelo
+% próprio editor)
+@Book{Goodfellow:2016,
+  author =	"Goodfellow, I. and Bengio, Y. and Courville, A.",
+  title =	"Deep learning",
+  address =	"Cambridge",
+  publisher =	"MIT Press",
+  year =	"2016",
+  url =		"https://www.deeplearningbook.org/",
+  urldate =	"2026-07-07"
+}
+
+% CAPÍTULO de livro (parte de coletânea, com organizador)
+@InCollection{Pimentel:2011,
+  author =	"Pimentel, M. and Gerosa, M. and Fuks, H.",
+  title =	"Sistemas de comunica{\c{c}}{\~a}o para colabora{\c{c}}{\~a}o",
+  editor =	"Pimentel, M. and Fuks, H.",
+  booktitle =	"Sistemas colaborativos",
+  address =	"Rio de Janeiro",
+  publisher =	"Elsevier",
+  year =	"2011",
+  note =	"Cap. 5",
+  url =		"https://sistemascolaborativos.uniriotec.br/wp-content/uploads/sites/18/2019/06/SC-cap5-comunicacao.pdf",
+  urldate =	"2026-07-07"
+}
+
+% ARTIGO de periódico — com DOI em forma de URL completa (novidade da
+% NBR 6023:2025)
+@Article{Dijkstra:1968,
+  author =	"Dijkstra, E.",
+  title =	"Go to statement considered harmful",
+  journal =	"Communications of the ACM",
+  address =	"New York",
+  volume =	"11",
+  number =	"3",
+  pages =	"147--148",
+  year =	"1968",
+  url =		"https://doi.org/10.1145/362929.362947",
+  urldate =	"2026-07-07"
+}
+
+% TRABALHO publicado em anais de evento (congresso, simpósio)
+@InProceedings{Michels:2024,
+  author =	"Michels, J. and Cassanho, L. and Burigo, B. and de Barbosa, C.",
+  title =	"Avalia{\c{c}}{\~a}o do {JFLAP} como ferramenta de ensino de gram\'aticas na disciplina de {Linguagens} {Formais} e {Aut\^omatos}",
+  booktitle =	"Simp\'osio Brasileiro de Inform\'atica na Educa{\c{c}}{\~a}o",
+  address =	"Rio de Janeiro",
+  publisher =	"Porto Alegre, SBC",
+  year =	"2024",
+  pages =	"199--209",
+  url =		"https://doi.org/10.5753/sbie.2024.242335",
+  urldate =	"2026-07-07"
+}
+
+% DISSERTAÇÃO (mestrado)
+@MastersThesis{Costa:2019,
+  author =	"Costa, J.",
+  title =	"Uma an\'alise sobre o impacto de dados faltantes no desempenho de m\'etodos de aprendizado de m\'aquina",
+  type =	"Disserta{\c{c}}{\~a}o (Mestrado em Ci{\^e}ncia da Computa{\c{c}}{\~a}o)",
+  school =	"Universidade Federal do Cear\'a",
+  address =	"Fortaleza",
+  year =	"2019",
+  pages =	"55",
+  url =		"https://repositorio.ufc.br/handle/riufc/41653",
+  urldate =	"2026-07-07"
+}
+
+% TESE (doutorado) — em repositório institucional
+@PhdThesis{Garcia:2014,
+  author =	"Garcia, F.",
+  title =	"{EPMOSt}: um sistema de monitoramento passivo energeticamente eficiente para redes de sensores sem fio",
+  type =	"Tese (Doutorado em Ci{\^e}ncia da Computa{\c{c}}{\~a}o)",
+  school =	"Universidade Federal do Cear\'a",
+  address =	"Fortaleza",
+  year =	"2014",
+  pages =	"115",
+  url =		"https://repositorio.ufc.br/handle/riufc/18675",
+  urldate =	"2026-07-07"
+}
+
+% NORMA técnica
+@Book{ABNT:25010:2011,
+  author =	"{ASSOCIA{\c{C}}{\~A}O BRASILEIRA DE NORMAS T\'ECNICAS}",
+  title =	"{ABNT} {NBR} {ISO/IEC} 25010: engenharia de sistemas e software --- requisitos e avalia{\c{c}}{\~a}o da qualidade de sistemas e software ({SQuaRE}) --- modelos de qualidade de sistemas e software",
+  address =	"Rio de Janeiro",
+  publisher =	"ABNT",
+  year =	"2011"
+}
+
+% LEGISLAÇÃO (lei, decreto, portaria) em meio eletrônico
+@Misc{Brasil:LGPD:2018,
+  author =	"{BRASIL}",
+  title =	"Lei nº 13.709, de 14 de agosto de 2018: Lei Geral de Prote{\c{c}}{\~a}o de Dados Pessoais ({LGPD})",
+  year =	"2018",
+  url =		"https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm",
+  urldate =	"2026-07-07"
+}
+
+% PORTARIA (citada na Declaração sobre uso de IA)
+@Misc{CNPq:2026,
+  author =	"{CONSELHO NACIONAL DE DESENVOLVIMENTO CIENT\'IFICO E TECNOL\'OGICO -- CNPq}",
+  title =	"Portaria nº 2.664, de 6 de mar{\c{c}}o de 2026: institui a Pol\'itica de Integridade na Atividade Cient\'ifica do {CNPq}",
+  year =	"2026",
+  url =		"http://memoria2.cnpq.br/web/guest/view/-/journal_content/56_INSTANCE_0oED/10157/23142775",
+  urldate =	"2026-07-07"
+}
+
+% SOFTWARE / aplicativo
+@Misc{Python:2025,
+  author =	"{PYTHON SOFTWARE FOUNDATION}",
+  title =	"Python",
+  note =	"Vers{\~a}o 3.13. Software",
+  year =	"2025",
+  url =		"https://www.python.org/",
+  urldate =	"2026-07-07"
+}
+
+% PÁGINA de site na internet
+@Misc{StackOverflow:2025,
+  author =	"{STACK OVERFLOW}",
+  title =	"2025 developer survey",
+  year =	"2025",
+  url =		"https://survey.stackoverflow.co/2025",
+  urldate =	"2026-07-07"
+}
+
+% VÍDEO online
+@Misc{BernersLee:2009,
+  author =	"Berners-Lee, T.",
+  title =	"The next web",
+  note =	"V\'ideo (16 min). Palestra {TED}",
+  year =	"2009",
+  url =		"https://www.ted.com/talks/tim_berners_lee_the_next_web",
+  urldate =	"2026-07-07"
+}
+
+% PODCAST — na NBR 6023:2025 o entrevistado figura como autor
+@Misc{Guanabara:2024,
+  author =	"Guanabara, G.",
+  title =	"Intelig{\^e}ncia artificial com {Guanabara}",
+  note =	"Entrevista concedida ao podcast Hipsters Ponto Tech, epis\'odio 426. Podcast",
+  year =	"2024",
+  url =		"https://www.alura.com.br/podcast/inteligencia-artificial-com-guanabara-hipsters-ponto-tech-426-a9408",
+  urldate =	"2026-07-07"
 }

@@ -1,17 +1,25 @@
+# Compila o TCC (tcc/exemplo-tcc.tex) usando a classe, o .bst e o .bib
+# que ficam na raiz do projeto (por isso as variaveis *INPUTS abaixo).
+
+export PATH := $(HOME)/bin:$(PATH)
+
 LATEX = pdflatex --interaction=batchmode
 BIBTEX = bibtex
 RM = rm -f
-FILE = exemplo-tese-proposta
+DIR = tcc
+FILE = exemplo-tcc
+ENV = TEXINPUTS=..: BIBINPUTS=..: BSTINPUTS=..:
 
-all:	
-		$(LATEX) $(FILE)
-		$(BIBTEX) $(FILE)
-		$(LATEX) $(FILE)
-		$(LATEX) $(FILE)
-		@echo ---------------------------------------------------
-		@echo Ps: done.
+all:
+	cd $(DIR) && $(ENV) $(LATEX) $(FILE)
+	cd $(DIR) && $(ENV) $(BIBTEX) $(FILE)
+	cd $(DIR) && $(ENV) sh -c 'for f in bu[0-9]*.aux; do [ -f "$$f" ] && $(BIBTEX) "$${f%.aux}"; done; true'
+	cd $(DIR) && $(ENV) $(LATEX) $(FILE)
+	cd $(DIR) && $(ENV) $(LATEX) $(FILE)
+	@echo ---------------------------------------------------
+	@echo Ps: done. PDF em $(DIR)/$(FILE).pdf
 
-clean:	
-		$(RM) $(FILE).aux $(FILE).log $(FILE).out $(FILE).ps $(FILE).pdf $(FILE).toc $(FILE).dvi $(FILE).lof $(FILE).bbl $(FILE).lot $(FILE).blg *~ *backup
-		@echo ---------------------------------------------------
-		@echo Directory cleaned
+clean:
+	cd $(DIR) && $(RM) $(FILE).aux $(FILE).log $(FILE).out $(FILE).ps $(FILE).pdf $(FILE).toc $(FILE).dvi $(FILE).lof $(FILE).bbl $(FILE).lot $(FILE).loq $(FILE).blg bu.aux bu[0-9]*.aux bu[0-9]*.bbl bu[0-9]*.blg *~ *backup
+	@echo ---------------------------------------------------
+	@echo Directory cleaned

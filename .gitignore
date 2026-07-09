@@ -1,0 +1,31 @@
+# Artefatos de compilação do LaTeX (regenerados pelo `make`)
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.loq
+*.bbl
+*.blg
+*.dvi
+*.ps
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+# (o PDF de exemplo tcc/exemplo-tcc.pdf É versionado no repositório)
+
+# Auxiliares do bibunits (referências locais de apêndices)
+bu.aux
+bu[0-9]*.aux
+bu[0-9]*.bbl
+bu[0-9]*.blg
+
+# Backups de editores
+*~
+*.backup
+.*.swp
+
+# Arquivos temporários do Word/OnlyOffice
+~$*.docx
+.~lock.*#
