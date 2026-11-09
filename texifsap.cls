@@ -1,7 +1,15 @@
+%% texifsap.cls
+%% Obra derivada da classe texufpel (Copyright 2026 Marilton Sanchotene de
+%% Aguiar, https://github.com/notcc/texufpel), distribuida sob a LaTeX
+%% Project Public License (LPPL) 1.3c -- veja LICENSE.md.
+%% Esta versao foi modificada para o IFSul - Campus Sapucaia do Sul: a
+%% formatacao segue as normas ABNT (NBR 14724, 6023, 6024, 6027, 6028 e
+%% 10520) e o Regulamento do TCC do curso, e nao o Manual de normas UFPel.
+
 %==============================================================================
 % Identificação
 %==============================================================================
-\def\currversion{06/02/2024}
+\def\currversion{09/11/2026}
 
 \typeout{^^J^^J
 --------------------------------------------------^^J
@@ -28,7 +36,9 @@ Versão: \currversion^^J
 \universidade{Instituto Federal Sul-rio-grandense}
 \universidadeeng{Sul-rio-grandense Federal Institute}
 
-\newcommand{\unidade}[1]{\gdef\@unidade{#1}}
+% O argumento opcional (artigo) e' aceito por compatibilidade com o texufpel:
+% \unidade[a]{...} ou \unidade{...}; o texto do TCC do IFSul nao o utiliza.
+\newcommand{\unidade}[2][o]{\gdef\@unidade{#2}}
 \newcommand{\programa}[1]{\gdef\@programa{#1}}
 \newcommand{\curso}[1]{\gdef\@curso{#1}}
 \newcommand{\nomecurso}[1]{\gdef\@nomecurso{#1}}
@@ -40,17 +50,30 @@ Versão: \currversion^^J
 \newcommand{\unidadeeng}[1]{\gdef\@unidadeeng{#1}}
 \newcommand{\programaeng}[1]{\gdef\@programaeng{#1}}
 \newcommand{\cursoeng}[1]{\gdef\@cursoeng{#1}}
+\newcommand{\nomecursoeng}[1]{\gdef\@nomecursoeng{#1}}
+\newcommand{\titulocursoeng}[1]{\gdef\@titulocursoeng{#1}}
+% dados em ingles; sem a versao em ingles, usa a versao em portugues
+\newcommand{\ei@titulocursoeng}{\@ifundefined{@titulocursoeng}{\@titulocurso}{\@titulocursoeng}}
+\newcommand{\ei@nomecursoeng}{\@ifundefined{@nomecursoeng}{\@nomecurso}{\@nomecursoeng}}
 
 \newcommand{\documento}[1]{\gdef\@documento{#1}}
 \newcommand{\tipodocumento}[1]{\gdef\@tipodocumento{#1}}
 \newcommand{\descricaodocumento}[1]{\gdef\@descricaodocumento{#1}}
 \newcommand{\descricaoaprovacao}[1]{\gdef\@descricaoaprovacao{#1}}
+% versoes em ingles, usadas pela opcao english na folha de rosto e na folha
+% de aprovacao
+\newcommand{\documentoeng}[1]{\gdef\@documentoeng{#1}}
+\newcommand{\descricaodocumentoeng}[1]{\gdef\@descricaodocumentoeng{#1}}
+\newcommand{\descricaoaprovacaoeng}[1]{\gdef\@descricaoaprovacaoeng{#1}}
 
 \DeclareOption{tcc}{
 \documento{Trabalho de Conclus\~ao de Curso}
 \tipodocumento{\tccname\ (\cursoname) -- \unidadename}
 \descricaodocumento{Trabalho de Conclus{\~a}o de Curso apresentado, como requisito parcial à obten{\c{c}}{\~a}o do t\'itulo de \@titulocurso, do Curso {\@nomecurso} do Instituto Federal Sul-rio-grandense - C{\^a}mpus Sapucaia do Sul.}
 \descricaoaprovacao{Trabalho de Conclus{\~a}o de Curso aprovado, como requisito parcial à obten{\c{c}}{\~a}o do grau de \@titulocurso, do Curso {\@nomecurso} do Instituto Federal Sul-rio-grandense - C{\^a}mpus Sapucaia do Sul.}
+\documentoeng{Undergraduate Thesis}
+\descricaodocumentoeng{Undergraduate Thesis presented in partial fulfillment of the requirements for the degree of \ei@titulocursoeng, \ei@nomecursoeng\ Program, Sul-rio-grandense Federal Institute -- Sapucaia do Sul Campus.}
+\descricaoaprovacaoeng{Undergraduate Thesis approved in partial fulfillment of the requirements for the degree of \ei@titulocursoeng, \ei@nomecursoeng\ Program, Sul-rio-grandense Federal Institute -- Sapucaia do Sul Campus.}
 }
 
 \newcommand{\capa}[1]{\gdef\@capa{#1}}
@@ -76,18 +99,33 @@ Versão: \currversion^^J
 \RequirePackage{natbib}
 \RequirePackage{chngcntr}
 \RequirePackage{titlesec}
-\RequirePackage{color}
+\RequirePackage{xcolor}
 \RequirePackage{setspace}
 \RequirePackage{geometry}
 \RequirePackage{hyperref}
 \RequirePackage{changepage}
+\RequirePackage{etoolbox}
+\RequirePackage{pdfpages}
 \RequirePackage[T1]{fontenc}
-\RequirePackage[singlelinecheck=off, skip=2pt, font=small, justification=justified, format=plain, labelsep=endash]{caption}
+% NBR 14724: citacoes longas, notas, paginacao, legendas e fontes das
+% ilustracoes e tabelas em tamanho "menor e uniforme" -- todos em 10 pt
+% (\footnotesize, o mesmo tamanho das notas de rodape)
+\RequirePackage[singlelinecheck=off, skip=2pt, font=footnotesize, justification=justified, format=plain, labelsep=endash]{caption}
 
 \DeclareCaptionListFormat{figuracf}{\figurename\ #1#2}
 \DeclareCaptionListFormat{tabelacf}{\tablename\ #1#2}
-\captionsetup[figure]{position=bottom,listformat=figuracf}
+% NBR 14724: a identificacao de ilustracoes e tabelas aparece na parte
+% superior (position=top ajusta o espaco entre a legenda e o conteudo)
+\captionsetup[figure]{position=top,listformat=figuracf}
 \captionsetup[table]{position=top,listformat=tabelacf}
+
+% conteudo e fonte (Fonte: ...) de figuras, tabelas e quadros em 10 pt;
+% dentro deles, {\small ...} tambem vale 10 pt
+\AtBeginEnvironment{figure}{\footnotesize\let\small\footnotesize}
+\AtBeginEnvironment{table}{\footnotesize\let\small\footnotesize}
+
+% textos em preto: links sem cor nem caixa; acentos nos marcadores do PDF
+\hypersetup{hidelinks,unicode=true,linktoc=all}
 
 %==============================================================================
 % Ambiente flutuante para quadros, nos mesmos moldes das tabelas, com
@@ -108,6 +146,7 @@ Versão: \currversion^^J
 }
 \DeclareCaptionListFormat{quadrocf}{\quadroname\ #1#2}
 \captionsetup[quadro]{position=top,listformat=quadrocf}
+\AtBeginEnvironment{quadro}{\footnotesize\let\small\footnotesize}
 
 \geometry{top=3cm,right=2cm,left=3cm,bottom=2cm}
 
@@ -133,6 +172,9 @@ Versão: \currversion^^J
   \def\advisorname{Orientador}%
   \def\coadvisorname{Coorientador}%
   \def\collaboratorname{Colaborador}%
+  \def\advisorsname{Orientadores}%
+  \def\coadvisorsname{Coorientadores}%
+  \def\citeandname{e}%
   \def\listabbrvname{Lista de Abreviaturas e Siglas}%
   \def\listsymbolname{Lista de S{\'\i}mbolos}%
   \def\annexname{Anexo}%
@@ -170,13 +212,16 @@ Versão: \currversion^^J
   \def\contentsname{Contents}%
   \def\listfigurename{List of Figures}%
   \def\listtablename{List of Tables}%
-  \def\listquadroname{List of Charts}%
+  \def\listquadroname{List of Boxes}%
   \def\figurename{Figure}%
   \def\tablename{Table}%
-  \def\quadroname{Chart}%
+  \def\quadroname{Box}%
   \def\advisorname{Advisor}%
   \def\coadvisorname{Coadvisor}%
   \def\collaboratorname{Collaborator}%
+  \def\advisorsname{Advisors}%
+  \def\coadvisorsname{Coadvisors}%
+  \def\citeandname{and}%
   \def\listabbrvname{List of Abbreviations and Acronyms}%
   \def\listsymbolname{List of Symbols}%
   \def\annexname{Annex}%
@@ -188,9 +233,9 @@ Versão: \currversion^^J
   \def\dissname{Dissertation}%
   \def\masterin{Masters in}%
   \def\universidadename{\@universidadeeng}%
-  \def\unidadename{\@unidadeeng}%
-  \def\programaname{\@programaeng}%
-  \def\cursoname{\@cursoeng}%
+  \def\unidadename{\@ifundefined{@unidadeeng}{\@unidade}{\@unidadeeng}}%
+  \def\programaname{\@ifundefined{@programaeng}{\@programa}{\@programaeng}}%
+  \def\cursoname{\@ifundefined{@cursoeng}{\@curso}{\@cursoeng}}%
 }
 
 \@namedef{dateenglish}{%
@@ -204,9 +249,18 @@ Versão: \currversion^^J
   % \def\ei@date{\@publmonth~\@publyear}%
 }
 
+% Data da capa e da folha de rosto (so' o ano). Definida tambem fora dos
+% ganchos de idioma: pacotes como o datetime2 (carregado pelo pdfcomment)
+% substituem \date<idioma> e o comando ficaria indefinido.
+\def\ei@date{\@publyear}
+
 \if@english%
 \selectlanguage{english}%
 \AtBeginDocument{\selectlanguage{english}}%
+% folha de rosto e folha de aprovacao em ingles
+\@ifundefined{@documentoeng}{}{\let\@documento\@documentoeng}%
+\@ifundefined{@descricaodocumentoeng}{}{\let\@descricaodocumento\@descricaodocumentoeng}%
+\@ifundefined{@descricaoaprovacaoeng}{}{\let\@descricaoaprovacao\@descricaoaprovacaoeng}%
 \fi
 
 %==============================================================================
@@ -222,8 +276,8 @@ Versão: \currversion^^J
 \def\ps@texufpel{%
   \let\@oddfoot\@empty%
   \let\@evenfoot\@empty%
-  \def\@oddhead{\hspace*{\fill}{\small\thepage}}%
-  \def\@evenhead{\hspace*{\fill}{\small\thepage}}%
+  \def\@oddhead{\hspace*{\fill}{\footnotesize\thepage}}%
+  \def\@evenhead{\hspace*{\fill}{\footnotesize\thepage}}%
 } 
 
 \pagestyle{empty}%
@@ -348,23 +402,22 @@ Versão: \currversion^^J
 
 \location{Sapucaia do Sul}{RS}
 
-\renewcommand{\maketitle}{
-\@ifundefined{@capa}{%
-\begin{titlepage}
-\thetitlepage
-\end{titlepage}
-\clearpage
-%\setcounter{page}{1}
-}{%
-\begin{titlepage}
-\thecoverpage
-\newpage
-\thetitlepage
-\end{titlepage}
-\clearpage
-% NBR 14724: a capa nao e' contada; a folha de rosto e' a pagina 1
-\setcounter{page}{2}
-}
+% NBR 14724: a capa nao e' contada; a folha de rosto e' a folha 1.
+% A capa recebe o rotulo ``capa'' para que o hyperref nao gere ancoras de
+% pagina duplicadas.
+\renewcommand{\maketitle}{%
+  \@ifundefined{@capa}{}{%
+    \begingroup
+    \def\thepage{capa}%
+    \begin{titlepage}
+    \thecoverpage
+    \end{titlepage}%
+    \endgroup
+  }%
+  \begin{titlepage}
+  \thetitlepage
+  \end{titlepage}%
+  \setcounter{page}{2}%
 }
 
 \newcommand{\thecoverpage}{%
@@ -416,9 +469,10 @@ Versão: \currversion^^J
     {\MakeUppercase{\textbf{\@title}}}%
   \vskip 8cm%
         \singlespacing%
+  % \sloppy: a caixa tem so' 9 cm; sem ele, palavras longas como
+  % "Desenvolvimento" podem passar da margem direita
   \begin{adjustwidth}{7cm}{0cm}
-%        \begin{hyphenrules}{nohyphenation}%
-        \@descricaodocumento%
+        \sloppy\@descricaodocumento%
  %     	\end{hyphenrules}%
           \vskip .5cm% 
   \@ifundefined{@advisora}{}{%
@@ -460,7 +514,8 @@ Versão: \currversion^^J
 \@aftertocfalse
 \renewcommand{\tableofcontents}{%
         \chapter*{\contentsname}
-        \@starttoc{toc}\@aftertoctrue%
+        % sumario em espaco simples, como no guia exemplo-tcc.docx
+        {\singlespacing\@starttoc{toc}}\@aftertoctrue%
 }
 
 %==============================================================================
@@ -501,14 +556,17 @@ Versão: \currversion^^J
 %==============================================================================
 % Resumo (abstract) e Abstract (englishabstract)
 %==============================================================================
+% NBR 6028:2021: resumo em paragrafo unico, sem recuo; palavras-chave logo
+% abaixo do resumo, separadas do texto por uma linha em branco
 \renewenvironment{abstract}{%
   \chapter*{\abstractname}
+  \everypar{{\setbox\z@\lastbox}\everypar{}}% sem recuo (o indentfirst anula \@afterindentfalse)
 %  \@ifundefined{@nocipinfo}{
 %  \noindent{\MakeUppercase{\@authoralast},
 %    \@authorafirst. \textbf{\@title}. \advisorname: \@advisorafirst\ \@advisoralast. \@publyear. \pageref{LastPage}~f. \@tipodocumento,
 %    \universidadename, \@city, \@publyear.}\\~\\}{}
 }{%
-  \par\vfill
+  \par\vspace{\baselineskip}%
   \noindent\keywordsname: \@abstractkw
 }
 
@@ -523,11 +581,12 @@ Versão: \currversion^^J
       }
 
       \chapter*{\abstractname}
+      \everypar{{\setbox\z@\lastbox}\everypar{}}%
   %    \noindent{\MakeUppercase{\@authoralast},
   %      \@authorafirst. \textbf{\@englishtitle}. \advisorname: \@advisorafirst\ \@advisoralast. \@publyear. \pageref{LastPage}~f. %\@tipodocumento,
    %     \universidadename, \@city, \@publyear.}\\~\\
     }{
-      \par\vfill
+      \par\vspace{\baselineskip}%
       \noindent\keywordsname: \@abstractkweng
     \end{otherlanguage}
 }
@@ -569,7 +628,7 @@ Versão: \currversion^^J
 }
 
 \def\@schapter#1{%
-  \if@aftertoc\addcontentsline{toc}{chapter}{#1}\fi%
+  \if@aftertoc\phantomsection\addcontentsline{toc}{chapter}{#1}\fi%
   \addtocontents{lof}{\protect\addvspace{10\p@}}%
   \addtocontents{lot}{\protect\addvspace{10\p@}}%
   \@makeschapterhead{#1}\@afterheading%
@@ -580,9 +639,14 @@ Versão: \currversion^^J
   \addvspace{21pt}%
 }
 
+% o contador ei@apxset garante ancoras unicas no hyperref (sem ele, o
+% Apendice A, o Anexo A e o Capitulo 1 geram a mesma ancora chapter.1)
+\newcounter{ei@apxset}
 \renewcommand{\appendix}[1][\appendixname]{%
   \setcounter{chapter}{0}%
   \renewcommand{\thechapter}{\Alph{chapter}}%
+  \stepcounter{ei@apxset}%
+  \xdef\theHchapter{apx\arabic{ei@apxset}.\noexpand\Alph{chapter}}%
   \setcounter{tocdepth}{0}%
   \@captionlistingfalse%
   \gdef\ei@chapsep{ -- }%
@@ -659,9 +723,12 @@ Versão: \currversion^^J
 %==============================================================================
 % Redefinição do formato de citações longas
 %==============================================================================
+% NBR 10520:2023 e NBR 14724: recuo de 4 cm, tamanho menor que o do texto
+% (10 pt, uniforme com notas e legendas), espaco simples e sem aspas
 \renewenvironment{quote}{%
-  \small\singlespacing% NBR 14724: citacao longa em espaco simples
-  \begin{list}{}{\setlength{\leftmargin}{40mm}\item\relax}
+  \par\footnotesize\singlespacing%
+  \begin{list}{}{\setlength{\leftmargin}{40mm}\setlength{\rightmargin}{0pt}%
+    \setlength{\topsep}{12pt}\setlength{\parsep}{0pt}\item\relax}
   }{%
   \end{list}
 }
@@ -672,6 +739,15 @@ Versão: \currversion^^J
 %==============================================================================
 \setlength{\bibhang}{0pt}
 \let\cite\citep
+
+% Separador dos sobrenomes na chamada (NBR 10520:2023): entre parenteses,
+% ponto e virgula -- (Sousa; Lima, 2022); com os nomes na frase, virgula e
+% "e" antes do ultimo -- Luz, Cardoso e Carvalho (2023); com a opcao
+% english, "and". O abnt.bst escreve \citesep e \citelastsep entre os
+% sobrenomes; o natbib marca as chamadas entre parenteses com \ifNAT@swa.
+\newif\ifei@citeparen
+\DeclareRobustCommand{\citesep}{\ifei@citeparen;\space\else\ifNAT@swa;\space\else,\space\fi\fi}
+\DeclareRobustCommand{\citelastsep}{\ifei@citeparen;\space\else\ifNAT@swa;\space\else\space\citeandname\space\fi\fi}
 % URLs das referencias na mesma fonte do texto (e com quebra de linha)
 \urlstyle{same}
 
@@ -715,13 +791,15 @@ Versão: \currversion^^J
 }
 
 %==============================================================================
-% Citacao de citacao (apud), NBR 10520:2023. Uso:
-%   \apud{obra-original}{obra-consultada}  -> Moore (1979 apud Cormen, 1990)
-%   \apudp{obra-original}{obra-consultada} -> (Moore, 1979 apud Cormen, 1990)
-% Na lista de referencias deve constar apenas a obra consultada (2o arg.)
+% Citacao de citacao (apud), NBR 10520:2023. Na lista de referencias entra
+% SOMENTE a obra consultada; por isso o autor e o ano da obra original sao
+% escritos a' mao, e so' a obra consultada e' indicada pela chave do .bib:
+%   \apud{Moore}{1979}{Cormen}          -> Moore (1979 apud Cormen et al., 1990)
+%   \apud[p.~45]{Moore}{1979}{Cormen}   -> Moore (1979 apud Cormen et al., 1990, p. 45)
+%   \apudp{Moore}{1979}{Cormen}         -> (Moore, 1979 apud Cormen et al., 1990)
 %==============================================================================
-\newcommand{\apud}[2]{\citeauthor{#1} (\citeyear{#1} apud \citeauthor{#2}, \citeyear{#2})}
-\newcommand{\apudp}[2]{(\citeauthor{#1}, \citeyear{#1} apud \citeauthor{#2}, \citeyear{#2})}
+\newcommand{\apud}[4][]{#2 (#3 apud {\ei@citeparentrue\citeauthor{#4}}, \citeyear{#4}\if\relax\detokenize{#1}\relax\else, #1\fi)}
+\newcommand{\apudp}[4][]{(#2, #3 apud {\ei@citeparentrue\citeauthor{#4}}, \citeyear{#4}\if\relax\detokenize{#1}\relax\else, #1\fi)}
 
 % \renewcommand{\NAT@nmfmt}[1]{%
 %   \ifNAT@swa\expandafter\MakeUppercase\else\expandafter\@firstofone\fi{{\NAT@up #1}}%
@@ -747,25 +825,66 @@ Versão: \currversion^^J
 %ficha catalográfica
 % NBR 14724:2024: a pagina da ficha (verso da folha de rosto) nao e'
 % contada nem numerada, por isso o contador de paginas e' devolvido
-\newcommand{\fichacatalografica}{
+% Uso: \fichacatalografica            (pagina provisoria, durante a escrita)
+%      \fichacatalografica[ficha.pdf] (versao final: PDF emitido pela
+%                                      Biblioteca; so' a 1a pagina)
+% A pagina recebe o rotulo ``ficha'' para que o hyperref nao gere ancoras
+% duplicadas.
+\newcommand{\fichacatalografica}[1][]{%
 	\clearpage
-	\mbox{}
-	\vfill
-	\begin{center}
-		\textbf{Insira AQUI a ficha catalogr\'afica\\Quando finalizado o trabalho, deve ser\\solicitada à Biblioteca.}
-	\end{center}
-	\vfill
-	\clearpage
-	\addtocounter{page}{-1}
-}
-
-% versao final: insere a ficha catalografica a partir do PDF fornecido
-% pela Biblioteca. Uso: \fichacatalograficapdf{ficha.pdf}
-\RequirePackage{pdfpages}
-\newcommand{\fichacatalograficapdf}[1]{%
-	\clearpage
-	\includepdf{#1}%
+	\begingroup
+	\def\thepage{ficha}%
+	\if\relax\detokenize{#1}\relax
+		\thispagestyle{empty}%
+		\mbox{}
+		\vfill
+		\begin{center}
+			\textbf{\if@english Insert the catalog card HERE\\When the work is finished, request it\\from the Library.\else Insira AQUI a ficha catalogr\'afica\\Quando finalizado o trabalho, deve ser\\solicitada à Biblioteca.\fi}
+		\end{center}
+		\vfill
+		\clearpage
+	\else
+		\includepdf[pages=1]{#1}%
+	\fi
+	\endgroup
 	\addtocounter{page}{-1}%
+}
+% forma antiga, mantida por compatibilidade: \fichacatalograficapdf{ficha.pdf}
+\newcommand{\fichacatalograficapdf}[1]{\fichacatalografica[#1]}
+
+% Referencia do trabalho (NBR 6023), usada na errata:
+%   SOBRENOME, Nome. Titulo. Orientador: Nome. Ano. N f. Tipo (Curso) --
+%   Unidade, Instituicao, Cidade, Ano.
+\newcommand{\ei@nomes}[1]{%
+  \csname @#1afirst\endcsname\ \csname @#1alast\endcsname
+  \@ifundefined{@#1b}{}{; \csname @#1bfirst\endcsname\ \csname @#1blast\endcsname}%
+  \@ifundefined{@#1c}{}{; \csname @#1cfirst\endcsname\ \csname @#1clast\endcsname}%
+  \@ifundefined{@#1d}{}{; \csname @#1dfirst\endcsname\ \csname @#1dlast\endcsname}}
+\newcommand{\ei@referencia}[1]{%
+  {\singlespacing\raggedright\noindent\MakeUppercase{\@authoralast},
+    \@authorafirst\@ifundefined{@authorb}{}{; \MakeUppercase{\@authorblast}, \@authorbfirst}. \textbf{#1}.
+    \@ifundefined{@advisora}{}{\@ifundefined{@advisorb}{\advisorname}{\advisorsname}: \ei@nomes{advisor}. }%
+    \@ifundefined{@coadvisora}{}{\@ifundefined{@coadvisorb}{\coadvisorname}{\coadvisorsname}: \ei@nomes{coadvisor}. }%
+    \@publyear. \pageref{LastPage}~f. \@tipodocumento,
+    \universidadename, \@city, \@publyear.\par}\vspace{\baselineskip}}
+
+% Errata (NBR 14724, opcional): logo apos a folha de rosto, com a referencia
+% do trabalho e o texto da errata. Uso:
+%   \begin{errata}
+%   16 & 10 & auto-clavado & autoclavado \\
+%   \end{errata}
+\newenvironment{errata}{%
+  \chapter*{Errata}
+  \ei@referencia{\@title}%
+  \begin{center}
+  \begin{tabular}{c c p{5.4cm} p{5.4cm}}
+  \hline
+  \textbf{Folha} & \textbf{Linha} & \textbf{Onde se l\^e} & \textbf{Leia-se} \\
+  \hline
+}{%
+  \hline
+  \end{tabular}
+  \end{center}
 }
 
 %agradecimentos
@@ -813,7 +932,7 @@ Versão: \currversion^^J
 		\noindent\textbf{\@title}\\
 		\vskip 2cm
 		\begin{adjustwidth}{7cm}{0cm}
-        \singlespacing
+        \singlespacing\sloppy
 		\begin{hyphenrules}{nohyphenation}
 			\@descricaoaprovacao
 		\end{hyphenrules}
@@ -829,3 +948,41 @@ Versão: \currversion^^J
 	\end{center}
 	\vfill
 }
+
+%==============================================================================
+% Ajustes gerais
+%==============================================================================
+% NBR 14724: texto com entrelinha de 1,5 (os elementos em espaco simples --
+% citacoes longas, notas, referencias, legendas e natureza do trabalho --
+% ajustam o espacamento nos proprios ambientes)
+\onehalfspacing
+
+% NBR 14724: notas de rodape separadas do texto por um filete de 5 cm a
+% partir da margem esquerda e alinhadas, a partir da segunda linha, abaixo
+% da primeira letra da primeira palavra (destacando o expoente)
+\renewcommand{\footnoterule}{\kern-3\p@\hrule\@width 5cm\kern 2.6\p@}
+\renewcommand\@makefntext[1]{%
+  \setbox\@tempboxa\hbox{\@makefnmark\space}%
+  \hangindent\wd\@tempboxa\hangafter\@ne
+  \noindent\box\@tempboxa#1}
+
+% NBR 6024:2012: alineas (enumerate de 1o nivel) indicadas por letra
+% minuscula seguida de parentese -- a), b), ..., z), aa), bb)... -- e
+% subalineas (2o nivel) por travessao seguido de espaco. A pontuacao (ponto
+% e virgula, dois-pontos, ponto final) e' escrita pelo autor.
+\newcommand{\ei@alinea}[1]{%
+  \ifnum\value{#1}>26
+    \@alph{\numexpr\value{#1}-26\relax}\@alph{\numexpr\value{#1}-26\relax}%
+  \else
+    \@alph{\value{#1}}%
+  \fi}
+\renewcommand{\theenumi}{\ei@alinea{enumi}}
+\renewcommand{\labelenumi}{\theenumi)}
+\renewcommand{\theenumii}{\ei@alinea{enumii}}
+\renewcommand{\labelenumii}{--}
+\renewcommand{\p@enumii}{\theenumi)}
+
+% pelo menos duas linhas de um paragrafo no fim e no inicio da pagina
+\clubpenalty=10000
+\@clubpenalty=10000
+\widowpenalty=10000

@@ -39,16 +39,21 @@ Na VERSÃO FINAL, quando receber o PDF da Biblioteca:
 
 2) Troque a linha \fichacatalografica por:
 
-\fichacatalograficapdf{ficha.pdf}
+\fichacatalografica[ficha.pdf]
 
 Pronto. Não é preciso adicionar pacote algum no preâmbulo: o comando já
-é nativo da classe texifsap e insere a página do PDF no lugar certo.
+é nativo da classe texifsap e insere a primeira página do PDF no lugar
+certo. (A forma antiga, \fichacatalograficapdf{ficha.pdf}, continua
+funcionando.)
+
+Não use \includepdf diretamente: a página entraria na contagem e todos
+os números de página ficariam uma unidade acima do correto.
 
 OBSERVAÇÕES
 
 - A página da ficha NÃO é contada nem numerada (regra da NBR
   14724:2024). O template já cuida disso automaticamente, tanto no
-  marcador quanto no comando \fichacatalograficapdf.
+  marcador quanto na versão com o PDF.
 - Não tente "desenhar" a ficha você mesmo nem copiar de outro
   trabalho: a catalogação segue regras próprias de biblioteconomia, e
   as bibliotecas costumam devolver trabalhos com ficha incorreta.

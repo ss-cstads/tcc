@@ -1,15 +1,27 @@
 APUD (citação de citação — NBR 10520:2023)
 
-\apud{obra-original}{obra-consultada}
-   -> Moore (1979 apud Cormen, 1990)          [narrativa, na frase]
+A classe já define os comandos \apud e \apudp. Não é preciso acrescentar
+nada ao preâmbulo.
 
-\apudp{obra-original}{obra-consultada}
-   -> (Moore, 1979 apud Cormen, 1990)         [entre parênteses]
+Na lista de Referências deve constar SOMENTE a obra efetivamente
+consultada. Por isso o autor e o ano da obra original são escritos à mão,
+e só a obra consultada é indicada pela chave do .bib:
+
+\apud{Moore}{1979}{Cormen}
+   -> Moore (1979 apud Cormen; Leiserson; Rivest, 1990)          [na frase]
+
+\apud[p.~45]{Moore}{1979}{Cormen}
+   -> Moore (1979 apud Cormen; Leiserson; Rivest, 1990, p. 45)   [com página]
+
+\apudp{Moore}{1979}{Cormen}
+   -> (Moore, 1979 apud Cormen; Leiserson; Rivest, 1990)         [entre parênteses]
 
 Importante:
 - Evite o apud; priorize sempre os textos originais.
-- Na lista de Referências deve constar apenas a obra efetivamente
-  consultada (o segundo argumento).
+- ATENÇÃO, mudança em relação à versão anterior do template: antes os
+  comandos recebiam duas chaves do .bib (\apud{original}{consultada}), o
+  que fazia a obra original aparecer indevidamente na lista de
+  Referências. Atualize as chamadas antigas para o formato acima.
 
 FOOTCITE (referência em nota de rodapé)
 

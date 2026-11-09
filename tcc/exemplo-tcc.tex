@@ -73,7 +73,7 @@
 %finais (dados como o número de folhas mudam até lá). Ao receber o
 %PDF da Biblioteca (ex.: ficha.pdf), salve-o nesta pasta e troque a
 %linha \fichacatalografica por:
-%\fichacatalograficapdf{ficha.pdf}
+%\fichacatalografica[ficha.pdf]
 %Conforme a NBR 14724:2024, esta página não é contada nem numerada —
 %o template já cuida disso automaticamente.
 \fichacatalografica
@@ -293,10 +293,12 @@ final da introdução ou esta seção) e remova o outro.
 %   abaixo), que já aplica recuo de 4 cm, fonte menor e espaço simples.
 %   Não use aspas e informe a página.
 % - CITAÇÃO DE CITAÇÃO (apud): quando não se teve acesso ao original.
-%   Evite; priorize os textos originais. Use os comandos:
-%     \apud{original}{consultada}  -> Moore (1979 apud Cormen et al., 1990)
-%     \apudp{original}{consultada} -> (Moore, 1979 apud Cormen et al., 1990)
-%   Na lista de Referências deve constar apenas a obra consultada.
+%   Evite; priorize os textos originais. Na lista de Referências deve
+%   constar APENAS a obra consultada; por isso o autor e o ano da obra
+%   original são escritos à mão e só a obra consultada vai pela chave:
+%     \apud{Moore}{1979}{Cormen}  -> Moore (1979 apud Cormen et al., 1990)
+%     \apudp{Moore}{1979}{Cormen} -> (Moore, 1979 apud Cormen et al., 1990)
+%     \apud[p.~45]{Moore}{1979}{Cormen} -> ... (1979 apud Cormen et al., 1990, p. 45)
 % - O ponto final da frase vem DEPOIS do parêntese da citação:
 %   correto:  ... blablabla (Silva, 2020).
 % - Com 4 ou mais autores no .bib, a citação sai automaticamente como
@@ -325,10 +327,10 @@ final do período, entre parênteses, é feita com o comando
   consultada~\cite[p.~10]{Nobre:2017}.
 \end{quote}
 
-Exemplo de citação de citação: conforme \apud{Moore:1979:MAI}{Cormen},
+Exemplo de citação de citação: conforme \apud{Moore}{1979}{Cormen},
 use o apud apenas quando não tiver acesso à obra original; nas
 referências constará somente a obra efetivamente consultada
-\apudp{Moore:1979:MAI}{Cormen}.
+\apudp{Moore}{1979}{Cormen}.
 
 \subsection{Uma seção terciária}
 

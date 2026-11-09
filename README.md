@@ -51,6 +51,15 @@ Documentos explicativos com orientações sobre funcionalidades específicas e f
 - **`como_incluir_tooltip_abreviacoes.txt`**  
   Uso de tooltips para exibição de abreviações e siglas.
 
+- **`como_declarar_uso_de_ia.txt`**  
+  Modelo de declaração do uso de ferramentas de inteligência artificial.
+
+- **`como_compilar_latex_localmente.txt`**  
+  Instalação e compilação do LaTeX no próprio computador (Windows e Linux).
+
+- **`como_inserir_figura_vetorizada_com_textos_latex.txt`**  
+  Figuras vetorizadas com os textos na mesma fonte do documento.
+
 ---
 
 ## 🖼️ Arquivos de apoio
@@ -90,8 +99,10 @@ Contribuições são bem-vindas e incentivadas.
 ### Utilize **issues** ou envie **pull requests**.
 ---
 
-## 📜 Agradecimentos
+## 📜 Agradecimentos e licença
 - Estes documentos foram adaptados dos modelos desenvolvidos e disponibilizados pela UFPel, no repositório https://github.com/notcc/texufpel.
+- A classe `texifsap.cls` é uma obra derivada da classe `texufpel` e, como ela, é distribuída sob a LaTeX Project Public License (LPPL) 1.3c — veja [`LICENSE.md`](LICENSE.md).
+- Diferentemente do original, que segue o *Manual de normas UFPel*, esta classe segue diretamente as normas ABNT e o Regulamento do TCC do IFSul. As atualizações da UFPel são incorporadas quando compatíveis com essas regras.
 
 Uso livre para fins acadêmicos e educacionais.
 

@@ -22,3 +22,8 @@ gerada automaticamente, nos mesmos moldes da Lista de Tabelas.
 Lembrete (NBR 14724:2024): QUADRO é para informações textuais ou
 qualitativas e é fechado em todas as bordas; TABELA é para dados
 numéricos/estatísticos e tem as laterais abertas.
+
+Observação: o template da UFPel, do qual este foi adaptado, numera os
+quadros junto com as figuras ("Figura N"), por regra do Manual de normas
+UFPel. Este template mantém a designação "Quadro N" com numeração
+própria, prevista na NBR 14724.
