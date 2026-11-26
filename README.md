@@ -87,6 +87,26 @@ Documentos explicativos com orientações sobre funcionalidades específicas e f
 
 ## 🚀 Como utilizar em LaTeX
 
+### 🖥️ Sistema de escrita em LaTeX do Curso (recomendado)
+
+O Curso disponibiliza um sistema de escrita em LaTeX no navegador, sem necessidade de instalar nada:
+**https://latex.projetos.sapucaia.ifsul.edu.br/**
+
+**Primeiro acesso**
+
+1. Clique em **Cadastre-se**.
+2. Informe o seu **e-mail acadêmico**.
+3. Uma **senha temporária** será enviada para esse e-mail; use-a para entrar no sistema.
+
+**Importando o modelo**
+
+1. Baixe o arquivo `.zip` deste repositório: no GitHub, clique em **Code → Download ZIP** (ou use o link direto [master.zip](https://github.com/ss-cstads/tcc/archive/refs/heads/master.zip)).
+2. Já logado no sistema, clique em **Novo projeto → Projeto existente (.zip)**.
+3. Selecione o arquivo `.zip` baixado para importá-lo como projeto.
+4. Abra o arquivo do seu trabalho — `tcc/exemplo-tcc.tex` (TCC) ou `memorial/memorial-aproveitamento.tex` (memorial descritivo) — e comece a editar.
+
+### Outras formas de compilar
+
 1. Edite o arquivo `.tex` com o conteúdo do seu trabalho.
 2. Compile o documento utilizando uma das opções abaixo:
    - **Overleaf**
