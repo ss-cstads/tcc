@@ -1,6 +1,6 @@
-# Modelos LaTeX para Trabalhos Acadêmicos
+# Modelos de Trabalhos Acadêmicos em LaTeX e Word
 
-Este repositório disponibiliza **modelos oficiais e exemplos práticos** para a elaboração de trabalhos acadêmicos dos cursos de computação do **Instituto Federal Siul-rio-grandense (IFSul) - câmpus Sapucaia do Sul**, seguindo as normas da **ABNT** e diretrizes institucionais.
+Este repositório disponibiliza **modelos oficiais e exemplos práticos**, em LaTeX e em Word (.docx), para a elaboração de trabalhos acadêmicos dos cursos de computação do **Instituto Federal Sul-rio-grandense (IFSul) - câmpus Sapucaia do Sul**, seguindo as normas da **ABNT** e diretrizes institucionais.
 
 O objetivo é facilitar a escrita, padronização e formatação de documentos acadêmicos, oferecendo modelos prontos e arquivos auxiliares amplamente utilizados e mantidos ao longo dos anos.
 
