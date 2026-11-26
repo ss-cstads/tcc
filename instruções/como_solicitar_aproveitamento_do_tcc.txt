@@ -1,17 +1,17 @@
 APROVEITAMENTO DO TCC POR VALIDAÇÃO DE CONHECIMENTOS E EXPERIÊNCIAS
-PROFISSIONAIS (Regulamento do TCC, Capítulo VII, arts. 47 a 52)
+PROFISSIONAIS (Regulamento do TCC, Capítulo VII, arts. 48 a 53)
 
 O modelo do memorial descritivo está em memorial/ (memorial-aproveitamento.tex,
 .pdf e .docx). Compile-o com:  make memorial
 
-QUEM PODE SOLICITAR (art. 49, II e V; art. 48, § 3º)
+QUEM PODE SOLICITAR (art. 50, II e V; art. 49, § 3º)
 
 - Estudante regularmente matriculado, durante o período letivo.
 - Experiência na área de Análise e Desenvolvimento de Sistemas, alinhada ao
-  campo de atuação do egresso descrito no PPC (art. 47, parágrafo único), de
+  campo de atuação do egresso descrito no PPC (art. 48, parágrafo único), de
   NO MÍNIMO DOIS ANOS, ocorrida nos ÚLTIMOS DEZ ANOS contados da data da
   solicitação. Também valem cursos de educação profissional e tecnológica
-  relacionados ao programa das disciplinas (art. 49, I).
+  relacionados ao programa das disciplinas (art. 50, I).
 - Só é aceito UM ÚNICO pedido de validação para fins de aproveitamento do TCC.
 - O PPC (2023, seção 3.8.12) também reconhece conhecimentos desenvolvidos em
   qualificações e módulos de cursos de educação profissional tecnológica, em
@@ -23,9 +23,9 @@ QUEM PODE SOLICITAR (art. 49, II e V; art. 48, § 3º)
 O QUE ENTREGAR
 
 1) Requerimento ao câmpus, por intermédio da Coordenação de Registros
-   Acadêmicos (art. 48, § 1º).
+   Acadêmicos (art. 49, § 1º).
 
-2) Memorial descritivo (art. 48 e art. 49, I e III):
+2) Memorial descritivo (art. 49 e art. 50, I e III):
    - descrição DETALHADA das atividades desenvolvidas no trabalho e/ou em
      cursos de educação profissional e tecnológica;
    - FUNDAMENTAÇÃO TEÓRICA das atividades (citações de autores, conforme a
@@ -36,7 +36,7 @@ O QUE ENTREGAR
    - padrões de texto acadêmico-científico (normas ABNT);
    - ENTRE CINCO E DEZ PÁGINAS.
 
-3) Documentos comprobatórios, anexados ao memorial (art. 49, IV) — são
+3) Documentos comprobatórios, anexados ao memorial (art. 50, IV) — são
    ESSENCIAIS:
    - Carteira de Trabalho e Previdência Social (página de identificação e
      página do contrato);
@@ -46,7 +46,7 @@ O QUE ENTREGAR
    Oculte nos comprovantes os dados pessoais que não forem necessários à
    comprovação (CPF, endereço, salário etc.).
 
-COMO É A AVALIAÇÃO (arts. 48, § 2º, e 50 a 52)
+COMO É A AVALIAÇÃO (arts. 49, § 2º, e 51 a 53)
 
 - Uma comissão de, no mínimo, três docentes (dois professores da área e o
   coordenador do curso) analisa o memorial e os documentos.
@@ -73,7 +73,6 @@ CHECKLIST ANTES DE ENTREGAR
     relacionadas às atividades e às disciplinas (Quadro 2 do modelo).
 [ ] Parte textual entre cinco e dez páginas.
 [ ] Declaração sobre uso de inteligência artificial (ver
-    como_declarar_uso_de_ia.txt) e texto de autoria própria (art. 34: o uso
-    de IA para a produção do trabalho é considerado plágio).
+    como_declarar_uso_de_ia.txt) e texto de autoria própria (art. 35: o uso de IA na autoria intelectual do trabalho é considerado plágio).
 [ ] Comentários de orientação removidos (no .docx: Revisão > Excluir >
     Excluir Todos os Comentários no Documento).

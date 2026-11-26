@@ -1,10 +1,14 @@
 DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL
 
-ATENÇÃO (Regulamento do TCC, art. 34): o uso de ferramentas de
-inteligência artificial para a PRODUÇÃO do trabalho é considerado plágio
-e anula o TCC. A declaração abaixo serve para usos de apoio (revisão,
-tradução etc.), que devem ser informados de forma transparente, conforme
-a Portaria CNPq nº 2.664/2026.
+REGRA (Regulamento do TCC vigente a partir de 2026/2, art. 35, parágrafo
+único): o uso de ferramentas de IA generativa na escrita e/ou revisão do
+conteúdo deve ser declarado EXPLICITAMENTE no trabalho, listando as
+ferramentas e descrevendo onde foram empregadas (por exemplo, textos,
+tabelas, gráficos, citações). O uso dessas ferramentas não exime o
+acadêmico da responsabilidade sobre todo o conteúdo, inclusive em caso de
+plágio. O uso de IA na AUTORIA INTELECTUAL do trabalho é considerado
+plágio e anula o TCC. A declaração também atende à Portaria CNPq
+nº 2.664/2026.
 
 No exemplo-tcc.tex, a declaração fica na seção "Declaração sobre uso de
 Inteligência Artificial", ao final do capítulo de conclusões. Use um
@@ -15,7 +19,8 @@ artificial generativa [NOME E VERSÃO, ex.: ChatGPT, modelo GPT-5, da
 OpenAI], entre [mês/ano] e [mês/ano], exclusivamente para [FINALIDADES,
 ex.: revisão ortográfica e gramatical, sugestões de reformulação de
 trechos previamente redigidos pelo autor e tradução do resumo para a
-língua inglesa]. A ferramenta não foi utilizada para gerar dados,
+língua inglesa], nos seguintes pontos do trabalho: [ONDE, ex.: revisão do
+texto dos Capítulos 1 e 2 e tradução do Abstract]. A ferramenta não foi utilizada para gerar dados,
 análises, interpretações ou conclusões. Todo o conteúdo sugerido foi
 revisado, editado e validado pelo autor, que assume integral
 responsabilidade pelo texto final, pela exatidão das informações e pela

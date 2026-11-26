@@ -23,7 +23,7 @@ mesma organização, use uma seção para cada cargo.
 Mostre a evolução: de júnior a pleno, de testes a análise de produto, de
 desenvolvedor a líder técnico. Isso evidencia o desenvolvimento de
 competências ao longo do tempo. Some os períodos e confira o mínimo de DOIS
-ANOS nos últimos dez (art. 49, II).
+ANOS nos últimos dez (art. 50, II).
 
 
 2. CONTEXTO DA ORGANIZAÇÃO E DO SISTEMA
@@ -57,7 +57,7 @@ Para cada atividade relevante, conte:
 
 4. FUNDAMENTAÇÃO TEÓRICA LIGADA À PRÁTICA
 
-É exigência do Regulamento (art. 49, III) e o que mais diferencia um memorial
+É exigência do Regulamento (art. 50, III) e o que mais diferencia um memorial
 excelente. Use autores clássicos da área — livros, teses, normas, guias
 oficiais — e ligue o conceito à sua prática. Um padrão que funciona:
 
@@ -85,7 +85,7 @@ antes da trajetória, desde que cada conceito seja ligado à prática.
 5. DISCIPLINAS DO CURSO CITADAS PELO NOME
 
 Relacione as atividades às disciplinas que tratam do mesmo conteúdo, citando
-o nome da disciplina. Isso atende ao art. 49, I (relação com o programa das
+o nome da disciplina. Isso atende ao art. 50, I (relação com o programa das
 disciplinas).
 
   Exemplo: "Os conteúdos de normalização e de junções estudados em Tópicos
