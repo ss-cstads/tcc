@@ -861,11 +861,16 @@ FUNCTION {format.publisher}
 	} if$
 }
 
+%==============================================================================
+% Ano da publicação. Obras do mesmo autor e do mesmo ano recebem a letra
+% (2023a, 2023b) também na lista de referências, para corresponder à
+% chamada no texto (NBR 10520:2023 e NBR 6023).
+%==============================================================================
 FUNCTION {format.year}
 {
 	year empty$
 		{""}
-		{year}
+		{year year.char *}
 	if$
 }
 

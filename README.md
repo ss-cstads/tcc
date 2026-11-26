@@ -33,6 +33,16 @@ Os arquivos abaixo são **modelos completos e funcionais**, prontos para adapta�
 - **`exemplo-tcc.tex`** – Trabalho de Conclusão de Curso em LaTeX  
 - **`exemplo-tcc.docx`** – Trabalho de Conclusão de Curso em Microsoft Word  
 
+### 📝 Memorial descritivo (aproveitamento do TCC)
+
+Modelo do **Memorial Descritivo de Validação de Conhecimentos e Experiências Profissionais**, usado para solicitar o aproveitamento do TCC por meio da experiência profissional (Capítulo VII do Regulamento do TCC). Fica na pasta `memorial/`:
+
+- **`memorial-aproveitamento.tex`** – memorial em LaTeX (classe `texifsap`, opção `memorial`)  
+- **`memorial-aproveitamento.docx`** – memorial em Microsoft Word  
+- **`bibliografia-memorial.bib`** – referências de exemplo para a fundamentação teórica  
+
+As orientações do que um bom memorial deve conter estão nos comentários do modelo e em `instruções/como_elaborar_um_bom_memorial.txt`.
+
 ---
 
 ## 🛠️ Arquivos auxiliares e tutoriais
@@ -50,6 +60,12 @@ Documentos explicativos com orientações sobre funcionalidades específicas e f
 
 - **`como_incluir_tooltip_abreviacoes.txt`**  
   Uso de tooltips para exibição de abreviações e siglas.
+
+- **`como_elaborar_um_bom_memorial.txt`**  
+  O que os memoriais descritivos bem avaliados têm em comum, com exemplos e checklist.
+
+- **`como_solicitar_aproveitamento_do_tcc.txt`**  
+  Requisitos, documentos e etapas da solicitação de aproveitamento do TCC.
 
 - **`como_declarar_uso_de_ia.txt`**  
   Modelo de declaração do uso de ferramentas de inteligência artificial.
@@ -78,7 +94,9 @@ Documentos explicativos com orientações sobre funcionalidades específicas e f
    - **VS Code com LaTeX Workshop**
    - **Linha de comando**:
      ```bash
-     make
+     make            # TCC e memorial
+     make tcc        # só o TCC
+     make memorial   # só o memorial
      ```
      ou
      ```bash

@@ -76,6 +76,18 @@ Versão: \currversion^^J
 \descricaoaprovacaoeng{Undergraduate Thesis approved in partial fulfillment of the requirements for the degree of \ei@titulocursoeng, \ei@nomecursoeng\ Program, Sul-rio-grandense Federal Institute -- Sapucaia do Sul Campus.}
 }
 
+% Memorial descritivo de validacao de conhecimentos e experiencias
+% profissionais para aproveitamento do TCC (Regulamento do TCC, Capitulo
+% VII). Nao tem orientador nem folha de aprovacao: o resultado e'
+% registrado em ata pela comissao avaliadora.
+\DeclareOption{memorial}{
+\documento{Memorial Descritivo}
+\tipodocumento{Memorial Descritivo de Valida{\c{c}}{\~a}o de Conhecimentos e Experi{\^e}ncias Profissionais (\cursoname) -- \unidadename}
+\descricaodocumento{Memorial descritivo apresentado como requisito para a solicita{\c{c}}{\~a}o de aproveitamento do Trabalho de Conclus{\~a}o de Curso do Curso {\@nomecurso} do Instituto Federal Sul-rio-grandense - C{\^a}mpus Sapucaia do Sul, por meio da valida{\c{c}}{\~a}o de conhecimentos e experi{\^e}ncias profissionais, nos termos do Cap\'itulo VII do Regulamento do Trabalho de Conclus{\~a}o de Curso.}
+\documentoeng{Descriptive Memorial}
+\descricaodocumentoeng{Descriptive memorial submitted to request the recognition of professional knowledge and experience in place of the Undergraduate Thesis, \ei@nomecursoeng\ Program, Sul-rio-grandense Federal Institute -- Sapucaia do Sul Campus.}
+}
+
 \newcommand{\capa}[1]{\gdef\@capa{#1}}
 \DeclareOption{capa}{\capa{1}}
 
@@ -472,16 +484,15 @@ Versão: \currversion^^J
   % \sloppy: a caixa tem so' 9 cm; sem ele, palavras longas como
   % "Desenvolvimento" podem passar da margem direita
   \begin{adjustwidth}{7cm}{0cm}
-        \sloppy\@descricaodocumento%
- %     	\end{hyphenrules}%
-          \vskip .5cm% 
+        \sloppy\@descricaodocumento\par
+  % orientador e coorientador, quando houver (o memorial nao tem)
   \@ifundefined{@advisora}{}{%
-        \@ifundefined{@advisora}{}{\advisorname: }{\@advisora\\}
-        \@ifundefined{@coadvisora}{}{\coadvisorname: }{\@coadvisora\\}
-
-        \end{adjustwidth}
-    \vfill%
+        \vskip .5cm%
+        \advisorname: \@advisora\\
+        \@ifundefined{@coadvisora}{}{\coadvisorname: \@coadvisora\\}%
   }%
+  \end{adjustwidth}
+  \vfill%
        \centering%
       \vskip .1cm%
       \@city\\\ei@date%

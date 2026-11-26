@@ -1,0 +1,238 @@
+COMO ELABORAR UM BOM MEMORIAL DESCRITIVO
+(aproveitamento do TCC por validação de conhecimentos e experiências
+profissionais — Regulamento do TCC, Capítulo VII)
+
+Este guia reúne o que os memoriais avaliados como EXCELENTES pela comissão
+do curso têm em comum. O modelo está em memorial/ (memorial-aproveitamento.tex
+e .docx); o processo de solicitação está em
+como_solicitar_aproveitamento_do_tcc.txt.
+
+A ideia central: o memorial NÃO é um currículo. A comissão precisa
+enxergar, em cada experiência, o que você fez, com que fundamento teórico,
+com que resultado e que relação isso tem com o curso.
+
+
+1. PERÍODO EXATO E PROGRESSÃO NA CARREIRA
+
+Indique o mês e o ano de início e de fim de cada cargo — inclusive no título
+da seção, se ajudar — e a duração. Se houve promoção ou mudança de função na
+mesma organização, use uma seção para cada cargo.
+
+  Exemplo: "3.2 Analista de Sistemas Pleno (maio de 2024 a março de 2026)"
+
+Mostre a evolução: de júnior a pleno, de testes a análise de produto, de
+desenvolvedor a líder técnico. Isso evidencia o desenvolvimento de
+competências ao longo do tempo. Some os períodos e confira o mínimo de DOIS
+ANOS nos últimos dez (art. 49, II).
+
+
+2. CONTEXTO DA ORGANIZAÇÃO E DO SISTEMA
+
+Antes de falar das atividades, situe a comissão:
+  - a organização: ramo de atuação, porte, clientes atendidos;
+  - o sistema ou produto: o que faz, para quem;
+  - o "panorama técnico": arquitetura (monolito, microsserviços, serverless,
+    cliente-servidor), linguagens, frameworks, bancos de dados,
+    infraestrutura (nuvem, filas, armazenamento) e ferramentas;
+  - a equipe: tamanho, papéis e metodologia (Scrum, Kanban, cascata).
+Termos próprios da organização ou do produto podem ser explicados em nota
+de rodapé.
+
+
+3. ATIVIDADES: DEMANDA -> AÇÃO -> RESULTADO
+
+Para cada atividade relevante, conte:
+  - a DEMANDA: o problema ou a necessidade;
+  - a AÇÃO: o que VOCÊ fez, com quais técnicas e ferramentas;
+  - o RESULTADO: o que mudou, com números sempre que possível.
+
+  Fraco: "Trabalhei com Python, AWS e MongoDB."
+  Bom:   "Implementei uma rotina agendada que gera o relatório mensal de
+          uso a partir dos registros diários, processando os dados em lotes
+          para respeitar o limite de tempo de execução do servidor; a
+          rotina substituiu cerca de oito horas mensais de trabalho manual."
+  Bom:   "A criação de testes automatizados para a API de pagamentos reduziu
+          de doze para duas as falhas reportadas em produção por mês."
+
+
+4. FUNDAMENTAÇÃO TEÓRICA LIGADA À PRÁTICA
+
+É exigência do Regulamento (art. 49, III) e o que mais diferencia um memorial
+excelente. Use autores clássicos da área — livros, teses, normas, guias
+oficiais — e ligue o conceito à sua prática. Um padrão que funciona:
+
+  "Segundo Sommerville (2019), a validação de requisitos confirma que as
+   necessidades identificadas foram corretamente compreendidas. Na minha
+   atuação, após o levantamento, submeto a especificação funcional à
+   aprovação do cliente antes de iniciar a configuração da solução."
+
+Obras usadas nos memoriais bem avaliados, por área:
+  - engenharia de software e requisitos: Sommerville; Pressman e Maxim;
+    Wiegers e Beatty;
+  - qualidade e testes: ISTQB (syllabus Foundation Level); Smart (BDD);
+  - arquitetura e APIs: Fielding (tese que define o REST);
+  - banco de dados e BI: Elmasri e Navathe; Date; Kimball e Ross;
+  - gestão de projetos e produtos: Vargas; Pichler; guia do Scrum;
+  - segurança da informação: obras sobre confidencialidade, integridade e
+    disponibilidade.
+Toda obra citada vai para as Referências (NBR 6023) e vice-versa.
+
+Dois formatos são bem avaliados: a fundamentação junto de cada atividade (o
+modelo usa este) ou um capítulo próprio de "fundamentação teórica aplicada"
+antes da trajetória, desde que cada conceito seja ligado à prática.
+
+
+5. DISCIPLINAS DO CURSO CITADAS PELO NOME
+
+Relacione as atividades às disciplinas que tratam do mesmo conteúdo, citando
+o nome da disciplina. Isso atende ao art. 49, I (relação com o programa das
+disciplinas).
+
+  Exemplo: "Os conteúdos de normalização e de junções estudados em Tópicos
+  Avançados em Sistemas de Banco de Dados sustentaram a reestruturação das
+  tabelas de cadastro, que eliminou registros duplicados."
+
+No fim, reúna tudo no quadro de relação com o perfil do egresso (capítulo 5
+do modelo): competência do PPC (transcrita) | atividades que a evidenciam |
+disciplinas relacionadas.
+
+PERFIL DO EGRESSO (PPC 2023, seção 3.6, p. 41-42). Transcreva no quadro as
+competências que as suas atividades evidenciam:
+  - domínio de trabalho em equipes com iniciativa, criatividade e
+    sociabilidade, de forma ética, com responsabilidade socioambiental,
+    atendendo às normas técnicas e de segurança;
+  - habilidade para aprender e lidar com o inusitado, conviver e se comunicar;
+  - capacidade para aprender de forma autônoma e contínua;
+  - comprometimento com a melhoria da qualidade de vida;
+  - conhecimento sobre a importância de agir com ética, comprometimento
+    socioambiental e solidariedade;
+  - o gerenciamento de processos participativos de organização pública e/ou
+    privada e/ou incluir-se neles;
+  - conhecimento sobre a importância de agir com responsabilidade,
+    sensibilidade e equilíbrio ao enfrentar desafios profissionais.
+  Atividades de atuação do profissional:
+  - analisar, projetar, desenvolver, testar, implantar e manter sistemas
+    computacionais de informação;
+  - avaliar, selecionar, especificar e utilizar metodologias, tecnologias e
+    ferramentas da Engenharia de Software, linguagens de programação e bancos
+    de dados;
+  - coordenar equipes de produção de softwares;
+  - vistoriar, realizar perícia, avaliar, emitir laudo e parecer técnico em
+    sua área de formação.
+
+DISCIPLINAS DO CURSO POR ÁREA (Matriz curricular nº 2, a partir de 2023/2, e
+matriz de eletivas — PPC, Apêndices D e E). Use os nomes exatamente assim;
+(E) = eletiva:
+  - Programação e algoritmos: Computação Aplicada à Solução de Problemas;
+    Princípios do Pensamento Computacional; Programação Orientada a Objetos;
+    Estruturas de Dados; Análise de Algoritmos (E).
+  - Desenvolvimento de sistemas e interfaces: Desenvolvimento de Interfaces I
+    e II; Fundamentos de Desenvolvimento de Sistemas Computacionais;
+    Desenvolvimento de Sistemas Computacionais; Desenvolvimento de aplicações
+    para Dispositivos Móveis; Tópicos Avançados em Programação para
+    Dispositivos Móveis (E); Experiência do Usuário e Acessibilidade (E).
+  - Engenharia de software, qualidade e projetos: Fundamentos de Engenharia de
+    Sistemas Computacionais; Engenharia de Sistemas Computacionais; Qualidade
+    de Sistemas Computacionais; Gestão de Projetos; Projeto de Sistemas
+    Computacionais (E).
+  - Banco de dados e análise de dados: Fundamentos de Sistemas de Banco de
+    Dados; Tópicos Avançados em Sistemas de Banco de Dados; Ciência e Análise
+    de Dados.
+  - Infraestrutura, redes e segurança: Fundamentos Computacionais; Fundamentos
+    de Infraestrutura Computacional; Fundamentos de Segurança de Sistemas
+    Computacionais; Segurança de Sistemas Computacionais; Tópicos Avançados em
+    Segurança de Sistemas Computacionais (E); Internet das Coisas (E).
+  - Inteligência artificial: Inteligência Artificial (E).
+  - Gestão, negócios e relações de trabalho: Relações Interpessoais;
+    Empreendedorismo e Inovação; Gestão Econômico-Financeira; Economia; Custos
+    Empresariais (E); Segurança no Trabalho.
+  - Formação geral: Fundamentos de Matemática Discreta; Matemática Vetorial e
+    Matricial; Metodologia Científica e de Extensão; Leitura e Produção
+    Textual; Introdução à Ética; Computação e Sociedade I e II.
+Seminários I, Seminários II e o TCC são os componentes validados pelo
+memorial; não os use no quadro. Se o PPC for atualizado, confira os nomes na
+nova matriz.
+
+
+6. EVIDÊNCIAS CONCRETAS
+
+Mostre, não apenas afirme:
+  - quadros com artefatos reais ANONIMIZADOS: uma consulta SQL, um cenário de
+    teste em BDD (Dado/Quando/Então), as etapas de um projeto com as
+    atividades e os resultados de cada uma, um trecho de configuração;
+  - links de repositórios públicos (por exemplo, projetos de cursos de
+    formação em desenvolvimento), cada um com as tecnologias e as
+    competências que desenvolveu.
+Todo quadro deve ser citado no texto, ter título em cima e fonte embaixo
+("Fonte: Elaboração própria.").
+
+
+7. COMPETÊNCIAS AO FINAL DE CADA EXPERIÊNCIA
+
+Feche cada experiência com uma lista das competências desenvolvidas —
+técnicas (por exemplo, "modelagem de bancos de dados NoSQL",
+"processamento assíncrono com filas") e comportamentais (liderança técnica,
+comunicação com clientes, revisão de código). Elas alimentam o quadro do
+perfil do egresso.
+
+
+8. SIGILO DA ORGANIZAÇÃO E PRIVACIDADE
+
+Não exponha dados de clientes, código-fonte proprietário, valores,
+credenciais nem detalhes internos sigilosos. Anonimize nomes de tabelas e
+identificadores (TABELA_PEDIDOS, id = xxxxx). Nos comprovantes anexados,
+oculte dados pessoais desnecessários (CPF, endereço, salário).
+
+
+9. ORGANIZAÇÃO DO TEXTO
+
+Três organizações foram bem avaliadas; escolha uma e mantenha-a:
+  a) CRONOLÓGICA POR EXPERIÊNCIA (a do modelo): um capítulo por organização
+     ou curso, cada um com contexto, atividades fundamentadas e competências;
+  b) FUNDAMENTAÇÃO + TRAJETÓRIA: um capítulo de fundamentação teórica
+     aplicada, seguido da trajetória profissional por organização;
+  c) CONTEXTO + ÁREAS DE CONHECIMENTO: um capítulo de contexto profissional
+     (organização, sistema, cargo e período, atividades) e um capítulo de
+     "aplicação dos conhecimentos acadêmicos", com uma seção por área
+     (requisitos, gestão de projetos, APIs, banco de dados, segurança...),
+     cada uma com teoria, prática e disciplinas. Funciona bem quando toda a
+     experiência é numa única organização.
+Em qualquer caso: introdução com objetivo, base regulamentar e visão geral;
+considerações finais com a síntese e a SOLICITAÇÃO formal de aproveitamento
+(citando o Capítulo VII do Regulamento); referências; anexos com os
+comprovantes. Parte textual entre cinco e dez páginas.
+
+Primeira pessoa ("atuei") ou terceira ("o autor atuou"): ambas foram
+aceitas; apenas não as misture.
+
+
+10. INTRODUÇÃO E CONCLUSÃO
+
+Na introdução, além do objetivo e da base regulamentar, vale mencionar a
+formação anterior (outros cursos, graduações, certificações) e como você
+chegou à área — isso contextualiza a trajetória.
+
+Na conclusão, sintetize a trajetória e mostre que, em conjunto, as
+experiências cobrem as dimensões do desenvolvimento de software esperadas do
+egresso: levantamento de requisitos, modelagem de dados, projeto e
+implementação, integração, testes, implantação, manutenção, trabalho em
+equipe. Reconhecimentos formais (promoções, premiações) e a forma como o
+curso e o trabalho se complementaram também podem ser destacados. Não traga
+informações novas.
+
+
+CHECKLIST DE QUALIDADE
+
+[ ] Cada cargo tem período (mês/ano) e comprovante anexado e citado.
+[ ] Cada experiência tem contexto da organização e panorama técnico.
+[ ] As atividades seguem demanda -> ação -> resultado, com números quando
+    possível.
+[ ] Cada atividade relevante tem fundamentação em autor, e todos os autores
+    estão nas Referências.
+[ ] As disciplinas do curso são citadas pelo nome.
+[ ] Há pelo menos uma evidência concreta (quadro com artefato ou link).
+[ ] Cada experiência termina com as competências desenvolvidas.
+[ ] O quadro do perfil do egresso transcreve as competências do PPC vigente.
+[ ] Nenhuma informação sigilosa ou dado pessoal desnecessário.
+[ ] Conclusão com a solicitação formal de aproveitamento.
+[ ] Parte textual entre cinco e dez páginas.

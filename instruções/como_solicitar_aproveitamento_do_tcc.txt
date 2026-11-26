@@ -1,0 +1,79 @@
+APROVEITAMENTO DO TCC POR VALIDAÇÃO DE CONHECIMENTOS E EXPERIÊNCIAS
+PROFISSIONAIS (Regulamento do TCC, Capítulo VII, arts. 47 a 52)
+
+O modelo do memorial descritivo está em memorial/ (memorial-aproveitamento.tex,
+.pdf e .docx). Compile-o com:  make memorial
+
+QUEM PODE SOLICITAR (art. 49, II e V; art. 48, § 3º)
+
+- Estudante regularmente matriculado, durante o período letivo.
+- Experiência na área de Análise e Desenvolvimento de Sistemas, alinhada ao
+  campo de atuação do egresso descrito no PPC (art. 47, parágrafo único), de
+  NO MÍNIMO DOIS ANOS, ocorrida nos ÚLTIMOS DEZ ANOS contados da data da
+  solicitação. Também valem cursos de educação profissional e tecnológica
+  relacionados ao programa das disciplinas (art. 49, I).
+- Só é aceito UM ÚNICO pedido de validação para fins de aproveitamento do TCC.
+- O PPC (2023, seção 3.8.12) também reconhece conhecimentos desenvolvidos em
+  qualificações e módulos de cursos de educação profissional tecnológica, em
+  cursos de formação inicial e continuada ou qualificação profissional de, no
+  mínimo, 160 horas, em cursos superiores e em processos formais de
+  certificação profissional — sempre diretamente relacionados ao perfil
+  profissional de conclusão do curso.
+
+O QUE ENTREGAR
+
+1) Requerimento ao câmpus, por intermédio da Coordenação de Registros
+   Acadêmicos (art. 48, § 1º).
+
+2) Memorial descritivo (art. 48 e art. 49, I e III):
+   - descrição DETALHADA das atividades desenvolvidas no trabalho e/ou em
+     cursos de educação profissional e tecnológica;
+   - FUNDAMENTAÇÃO TEÓRICA das atividades (citações de autores, conforme a
+     NBR 10520) — é o que diferencia o memorial de um currículo;
+   - o PERÍODO de cada atividade, com as devidas comprovações;
+   - relação com as habilidades e competências do PERFIL DO EGRESSO (PPC) e
+     com o programa das disciplinas;
+   - padrões de texto acadêmico-científico (normas ABNT);
+   - ENTRE CINCO E DEZ PÁGINAS.
+
+3) Documentos comprobatórios, anexados ao memorial (art. 49, IV) — são
+   ESSENCIAIS:
+   - Carteira de Trabalho e Previdência Social (página de identificação e
+     página do contrato);
+   - carta da chefia e/ou de superior do local de trabalho;
+   - para atividade autônoma: carta de contador e/ou documento da Receita
+     Federal.
+   Oculte nos comprovantes os dados pessoais que não forem necessários à
+   comprovação (CPF, endereço, salário etc.).
+
+COMO É A AVALIAÇÃO (arts. 48, § 2º, e 50 a 52)
+
+- Uma comissão de, no mínimo, três docentes (dois professores da área e o
+  coordenador do curso) analisa o memorial e os documentos.
+- Se não houver necessidade de processo complementar, os três professores
+  atribuem notas; a média aritmética compõe a média final nas disciplinas de
+  Seminários I, Seminários II e no TCC.
+- Se a comissão indicar processo complementar, o estudante faz uma
+  APRESENTAÇÃO ORAL de 20 a 25 minutos, com arguição sobre os conhecimentos e
+  experiências, considerando o perfil do egresso. A nota considera o memorial
+  e a apresentação; a média dos três professores determina a aprovação ou a
+  reprovação.
+- O resultado é registrado em ata, encaminhada à Coordenação de Registros
+  Acadêmicos, e no histórico escolar consta: "aproveitamento de Trabalho de
+  Conclusão de Curso por meio de validação de conhecimentos e experiências".
+
+CHECKLIST ANTES DE ENTREGAR
+
+[ ] Experiência total de pelo menos dois anos, nos últimos dez anos
+    (some os períodos no Quadro 1 do modelo).
+[ ] Período (mês/ano de início e fim) de cada experiência indicado no texto.
+[ ] Cada experiência com comprovante anexado e citado no texto.
+[ ] Atividades fundamentadas com autores, todos listados nas Referências.
+[ ] Competências do perfil do egresso transcritas do PPC vigente e
+    relacionadas às atividades e às disciplinas (Quadro 2 do modelo).
+[ ] Parte textual entre cinco e dez páginas.
+[ ] Declaração sobre uso de inteligência artificial (ver
+    como_declarar_uso_de_ia.txt) e texto de autoria própria (art. 34: o uso
+    de IA para a produção do trabalho é considerado plágio).
+[ ] Comentários de orientação removidos (no .docx: Revisão > Excluir >
+    Excluir Todos os Comentários no Documento).

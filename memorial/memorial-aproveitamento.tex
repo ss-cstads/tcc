@@ -1,0 +1,571 @@
+\documentclass[memorial,capa]{texifsap}
+
+\usepackage[utf8]{inputenc} % acentuacao
+\usepackage{graphicx} % para inserir figuras
+\usepackage{array} % células de quadros alinhadas à esquerda: >{\raggedright\arraybackslash}p{...}
+\graphicspath{{imagens/}}
+\usepackage[T1]{fontenc}
+% coluna de largura fixa com texto alinhado à esquerda (evita espaços largos)
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+%==============================================================================
+% MEMORIAL DESCRITIVO DE VALIDAÇÃO DE CONHECIMENTOS E EXPERIÊNCIAS
+% PROFISSIONAIS — APROVEITAMENTO DO TRABALHO DE CONCLUSÃO DE CURSO
+%
+% REGRAS (Regulamento do TCC, Capítulo VII, arts. 47 a 52):
+% - O memorial descreve, de forma DETALHADA, as atividades profissionais
+%   e/ou cursos de educação profissional e tecnológica relacionados à área
+%   de Análise e Desenvolvimento de Sistemas, alinhados ao perfil do
+%   egresso do curso (PPC) e ao programa das disciplinas (art. 49, I).
+% - Valem experiências de, no MÍNIMO, DOIS ANOS, ocorridas nos ÚLTIMOS DEZ
+%   ANOS, contados da data da solicitação (art. 49, II).
+% - Texto acadêmico-científico: relato das atividades COM FUNDAMENTAÇÃO
+%   TEÓRICA, com o período de cada atividade e as devidas comprovações;
+%   ENTRE CINCO E DEZ PÁGINAS (art. 49, III).
+% - Comprovantes OBRIGATÓRIOS, anexados ao memorial: Carteira de Trabalho
+%   (CTPS), carta da chefia/superior ou documento que comprove atividade
+%   autônoma (carta de contador e/ou documento da Receita Federal)
+%   (art. 49, IV).
+% - O pedido é feito por requerimento à Coordenação de Registros
+%   Acadêmicos, durante o período letivo, estando regularmente matriculado;
+%   só é aceito UM ÚNICO pedido (art. 48, §§ 1º e 3º; art. 49, V).
+% - Uma comissão de três docentes avalia o memorial e pode exigir
+%   apresentação oral de 20 a 25 minutos, com arguição (arts. 50 e 51).
+%
+% O QUE OS MEMORIAIS BEM AVALIADOS TÊM EM COMUM (detalhes e exemplos em
+% instruções/como_elaborar_um_bom_memorial.txt):
+%  1. período EXATO (mês/ano) de cada cargo, com a progressão na carreira;
+%  2. contexto da organização e do sistema (arquitetura, tecnologias, equipe);
+%  3. atividades descritas como DEMANDA -> AÇÃO -> RESULTADO, com o impacto
+%     quantificado sempre que possível;
+%  4. FUNDAMENTAÇÃO em autores clássicos da área, no padrão
+%     "Segundo Autor (ano), <conceito>. Na minha atuação, <prática>.";
+%  5. DISCIPLINAS do curso citadas pelo nome, junto às atividades;
+%  6. EVIDÊNCIAS concretas: quadros com artefatos anonimizados (consulta SQL,
+%     cenário de teste, etapas de projeto) e links de repositórios públicos;
+%  7. competências listadas ao final de cada experiência;
+%  8. sigilo da organização preservado (dados de clientes, código, valores);
+%  9. conclusão que sintetiza a trajetória e formaliza o pedido.
+%==============================================================================
+
+\unidade{C{\^a}mpus Sapucaia do Sul}
+
+%TÍTULO DE FORMAÇÃO: descomente o bloco correspondente ao seu curso e
+%mantenha o outro comentado.
+%
+%--- Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas:
+\curso{An\'alise e Desenvolvimento de Sistemas}
+\nomecurso{Superior de Tecnologia em An\'alise e Desenvolvimento de Sistemas}
+%na capa, o nome do curso quebra a linha no ponto indicado pelo \\
+\nomecursocapa{Superior de Tecnologia em\\An\'alise e Desenvolvimento de Sistemas}
+\titulocurso{Tecn\'ologo(a) em An\'alise e Desenvolvimento de Sistemas}
+
+%TÍTULO: mantenha como está. A segunda linha (depois do \\) é o subtítulo.
+\title{Memorial descritivo de valida\c{c}\~ao de conhecimentos e experi\^encias profissionais\\[.5cm]Aproveitamento do Trabalho de Conclus\~ao de Curso}
+
+%AUTOR: o memorial é individual e não tem orientador.
+\author{ÚltimoSobrenome}{Primeiro nome e sobrenome}
+
+\begin{document}
+
+\maketitle
+
+\sloppy
+
+%Sumario
+\tableofcontents
+
+%OPCIONAL: se usar muitos quadros, tabelas ou figuras, descomente a lista
+%correspondente ANTES do \tableofcontents (as listas vêm antes do sumário).
+%\listofquadros
+%\listoftables
+%\listoffigures
+
+%==============================================================================
+% PARTE TEXTUAL — entre CINCO e DEZ páginas (Regulamento do TCC, art. 49,
+% III). Organização recomendada:
+%   1 Introdução
+%   2 Trajetória profissional (quadro-resumo com períodos e comprovantes)
+%   3, 4, ... Um capítulo por experiência profissional (ou curso de
+%     educação profissional e tecnológica), em ordem cronológica
+%   n Relação com o perfil do egresso e com as disciplinas do curso
+%   n+1 Considerações finais (com a solicitação de aproveitamento)
+%   Referências e Anexos (comprovantes)
+% Outras organizações também são bem avaliadas: (a) um capítulo de
+% fundamentação teórica aplicada antes da trajetória; ou (b) um capítulo de
+% contexto profissional seguido de um capítulo POR ÁREA DE CONHECIMENTO
+% (requisitos, gestão de projetos, APIs, banco de dados, segurança...),
+% cada uma com teoria, prática e disciplinas. Escolha uma e mantenha-a.
+% Pessoa do discurso: 1ª pessoa ("atuei") ou 3ª ("o autor atuou") são
+% aceitas; apenas não as misture.
+%==============================================================================
+
+%ATENÇÃO — PLÁGIO E INTELIGÊNCIA ARTIFICIAL (Regulamento do TCC, art. 34):
+%plágio total ou parcial ANULA o TCC e reprova o acadêmico. O uso de
+%ferramentas de inteligência artificial para a produção do trabalho é
+%considerado plágio. Escreva o texto com suas próprias palavras e cite e
+%referencie TODAS as fontes utilizadas.
+
+\chapter{Introdução}
+
+%GUIA: apresente o objetivo do memorial e a sua base regulamentar
+%(Capítulo VII do Regulamento do TCC), resuma a sua formação prévia, se
+%for relevante (outros cursos, graduações, certificações), e dê uma visão
+%geral da trajetória que será descrita: quais experiências, em que
+%períodos e em que áreas. No último parágrafo, descreva a organização do
+%texto.
+
+O Trabalho de Conclusão de Curso (TCC) é atividade curricular
+obrigatória do Curso Superior de Tecnologia em Análise e Desenvolvimento
+de Sistemas do Instituto Federal Sul-rio-grandense (IFSul), Câmpus
+Sapucaia do Sul. O Capítulo VII do Regulamento do Trabalho de Conclusão
+de Curso~\cite{IFSul:RegTCC}, que integra o Projeto Pedagógico do
+Curso~\cite{IFSul:PPC}, prevê, contudo, que os conhecimentos
+adquiridos na experiência profissional possam ser avaliados,
+reconhecidos e certificados para fins de aproveitamento do TCC. Nesse
+contexto, este memorial descritivo tem por objetivo apresentar e
+fundamentar as experiências profissionais do autor na área de Análise e
+Desenvolvimento de Sistemas, demonstrando a sua correspondência com as
+competências previstas no perfil do egresso do curso.
+
+Descreva aqui, em um ou dois parágrafos, a sua formação e trajetória de
+forma resumida: há quanto tempo atua na área, em quais organizações, em
+que funções e com quais tecnologias e metodologias. Se possuir formação
+anterior (outros cursos técnicos ou superiores, especializações,
+certificações) que ajude a contextualizar a trajetória, mencione-a aqui.
+
+O memorial está organizado da seguinte forma: o Capítulo~\ref{cap:trajetoria}
+apresenta a trajetória profissional e os períodos de cada experiência;
+os Capítulos~\ref{cap:experiencia1} e~\ref{cap:experiencia2} descrevem as
+atividades desenvolvidas em cada organização, com a respectiva
+fundamentação teórica; o Capítulo~\ref{cap:egresso} relaciona as
+competências desenvolvidas ao perfil do egresso e às disciplinas do
+curso; e o Capítulo~\ref{cap:consideracoes} apresenta as considerações
+finais e a solicitação de aproveitamento.
+
+\chapter{Trajetória profissional}
+\label{cap:trajetoria}
+
+%GUIA: apresente uma visão geral da trajetória, em ordem cronológica, e
+%resuma TODAS as experiências no quadro abaixo, com o período exato
+%(mês/ano de início e de fim) e o documento comprobatório de cada uma,
+%identificado pela letra do anexo correspondente. O quadro permite à
+%comissão verificar rapidamente os requisitos do art. 49, II: período
+%mínimo de DOIS ANOS de experiência, ocorrida nos ÚLTIMOS DEZ ANOS.
+%Cursos de educação profissional e tecnológica também podem ser
+%incluídos (art. 49, I), indicando a carga horária e o certificado.
+%Remova do quadro as linhas que não se aplicam (atividade autônoma, curso)
+%e os anexos correspondentes.
+
+Apresente aqui, em linhas gerais, a evolução da sua trajetória na área
+de tecnologia: como ingressou na área, como as funções e as
+responsabilidades evoluíram e quais foram os principais domínios de
+atuação (por exemplo, desenvolvimento de software, banco de dados,
+testes e qualidade, infraestrutura, análise de requisitos ou gestão de
+projetos).
+
+O Quadro~\ref{quadro-trajetoria} resume as experiências descritas neste
+memorial, com os respectivos períodos e documentos comprobatórios,
+reunidos nos anexos. Somadas, as experiências totalizam N anos e M
+meses de atuação na área, todos nos últimos dez anos.
+
+\begin{quadro}[htbp]
+\caption{Experiências profissionais descritas neste memorial}
+\label{quadro-trajetoria}
+\centering\begin{tabular}{|L{3.2cm}|L{2.8cm}|L{2.8cm}|L{1.9cm}|L{2.9cm}|}
+\hline
+\textbf{Organização ou curso} & \textbf{Cargo/função} & \textbf{Período} & \textbf{Duração} & \textbf{Comprovante}\\
+\hline
+{\small Nome da organização 1} & {\small Cargo exercido} & {\small mm/aaaa a mm/aaaa} & {\small N meses} & {\small Anexo~\ref{anx:ctps}}\\
+\hline
+{\small Nome da organização 2} & {\small Cargo exercido} & {\small mm/aaaa até o presente} & {\small N meses} & {\small Anexos~\ref{anx:ctps2} e~\ref{anx:carta}}\\
+\hline
+{\small Atividade autônoma (se houver)} & {\small Serviço prestado} & {\small mm/aaaa a mm/aaaa} & {\small N meses} & {\small Anexo~\ref{anx:contador}}\\
+\hline
+{\small Curso de qualificação profissional (se houver)} & {\small Nome do curso (N horas)} & {\small mm/aaaa a mm/aaaa} & {\small --} & {\small Anexo~\ref{anx:certificado}}\\
+\hline
+\multicolumn{3}{|r|}{\small\textbf{Total}} & {\small\textbf{N meses}} & \\
+\hline
+\end{tabular}
+\begin{flushleft}
+{\small Fonte: Elaboração própria.}
+\end{flushleft}
+\end{quadro}
+
+%==============================================================================
+% UM CAPÍTULO POR EXPERIÊNCIA. Copie o capítulo abaixo para cada
+% organização (ou curso), em ordem cronológica. Se houve mudança de cargo
+% na mesma organização, use uma seção para cada cargo, com o respectivo
+% período.
+%==============================================================================
+
+\chapter{Experiência profissional em Nome da organização 1}
+\label{cap:experiencia1}
+
+%GUIA: indique no primeiro parágrafo o PERÍODO (mês/ano de início e de
+%fim), o CARGO e a carga horária semanal, e o documento comprobatório.
+%Depois, contextualize a organização e o sistema ou produto em que atuou.
+%Não exponha informações sigilosas da organização (dados de clientes,
+%código-fonte proprietário, valores, credenciais).
+
+Entre mm/aaaa e mm/aaaa, o autor atuou na Nome da organização 1, no
+cargo de Cargo exercido, com jornada de N horas semanais, conforme a
+Carteira de Trabalho apresentada no Anexo~\ref{anx:ctps}. Apresente aqui
+a organização: o seu ramo de atuação, o porte, os clientes atendidos e o
+papel da área de tecnologia no negócio.
+
+\section{Contexto técnico}
+\label{sec:contexto1}
+
+%GUIA: descreva o sistema, produto ou ambiente em que atuou: a
+%arquitetura, as linguagens, os frameworks, os bancos de dados, a
+%infraestrutura e as ferramentas, e a organização da equipe (tamanho,
+%papéis, metodologia de trabalho).
+
+Descreva aqui o sistema ou o ambiente em que atuou, com a arquitetura,
+as tecnologias empregadas e a organização da equipe. Por exemplo, se a
+equipe adotava o Scrum, explique brevemente o framework e o seu papel
+nele: segundo \citet{Schwaber:2020}, o Scrum organiza o trabalho em
+ciclos de duração fixa, as \textit{sprints}, nas quais um time
+multidisciplinar entrega incrementos do produto e inspeciona
+continuamente o progresso.
+
+\section{Atividades desenvolvidas}
+\label{sec:atividades1}
+
+%GUIA: esta é a parte central do memorial. Para cada atividade
+%relevante, descreva: (i) o problema ou a demanda; (ii) o que você fez,
+%com quais técnicas e ferramentas; (iii) o resultado obtido; e (iv) a
+%FUNDAMENTAÇÃO TEÓRICA — os conceitos da área que sustentam a atividade,
+%com citação de autores (livros, artigos, normas). A fundamentação é
+%exigência do Regulamento (art. 49, III) e o que diferencia o memorial
+%de um currículo. Use subseções se houver muitas atividades.
+%
+%PADRÃO QUE FUNCIONA, para cada atividade:
+%  "Segundo Autor (ano), <conceito da área>. Na minha atuação, <o que
+%   foi feito, com quais ferramentas>. Como resultado, <impacto, de
+%   preferência com números: tempo, volume, falhas, equipe>. Essa
+%   atividade relaciona-se à disciplina <nome da disciplina>."
+%Mostre EVIDÊNCIAS: um quadro com um artefato real anonimizado (consulta
+%SQL, cenário BDD, etapas do projeto, trecho de configuração) e links de
+%repositórios públicos, quando houver. Explique em nota de rodapé
+%(\footnote{...}) termos próprios da organização ou do produto.
+%Evite: listar tecnologias sem dizer o que fez com elas; frases genéricas
+%("trabalhei com várias tecnologias"); expor dados sigilosos.
+%
+%Citações (NBR 10520:2023): \cite{chave} -> (Sommerville, 2019);
+%\citet{chave} -> Sommerville (2019); com página: \cite[p.~45]{chave}.
+
+Descreva aqui cada atividade relevante, relacionando-a aos conceitos da
+área. Por exemplo, ao relatar o levantamento de requisitos de uma nova
+funcionalidade, explique que a engenharia de requisitos compreende a
+elicitação, a análise, a especificação e a validação das necessidades
+dos usuários~\cite{Sommerville:2019}, e mostre como cada etapa ocorreu na
+sua prática.
+
+Da mesma forma, ao descrever o desenvolvimento ou o teste de uma API,
+fundamente-o no estilo arquitetural adotado. \citet{Fielding:2000}
+definiu o estilo REST por um conjunto de restrições, como a comunicação
+cliente-servidor sem estado e a interface uniforme, que orientam o
+projeto de serviços web. Relate então o que foi implementado e quais
+resultados foram alcançados, como a redução de falhas em produção ou o
+ganho de desempenho, quantificando-os sempre que possível, e indique a
+disciplina do curso que trata do mesmo conteúdo (por exemplo,
+Desenvolvimento de Sistemas Computacionais).
+
+\section{Competências desenvolvidas}
+
+%GUIA: liste, em alíneas, as competências técnicas e comportamentais
+%desenvolvidas nessa experiência. Elas serão retomadas no quadro do
+%capítulo de relação com o perfil do egresso.
+
+A atuação na Nome da organização 1 contribuiu para o desenvolvimento das
+seguintes competências:
+\begin{itemize}
+\item competência técnica 1 (por exemplo, desenvolvimento de aplicações
+  web com a tecnologia X);
+\item competência técnica 2 (por exemplo, modelagem e consulta de bancos
+  de dados relacionais);
+\item competência comportamental (por exemplo, trabalho em equipe com
+  metodologias ágeis).
+\end{itemize}
+
+\chapter{Experiência profissional em Nome da organização 2}
+\label{cap:experiencia2}
+
+Entre mm/aaaa e o presente, o autor atua na Nome da organização 2, no
+cargo de Cargo exercido, conforme a Carteira de Trabalho e a carta da
+chefia imediata apresentadas nos Anexos~\ref{anx:ctps2}
+e~\ref{anx:carta}. Apresente aqui a organização e o seu contexto, como
+no capítulo anterior.
+
+\section{Contexto técnico}
+
+Descreva aqui o sistema ou o ambiente em que atua, as tecnologias e a
+organização da equipe. Se houver práticas de garantia da qualidade,
+relacione-as à literatura: para \citet{Pressman:2021}, a qualidade de
+software envolve a conformidade com os requisitos, com padrões de
+desenvolvimento e com as características esperadas de um produto
+profissional.
+
+\section{Atividades desenvolvidas}
+\label{sec:atividades2}
+
+Descreva aqui as atividades desenvolvidas, com a mesma estrutura do
+capítulo anterior: a demanda, o que foi feito, o resultado e a
+fundamentação teórica. Se houve progressão de cargo na organização,
+crie uma seção para cada cargo, indicando o respectivo período.
+
+Sempre que possível, apresente uma evidência concreta da atividade. Por
+exemplo, ao relatar a validação de dados de um sistema, explique que o
+modelo relacional organiza os dados em tabelas relacionadas entre si,
+cuja consistência é garantida por restrições de
+integridade~\cite{Elmasri:2018}, e mostre uma consulta utilizada, com os
+nomes de tabelas e os identificadores anonimizados, como no
+Quadro~\ref{quadro-evidencia}. Em seguida, explique a finalidade da
+consulta e o resultado obtido com ela.
+
+\begin{quadro}[htbp]
+\caption{Exemplo de consulta SQL utilizada na validação de dados (nomes anonimizados)}
+\label{quadro-evidencia}
+\centering\begin{tabular}{|p{12cm}|}
+\hline
+{\ttfamily\small SELECT p.id, p.situacao, u.nome AS responsavel}\\
+{\ttfamily\small FROM TABELA\_PEDIDOS p}\\
+{\ttfamily\small JOIN TABELA\_USUARIOS u ON u.id = p.id\_usuario}\\
+{\ttfamily\small WHERE p.situacao = 'PENDENTE'}\\
+{\ttfamily\small \ \ AND p.data\_criacao < CURRENT\_DATE - 30;}\\
+\hline
+\end{tabular}
+\begin{flushleft}
+{\small Fonte: Elaboração própria.}
+\end{flushleft}
+\end{quadro}
+
+\section{Competências desenvolvidas}
+
+A atuação na Nome da organização 2 tem contribuído para o
+desenvolvimento das seguintes competências:
+\begin{itemize}
+\item competência técnica 1;
+\item competência técnica 2;
+\item competência comportamental.
+\end{itemize}
+
+\chapter{Relação com o perfil do egresso e com as disciplinas do curso}
+\label{cap:egresso}
+
+%GUIA: este capítulo demonstra o requisito central da validação: a
+%correspondência entre as experiências e as habilidades e competências
+%do PERFIL DO EGRESSO, descritas no Projeto Pedagógico do Curso (PPC)
+%(art. 48), e o programa das disciplinas (art. 49, I). Inclua no quadro
+%as competências que as suas atividades EVIDENCIAM, transcritas do PPC
+%sem reescrevê-las, e indique, para cada uma, as atividades dos capítulos
+%anteriores e as disciplinas relacionadas. Uma competência pode ser
+%evidenciada por várias atividades e relacionar-se a várias disciplinas.
+%
+%PERFIL DO EGRESSO (PPC 2023, seção 3.6, p. 41-42), para consulta:
+%"O perfil profissional do(a) egresso(a) do Curso contempla o domínio de
+%trabalho em equipes com iniciativa, criatividade e sociabilidade,
+%realizando suas atividades profissionais de forma ética, com
+%responsabilidade socioambiental, atendendo às normas técnicas e de
+%segurança, compreendendo:
+% - habilidade para aprender e lidar com o inusitado, conviver e se
+%   comunicar;
+% - capacidade para aprender de forma autônoma e contínua;
+% - comprometimento com a melhoria da qualidade de vida;
+% - conhecimento sobre importância de agir com ética, comprometimento
+%   socioambiental e solidariedade enquanto ser humano, cidadão e
+%   profissional;
+% - o gerenciamento de processos participativos de organização pública
+%   e/ou privada e/ou incluir-se neles;
+% - conhecimento sobre a importância de agir com responsabilidade,
+%   sensibilidade e equilíbrio ao enfrentar desafios profissionais.
+%Na atuação deste(a) profissional, destacam-se as seguintes atividades:
+% - analisar, projetar, desenvolver, testar, implantar e manter sistemas
+%   computacionais de informação;
+% - avaliar, selecionar, especificar e utilizar metodologias, tecnologias
+%   e ferramentas da Engenharia de Software, linguagens de programação e
+%   bancos de dados;
+% - coordenar equipes de produção de softwares;
+% - vistoriar, realizar perícia, avaliar, emitir laudo e parecer técnico
+%   em sua área de formação."
+%DISCIPLINAS DO CURSO POR ÁREA (Matriz curricular nº 2, a partir de
+%2023/2, e matriz de eletivas — PPC, Apêndices D e E). Use os nomes
+%exatamente como abaixo; (E) = eletiva:
+% - Programação e algoritmos: Computação Aplicada à Solução de Problemas;
+%   Princípios do Pensamento Computacional; Programação Orientada a
+%   Objetos; Estruturas de Dados; Análise de Algoritmos (E).
+% - Desenvolvimento de sistemas e interfaces: Desenvolvimento de
+%   Interfaces I e II; Fundamentos de Desenvolvimento de Sistemas
+%   Computacionais; Desenvolvimento de Sistemas Computacionais;
+%   Desenvolvimento de aplicações para Dispositivos Móveis; Tópicos
+%   Avançados em Programação para Dispositivos Móveis (E); Experiência do
+%   Usuário e Acessibilidade (E).
+% - Engenharia de software, qualidade e projetos: Fundamentos de
+%   Engenharia de Sistemas Computacionais; Engenharia de Sistemas
+%   Computacionais; Qualidade de Sistemas Computacionais; Gestão de
+%   Projetos; Projeto de Sistemas Computacionais (E).
+% - Banco de dados e análise de dados: Fundamentos de Sistemas de Banco de
+%   Dados; Tópicos Avançados em Sistemas de Banco de Dados; Ciência e
+%   Análise de Dados.
+% - Infraestrutura, redes e segurança: Fundamentos Computacionais;
+%   Fundamentos de Infraestrutura Computacional; Fundamentos de Segurança
+%   de Sistemas Computacionais; Segurança de Sistemas Computacionais;
+%   Tópicos Avançados em Segurança de Sistemas Computacionais (E);
+%   Internet das Coisas (E).
+% - Inteligência artificial: Inteligência Artificial (E).
+% - Gestão, negócios e relações de trabalho: Relações Interpessoais;
+%   Empreendedorismo e Inovação; Gestão Econômico-Financeira; Economia;
+%   Custos Empresariais (E); Segurança no Trabalho.
+% - Formação geral: Fundamentos de Matemática Discreta; Matemática
+%   Vetorial e Matricial; Metodologia Científica e de Extensão; Leitura e
+%   Produção Textual; Introdução à Ética; Computação e Sociedade I e II.
+%(Seminários I, Seminários II e o TCC são os componentes que estão sendo
+%validados; não os use no quadro.)
+%Campo de atuação: empresas de planejamento, desenvolvimento de projetos,
+%assistência técnica e consultoria, empresas de tecnologia, empresas em
+%geral (indústria, comércio e serviços), ONGs, órgãos públicos,
+%institutos e centros de pesquisa e instituições de ensino.
+
+O perfil do egresso do Curso Superior de Tecnologia em Análise e
+Desenvolvimento de Sistemas, descrito no Projeto Pedagógico do
+Curso~\cite[p.~41-42]{IFSul:PPC}, contempla o domínio de trabalho em
+equipes, realizado de forma ética e atendendo às normas técnicas, e
+destaca, na atuação do profissional, atividades como analisar,
+projetar, desenvolver, testar, implantar e manter sistemas
+computacionais de informação. O Quadro~\ref{quadro-egresso} relaciona essas
+competências às atividades descritas neste memorial e às disciplinas do
+curso que tratam dos mesmos conteúdos.
+
+\begin{quadro}[htbp]
+\caption{Relação entre as competências do perfil do egresso, as atividades profissionais e as disciplinas do curso}
+\label{quadro-egresso}
+\centering\begin{tabular}{|L{5.4cm}|L{4.8cm}|L{4.2cm}|}
+\hline
+\textbf{Competência do perfil do egresso (PPC)} & \textbf{Atividades que a evidenciam} & \textbf{Disciplinas relacionadas}\\
+\hline
+{\small Analisar, projetar, desenvolver, testar, implantar e manter sistemas computacionais de informação} & {\small Atividades da Seção~\ref{sec:atividades1} (levantamento de requisitos e desenvolvimento da API)} & {\small Fundamentos de Engenharia de Sistemas Computacionais; Desenvolvimento de Sistemas Computacionais}\\
+\hline
+{\small Avaliar, selecionar, especificar e utilizar metodologias, tecnologias e ferramentas da Engenharia de Software, linguagens de programação e bancos de dados} & {\small Atividade da Seção~\ref{sec:atividades2} (validação de dados)} & {\small Tópicos Avançados em Sistemas de Banco de Dados}\\
+\hline
+{\small Coordenar equipes de produção de softwares} & {\small Descreva a atividade (por exemplo, liderança técnica de uma equipe)} & {\small Gestão de Projetos}\\
+\hline
+{\small Domínio de trabalho em equipes com iniciativa, criatividade e sociabilidade} & {\small Atuação em equipe com metodologia ágil (Seção~\ref{sec:contexto1})} & {\small Relações Interpessoais}\\
+\hline
+\end{tabular}
+\begin{flushleft}
+{\small Fonte: Elaboração própria, com base em \citet{IFSul:PPC}.}
+\end{flushleft}
+\end{quadro}
+
+Comente aqui o quadro, destacando as competências mais desenvolvidas na
+trajetória e a forma como a experiência profissional complementou os
+conteúdos estudados no curso.
+
+\chapter{Considerações finais}
+\label{cap:consideracoes}
+
+%GUIA: sintetize a trajetória descrita, retome as principais competências
+%desenvolvidas e mostre que elas correspondem às esperadas para o TCC.
+%Vale destacar como a experiência profissional e o curso se
+%complementaram e reconhecimentos formais recebidos (promoções,
+%premiações). Não apresente experiências ou dados novos que não tenham
+%aparecido antes.
+
+Sintetize aqui a trajetória descrita no memorial, em ordem cronológica,
+e as principais competências desenvolvidas em cada experiência,
+evidenciando que, em conjunto, elas abrangem as dimensões do
+desenvolvimento de software esperadas do egresso, como a análise de
+requisitos, a modelagem de dados, o projeto e a implementação de
+sistemas, os testes, a manutenção e o trabalho em equipe.
+
+\section{Solicitação de aproveitamento}
+
+Diante do exposto, e considerando que as experiências profissionais
+documentadas neste memorial correspondem às habilidades e competências
+previstas no perfil do egresso do Curso Superior de Tecnologia em
+Análise e Desenvolvimento de Sistemas, o autor solicita o aproveitamento
+do Trabalho de Conclusão de Curso por meio da validação de
+conhecimentos e experiências profissionais, na forma prevista no
+Capítulo VII do Regulamento do Trabalho de Conclusão de Curso do Curso
+Superior de Tecnologia em Análise e Desenvolvimento de Sistemas do
+Instituto Federal Sul-rio-grandense, Câmpus Sapucaia do Sul.
+
+\section{Declaração sobre uso de Inteligência Artificial}
+
+%GUIA (Portaria CNPq nº 2.664/2026): declare o uso de ferramentas de
+%inteligência artificial generativa em qualquer fase da elaboração do
+%memorial, com a ferramenta, a finalidade e a fase. Lembre-se do
+%Regulamento do TCC (art. 34): o uso de IA para a PRODUÇÃO do trabalho é
+%considerado plágio. Veja instruções/como_declarar_uso_de_ia.txt.
+
+Declare aqui, de forma transparente, o uso de ferramentas de
+inteligência artificial generativa na elaboração deste memorial,
+especificando a ferramenta, com nome e versão, a finalidade e a fase do
+trabalho em que ocorreu. Caso nenhuma ferramenta tenha sido utilizada,
+declare-o expressamente.
+
+%REFERÊNCIAS: liste somente as obras citadas no texto (NBR 6023). As
+%regras de preenchimento do .bib estão no final de tcc/exemplo-tcc.tex.
+\bibliographystyle{abnt}
+\bibliography{bibliografia-memorial}
+
+%==============================================================================
+% ANEXOS — DOCUMENTOS COMPROBATÓRIOS (OBRIGATÓRIOS; Regulamento do TCC,
+% art. 49, IV): Carteira de Trabalho (páginas de identificação e do
+% contrato de trabalho), carta da chefia/superior e/ou documento que
+% comprove atividade autônoma (carta de contador, documento da Receita
+% Federal). Cursos de educação profissional e tecnológica: certificado
+% com carga horária. Um anexo para cada documento, na ordem em que são
+% citados no texto.
+%
+% Para inserir um documento em PDF, use (uma página por vez ou todas):
+%   \includepdf[pages=-,pagecommand={}]{anexos/ctps.pdf}
+% (o pacote pdfpages já é carregado pela classe). Se preferir imagens:
+%   \includegraphics[width=\textwidth]{anexos/ctps.png}
+% ATENÇÃO À PRIVACIDADE: oculte dados pessoais que não sejam necessários à
+% comprovação (como CPF, número de documentos, endereço e salário).
+%==============================================================================
+\anexos
+
+%Cada anexo recebe a cópia digitalizada de um documento comprobatório
+%previsto no Regulamento do TCC (art. 49, IV) ou no PPC (seção 3.8.12).
+%Substitua o texto de cada anexo pelo documento real e remova os anexos
+%que não se aplicam (e as linhas correspondentes do Quadro 1).
+
+\chapter{Carteira de Trabalho -- Nome da organização 1}
+\label{anx:ctps}
+
+Insira aqui a cópia da Carteira de Trabalho e Previdência Social (CTPS)
+que comprova o período de atuação na Nome da organização 1, gerada pelo
+aplicativo Carteira de Trabalho Digital ou digitalizada da carteira em
+papel (página de identificação e página do contrato de trabalho).
+
+\chapter{Carteira de Trabalho -- Nome da organização 2}
+\label{anx:ctps2}
+
+Insira aqui a cópia da Carteira de Trabalho que comprova o período de
+atuação na Nome da organização 2.
+
+\chapter{Carta da chefia -- Nome da organização 2}
+\label{anx:carta}
+
+Insira aqui a carta da chefia imediata ou de superior da organização,
+assinada, que declare o cargo, o período e as principais atividades
+desempenhadas pelo autor.
+
+\chapter{Declaração de contador -- atividade autônoma}
+\label{anx:contador}
+
+Se houver atividade autônoma, insira aqui a carta do contador e/ou o
+documento da Receita Federal que comprove a atividade e o seu período.
+
+\chapter{Certificado de curso -- Nome do curso}
+\label{anx:certificado}
+
+Se o memorial incluir curso de educação profissional e tecnológica,
+insira aqui a cópia do certificado, com a carga horária e o período de
+realização.
+
+\end{document}
